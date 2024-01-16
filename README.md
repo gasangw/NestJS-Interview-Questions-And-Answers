@@ -1,7 +1,8 @@
 # NestJS Interview Questions & Answers
 
-> Welcome to the NestJS Interview Questions and Answers repository!
- Click ⭐if you like the project and incase you're interested in contributing to this project. Before you dive in, please take a moment to review our guidelines.
+> Welcome to the NestJS Interview Questions and Answers repository! 
+- This repository aims to be a comprehensive resource for NestJS developers preparing for interviews. Whether you're a beginner or an experienced developer, this collection of questions and answers is designed to help you brush up on your NestJS knowledge and excel in interviews.
+> Click ⭐if you like the project and incase you're interested in contributing to this project. Before you dive in, please take a moment to review our guidelines.
 
 ## Important Links
 
