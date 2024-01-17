@@ -21,6 +21,7 @@
 | 3   | [What is the main responsibility of controllers](#What-is-the-main-responsibility-of-controllers)  
 | 4   | [Can you explain how to use decorators in a NestJS controller?](#Can-you-explain-how-to-use-decorators-in-a-NestJS-controller?) 
 | 5   | [How can you use route parameters in a NestJS controller?](#How-can-you-use-route-parameters-in-a-NestJS-controller?) 
+| 6   | [What is the role of the `@Body()` decorator?](#What-is-the-role-of-the-`@Body()`-decorator?) 
 
 
 ### Answers
@@ -90,14 +91,28 @@
     }
 
    ```
-      **[⬆ Back to Top](#table-of-contents)**
+   **[⬆ Back to Top](#table-of-contents)**
   
 5. ### How can you use route parameters in a NestJS controller?
-    Route parameters in a NestJS controller can be accessed using the `@Param()` decorator in the controller methods.
+  Route parameters in a NestJS controller can be accessed using the `@Param()` decorator in the controller methods.
     ```javascript
         @Patch('id')
         update(@Param('id') id: number, @Body() body: any ): string {
            return `This action updates the body of the cat`;
         }
     ```
-     **[⬆ Back to Top](#table-of-contents)**
+   **[⬆ Back to Top](#table-of-contents)**
+
+6. ### What is the role of the `@Body()` decorator?
+   The `@Body()` decorator in NestJS is used to extract the entire body of the incoming HTTP request. It's commonly used in methods that handle POST and PUT requests where data is sent in the body of the request.
+
+  For example, if you have a method in your controller to create a new user, you might use the `@Body()` decorator to get the user data from the request:
+   ```javascript
+   @Post()
+    create(@Body() createUserDto: CreateUserDto) {
+      return this.usersService.create(createUserDto);
+    }
+   ```
+  In this example, createUserDto is an object that contains the data sent in the request body. The @Body() decorator automatically parses the JSON request body and assigns it to the createUserDto parameter.
+    
+   **[⬆ Back to Top](#table-of-contents)**
