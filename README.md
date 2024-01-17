@@ -18,6 +18,8 @@
 | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1   | [What is Nestjs](#what-is-nestjs)                                         |
 | 2   | [How to declare a class as a controller in Nest.js](#How-to-declare-a-class-as-a-controller-in-Nest.js)  
+| 3   | [What is the main responsibility of controllers](#What-is-the-main-responsibility-of-controllers)  
+| 4   | [Can you explain how to use decorators in a NestJS controller?](#Can-you-explain-how-to-use-decorators-in-a-NestJS-controller?) 
 
 
 ### Answers
@@ -46,3 +48,29 @@
    In this example the `ExampleController` is a controller class. **@Controller('example')** decorator tells Nest.js that this class is a controller that should handle requests to the `example` route. The **@Get()** decorator on the `getHello` method indicates that this method should handle HTTP GET requests.
 
    **[⬆ Back to Top](#table-of-contents)**
+
+3. ### What is the main responsibility of controllers
+
+   Controllers are responsible for handling incoming `requests` and returning `responses` to the client.Controllers organize routes and handle HTTP requests that come to those routes.
+   
+   **[⬆ Back to Top](#table-of-contents)**
+
+4. ### Can you explain how to use decorators in a NestJS controller?
+   Decorators in a NestJS controller are used to define routes and to handle different types of HTTP requests. For example, `@Get()`, `@Post()`, `@Put()`, `@Delete()` are used to handle GET, POST, PUT, DELETE requests respectively.
+   ```javascript
+   import { Controller, Get } from '@nestjs/common';
+
+    @Controller('cats')
+    export class CatsController {
+      @Get()
+      findAll(): string {
+        return 'This action returns all cats';
+      }
+
+      @Get(':id')
+      findOne(@Param('id') id: number): string {
+        return `This action returns a cat with id of ${id}`;
+      }
+    }
+
+   ```
