@@ -11,3 +11,38 @@
 - [Contributing Guidelines](./CONTRIBUTING.md): Before contributing, please read our contributing guidelines. They provide information on how to submit questions, report issues, and more.
 
 > Follow me [@gasangw](https://github.com/gasangw).
+
+### Table of Contents
+
+| No. | Questions                                                                                                                                                         |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | [What is Nestjs](#what-is-nestjs)                                         |
+| 2   | [How to declare a class as a controller in Nest.js](#How-to-declare-a-class-as-a-controller-in-Nest.js)  
+
+
+### Answers
+
+
+1. ### What is Nestjs
+
+   Nest(NestJS) is a framework for building efficient, scalable Node.js server side applications. It uses progressive JavaScript and its built with and fully suports Typescript.
+
+2. ### How to declare a class as a controller in Nest.js
+
+   In Nest.js we can declare a class as a controller by using the **@Controller()** decorator. Here is a basic example.
+
+   ```javascript
+      import { Controller, Get } from '@nestjs/common';
+      
+      @Controller('example')
+      class ExampleController {
+
+         @Get()
+         getHello(): string {
+            return 'Hello world!';
+         }
+      }
+   ```
+   In this example the `ExampleController` is a controller class. **@Controller('example')** decorator tells Nest.js that this class is a controller that should handle requests to the `example` route. The **@Get()** decorator on the `getHello` method indicates that this method should handle HTTP GET requests.
+
+   **[⬆ Back to Top](#table-of-contents)**
