@@ -20,6 +20,7 @@
 | 2   | [How to declare a class as a controller in Nest.js](#How-to-declare-a-class-as-a-controller-in-Nest.js)  
 | 3   | [What is the main responsibility of controllers](#What-is-the-main-responsibility-of-controllers)  
 | 4   | [Can you explain how to use decorators in a NestJS controller?](#Can-you-explain-how-to-use-decorators-in-a-NestJS-controller?) 
+| 5   | [How can you use route parameters in a NestJS controller?](#How-can-you-use-route-parameters-in-a-NestJS-controller?) 
 
 
 ### Answers
@@ -90,3 +91,13 @@
 
    ```
       **[⬆ Back to Top](#table-of-contents)**
+  
+5. ### How can you use route parameters in a NestJS controller?
+    Route parameters in a NestJS controller can be accessed using the `@Param()` decorator in the controller methods.
+    ```javascript
+        @Patch('id')
+        update(@Param('id') id: number, @Body() body: any ): string {
+           return `This action updates the body of the cat`;
+        }
+    ```
+     **[⬆ Back to Top](#table-of-contents)**
