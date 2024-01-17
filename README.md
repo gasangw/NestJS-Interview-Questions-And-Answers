@@ -58,7 +58,7 @@
 4. ### Can you explain how to use decorators in a NestJS controller?
    Decorators in a NestJS controller are used to define routes and to handle different types of HTTP requests. For example, `@Get()`, `@Post()`, `@Put()`, `@Delete()` are used to handle GET, POST, PUT, DELETE requests respectively.
    ```javascript
-   import { Controller, Get } from '@nestjs/common';
+   import { Controller, Get, Param, Body, Post, Patch, Delete } from '@nestjs/common';
 
     @Controller('cats')
     export class CatsController {
@@ -69,8 +69,24 @@
 
       @Get(':id')
       findOne(@Param('id') id: number): string {
-        return `This action returns a cat with id of ${id}`;
+        return `This action returns a cat with the provided id`;
+      }
+
+      @Post()
+      create(@Body() body: any): string {
+        return `This action returns the body of the cat`;
+      }
+
+      @Patch('id')
+      update(@Param('id') id: number, @Body() body: any ): string {
+        return `This action updates the body of the cat`;
+      }
+
+      @Delete('id')
+      remove(@Param('id') id: number): string {
+        return `This action removes a cat`;
       }
     }
 
    ```
+      **[⬆ Back to Top](#table-of-contents)**
