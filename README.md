@@ -22,6 +22,7 @@
 | 4   | [Can you explain how to use decorators in a NestJS controller?](#Can-you-explain-how-to-use-decorators-in-a-NestJS-controller?) 
 | 5   | [How can you use route parameters in a NestJS controller?](#How-can-you-use-route-parameters-in-a-NestJS-controller?) 
 | 6   | [What is the role of the `@Body()` decorator?](#What-is-the-role-of-the-`@Body()`-decorator?) 
+| 6   | [What is the role of the `@Body()` decorator?](#What-is-the-role-of-the-`@Body()`-decorator?) 
 
 
 ### Answers
