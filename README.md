@@ -30,15 +30,13 @@
 | 11  | [What is the role of the `@Body()` decorator?](<#What-is-the-role-of-the-`@Body()`-decorator?>)                                                                                                 |
 | 12  | [What is an interceptor in the context of NestJS?](#What-is-an-interceptor-in-the-context-of-NestJS?)                                                                                           |
 | 13  | [What are pipes in the context of NestJS?](#What-are-pipes-in-the-context-of-NestJS?)                                                                                                           |
-| 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                           |
-| 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                           |
-| 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                           |
-| 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                           |
-| 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                           |
-| 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                           |
-| 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                           |
-
-
+| 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                         |
+| 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                         |
+| 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                         |
+| 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                         |
+| 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                         |
+| 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                         |
+| 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                         |
 
 ### Answers
 
@@ -262,15 +260,18 @@
       }
     }
     ```
+
     This `ParseIntPipe` is therefore used in this way
+
     ```javascript
 
       @Get()
       async findOne(@Query('id', ParseIntPipe) id: number) {
         return this.usersService.findOne(id);
-      }   
+      }
 
     ```
+
     Nest comes with nine pipes available out-of-the-box:
     `ParseIntPipe:` This pipe transforms an incoming string into an integer. If the string cannot be parsed into an integer, it throws an exception. As shown above.
     `ValidationPipe:` This pipe validates that the incoming request body matches a specific DTO (Data Transfer Object). If the data is invalid, it throws an exception.
@@ -285,12 +286,29 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 14. ### What are guards in the context of NestJS?
-    
-    
 
+    Guards are functions that have a single responsibility. They determine whether a given request will be handled by the route handler or not, depending on certain conditions (like permissions, roles, ACLs, etc.) present at run-time. For example, you might use a guard to check if a user is logged in before allowing them to access a route.
+    A `guard` is a class annotated with the `@Injectable()` decorator, which implements the `CanActivate` interface. This interface should return a boolean or a Promise that resolves to a boolean. If it returns true, the request proceeds to the route handler. If it returns false, the request is denied and the route handler is not executed.
+    Here's an example of a basic guard:
+
+    ```javascript
+    import { Injectable, CanActivate, ExecutionContext } from "@nestjs/common";
+
+    @Injectable()
+    export class AuthGuard implements CanActivate {
+      canActivate(context: ExecutionContext): boolean | Promise<boolean> {
+        const request = context.switchToHttp().getRequest();
+        // Add your authentication logic here
+        // For example, check if a valid JWT token exists in the request headers
+        return true; // or false if the request should be denied
+      }
+    }
+    ```
+    In this example, AuthGuard allows all requests to proceed. In a real application, you would add your authentication logic in the canActivate method.
+
+    **[⬆ Back to Top](#table-of-contents)**
 
 15. ### What are guards in the context of NestJS?
-    
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -299,19 +317,17 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 17. ### What are guards in the context of NestJS?
- 
+
     **[⬆ Back to Top](#table-of-contents)**
 
 18. ### What are guards in the context of NestJS?
-     
+
     **[⬆ Back to Top](#table-of-contents)**
 
 19. ### What are guards in the context of NestJS?
-    
 
     **[⬆ Back to Top](#table-of-contents)**
 
 20. ### What are guards in the context of NestJS?
-
 
     **[⬆ Back to Top](#table-of-contents)**
