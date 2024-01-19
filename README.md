@@ -32,7 +32,7 @@
 | 13  | [What are pipes in the context of NestJS?](#What-are-pipes-in-the-context-of-NestJS?)                                                                                                           |
 | 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                         |
 | 15  | [What are middlewares in the context of NestJS?](#What-are-middlewares-in-the-context-of-NestJS?)                                                                                                         |
-| 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                         |
+| 14  | [Explain the concept of Dependency Injection in NestJS. How does it help in building modular and testable applications?](#Explain-the-concept-of-Dependency-Injection-in-NestJS.-How-does-it-help-in-building-modular-and-testable-applications?)                                                                                                         |
 | 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                         |
 | 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                         |
 | 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                         |
@@ -320,7 +320,8 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-16. ### What are guards in the context of NestJS?
+16. ### Explain the concept of Dependency Injection in NestJS. How does it help in building modular and testable applications?
+      Dependency Injection is a powerful design pattern that promotes the separation of concerns and modularity in software applications
 
     **[⬆ Back to Top](#table-of-contents)**
 
