@@ -23,12 +23,11 @@
 | 5   | [What’s the difference between NestJS and Angular?](#What’s-the-difference-between-NestJS-and-Angular?)                                  |
 | 6   | [Is it possible to use other languages like C++, Ruby or Python with NestJS? If yes, then how?](#Is-it-possible-to-use-other-languages-like-C++,-Ruby-or-Python-with-NestJS?-If-yes,-then-how?)
 | 7   | [What are the main components of a NestJS application?](#What-are-the-main-components-of-a-NestJS-application?) 
-| 7   | [How to declare a class as a controller in Nest.js](#How-to-declare-a-class-as-a-controller-in-Nest.js)    
-| 8   | [What is the main responsibility of controllers](#What-is-the-main-responsibility-of-controllers)  
+| 8   | [How to declare a class as a controller in Nest.js](#How-to-declare-a-class-as-a-controller-in-Nest.js)     
 | 9   | [Can you explain how to use decorators in a NestJS controller?](#Can-you-explain-how-to-use-decorators-in-a-NestJS-controller?) 
 | 10   | [How can you use route parameters in a NestJS controller?](#How-can-you-use-route-parameters-in-a-NestJS-controller?) 
 | 11   | [What is the role of the `@Body()` decorator?](#What-is-the-role-of-the-`@Body()`-decorator?) 
-| 12   | [What is the role of the `@Body()` decorator?](#What-is-the-role-of-the-`@Body()`-decorator?) 
+| 12   | [What is an interceptor in the context of NestJS?](#What-is-an-interceptor-in-the-context-of-NestJS?) 
 
 
 ### Answers
@@ -79,7 +78,7 @@
 7. ### What are the main components of a NestJS application?
     The main contents of the nestjs application inlcude: 
     `Modules:` Modules are a way of organizing related components into a single block. They provide a way to structure your application.
-    `Controllers:` Controllers handle incoming HTTP requests and return responses. They are responsible for validating input and mapping business operations to specific route handlers.
+    `Controllers:` Controllers are responsible for handling incoming `requests` and returning `responses` to the client.Controllers organize routes and handle HTTP requests that come to those routes.
     `Services:` services are responsible for business logic and interacting with data sources. They can be injected into controllers or other services, promoting code reusability and separation of concerns.
 
 8. ### How to declare a class as a controller in Nest.js
@@ -102,13 +101,8 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-9.  ### What is the main responsibility of controllers
-
-    Controllers are responsible for handling incoming `requests` and returning `responses` to the client.Controllers organize routes and handle HTTP requests that come to those routes.
-   
-    **[⬆ Back to Top](#table-of-contents)**
-
-10. ### Can you explain how to use decorators in a NestJS controller?
+ 
+9.  ### Can you explain how to use decorators in a NestJS controller?
     Decorators in a NestJS controller are used to define routes and to handle different types of HTTP requests. For example, `@Get()`, `@Post()`, `@Put()`, `@Delete()` are used to handle GET, POST, PUT, DELETE requests respectively.
     ```javascript
     import { Controller, Get, Param, Body, Post, Patch, Delete } from '@nestjs/common';
@@ -144,7 +138,7 @@
     ```
     **[⬆ Back to Top](#table-of-contents)**
   
-11. ### How can you use route parameters in a NestJS controller?
+10. ### How can you use route parameters in a NestJS controller?
     Route parameters in a NestJS controller can be accessed using the `@Param()` decorator in the controller methods.
     ```javascript
         @Patch('id')
@@ -154,7 +148,7 @@
     ```
     **[⬆ Back to Top](#table-of-contents)**
 
-12. ### What is the role of the `@Body()` decorator?
+11. ### What is the role of the `@Body()` decorator?
     The `@Body()` decorator in NestJS is used to extract the entire body of the incoming HTTP request. It's commonly used in methods that handle POST and PUT requests where data is sent in the body of the request.
 
     For example, if you have a method in your controller to create a new user, you might use the `@Body()` decorator to get the user data from the request:
@@ -166,4 +160,35 @@
     ```
     In this example, createUserDto is an object that contains the data sent in the request body. The @Body() decorator automatically parses the JSON request body and assigns it to the createUserDto parameter.
     
+    **[⬆ Back to Top](#table-of-contents)**
+
+12. ### What is an interceptor in the context of NestJS?
+    An interceptor is a class annotated with the `@Injectable()` decorator and implements the `NestInterceptor interface`.
+    An Interceptor is function that can be used to intercept incoming requests to a NestJS application and perform some sort of manipulation before the request is handled by the route handler. This can be useful for things like logging, authentication and so on.
+    An Interceptor has a set of useful capabilities which are inspired by the `Aspect Oriented Programming (AOP) technique` Aspect Oriented Programming is a `programming paradigm` that aims to increase `modularity` by allowing the separation of cross-cutting concern. 
+    Interceptors make it possible to:
+    `Binding extra logic before / after method execution:` An Interceptor can execute logic before and after a method is executed. This can be useful for tasks like logging, transforming the result of a method, or handling errors.
+    `Transforming the result returned from a function:` An Interceptor can transform the response returned from a method. For example, you could use an interceptor to transform all responses to have a specific format.
+    `Handling errors:` An Interceptor can also handle errors thrown within your application. This can be useful for logging or transforming errors before they're sent to the client.
+    Here is an example of an interceptor that logs the user interactions as shown in the [Nestjs document](https://docs.nestjs.com/interceptors)
+    ```javascript
+      import { Injectable, NestInterceptor, ExecutionContext, CallHandler } from '@nestjs/common';
+      import { Observable } from 'rxjs';
+      import { tap } from 'rxjs/operators';
+
+      @Injectable()
+      export class LoggingInterceptor implements NestInterceptor {
+        intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
+          console.log('Before...');
+
+          const now = Date.now();
+          return next
+            .handle()
+            .pipe(
+              tap(() => console.log(`After... ${Date.now() - now}ms`)),
+            );
+        }
+      }
+    ```
+
     **[⬆ Back to Top](#table-of-contents)**
