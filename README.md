@@ -17,14 +17,15 @@
 | No. | Questions                                                                                                                                                         |
 | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1   | [What is Nestjs](#what-is-nestjs)     
-| 2   | [Who developed NestJS? Why did they develop NestJS?](#Who-developed-NestJS?-Why-did-they-develop-NestJS?)    
-| 3   | [How can you install NestJS and set up a new project on your machine?](#How-can-you-install-NestJS-and-set-up-a-new-project-on-your-machine?)                                  |
-| 3   | [How to declare a class as a controller in Nest.js](#How-to-declare-a-class-as-a-controller-in-Nest.js)  
-| 3   | [What is the main responsibility of controllers](#What-is-the-main-responsibility-of-controllers)  
-| 4   | [Can you explain how to use decorators in a NestJS controller?](#Can-you-explain-how-to-use-decorators-in-a-NestJS-controller?) 
-| 5   | [How can you use route parameters in a NestJS controller?](#How-can-you-use-route-parameters-in-a-NestJS-controller?) 
-| 6   | [What is the role of the `@Body()` decorator?](#What-is-the-role-of-the-`@Body()`-decorator?) 
-| 6   | [What is the role of the `@Body()` decorator?](#What-is-the-role-of-the-`@Body()`-decorator?) 
+| 2   | [Who developed NestJS? Why did they develop NestJS?](#Who-developed-NestJS?-Why-did-they-develop-NestJS?)   
+| 3   | [When was NestJS first released?](#When-was-NestJS-first-released?)    
+| 4   | [How can you install NestJS and set up a new project on your machine?](#How-can-you-install-NestJS-and-set-up-a-new-project-on-your-machine?)                                  |
+| 5   | [How to declare a class as a controller in Nest.js](#How-to-declare-a-class-as-a-controller-in-Nest.js)  
+| 6   | [What is the main responsibility of controllers](#What-is-the-main-responsibility-of-controllers)  
+| 7   | [Can you explain how to use decorators in a NestJS controller?](#Can-you-explain-how-to-use-decorators-in-a-NestJS-controller?) 
+| 8   | [How can you use route parameters in a NestJS controller?](#How-can-you-use-route-parameters-in-a-NestJS-controller?) 
+| 9   | [What is the role of the `@Body()` decorator?](#What-is-the-role-of-the-`@Body()`-decorator?) 
+| 10   | [What is the role of the `@Body()` decorator?](#What-is-the-role-of-the-`@Body()`-decorator?) 
 
 
 ### Answers
@@ -38,7 +39,10 @@
     
     NestJS was developed by Kamil Myśliwiec, who is a Polish software engineer. He developed NestJS to address the lack of a consistent structure in Node.js applications and to bring powerful features of frameworks like Angular to the server-side.
 
-3. ### How can you install NestJS and set up a new project on your machine?
+3. ### When was NestJS first released?
+    NestJS was first released on October 5, 2016.
+
+4. ### How can you install NestJS and set up a new project on your machine?
     To install NestJS on your machine, you need to have Node.js and npm (Node Package Manager) installed. Once you have those, you can install the NestJS CLI (Command Line Interface) globally on your machine using the following command:
     ```javascript
       $ npm i -g @nestjs/cli   
@@ -62,11 +66,11 @@
     If you choose to generate a REST API, it will also generate `DTO` (Data Transfer Object) classes for handling input data (e.g., `create-user.dto.ts, update-user.dto.ts`)
     If you choose to generate a GraphQL API, it will also generate a resolver (e.g., `users.resolver.ts`)
 
-4. ### How to declare a class as a controller in Nest.js
+5. ### How to declare a class as a controller in Nest.js
 
-   In Nest.js we can declare a class as a controller by using the **@Controller()** decorator. Here is a basic example.
+    In Nest.js we can declare a class as a controller by using the **@Controller()** decorator. Here is a basic example.
 
-   ```javascript
+    ```javascript
       import { Controller, Get } from '@nestjs/common';
       
       @Controller('example')
@@ -76,22 +80,22 @@
          getHello(): string {
             return 'Hello world!';
          }
-      }
-   ```
-   In this example the `ExampleController` is a controller class. **@Controller('example')** decorator tells Nest.js that this class is a controller that should handle requests to the `example` route. The **@Get()** decorator on the `getHello` method indicates that this method should handle HTTP GET requests.
+     }
+    ```
+    In this example the `ExampleController` is a controller class. **@Controller('example')** decorator tells Nest.js that this class is a controller that should handle requests to the `example` route. The **@Get()** decorator on the `getHello` method indicates that this method should handle HTTP GET requests.
 
-   **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Back to Top](#table-of-contents)**
 
-5. ### What is the main responsibility of controllers
+6. ### What is the main responsibility of controllers
 
-   Controllers are responsible for handling incoming `requests` and returning `responses` to the client.Controllers organize routes and handle HTTP requests that come to those routes.
+    Controllers are responsible for handling incoming `requests` and returning `responses` to the client.Controllers organize routes and handle HTTP requests that come to those routes.
    
-   **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Back to Top](#table-of-contents)**
 
-6. ### Can you explain how to use decorators in a NestJS controller?
-   Decorators in a NestJS controller are used to define routes and to handle different types of HTTP requests. For example, `@Get()`, `@Post()`, `@Put()`, `@Delete()` are used to handle GET, POST, PUT, DELETE requests respectively.
-   ```javascript
-   import { Controller, Get, Param, Body, Post, Patch, Delete } from '@nestjs/common';
+7. ### Can you explain how to use decorators in a NestJS controller?
+    Decorators in a NestJS controller are used to define routes and to handle different types of HTTP requests. For example, `@Get()`, `@Post()`, `@Put()`, `@Delete()` are used to handle GET, POST, PUT, DELETE requests respectively.
+    ```javascript
+    import { Controller, Get, Param, Body, Post, Patch, Delete } from '@nestjs/common';
 
     @Controller('cats')
     export class CatsController {
@@ -121,29 +125,29 @@
       }
     }
 
-   ```
-   **[⬆ Back to Top](#table-of-contents)**
+    ```
+    **[⬆ Back to Top](#table-of-contents)**
   
-7. ### How can you use route parameters in a NestJS controller?
-  Route parameters in a NestJS controller can be accessed using the `@Param()` decorator in the controller methods.
+8. ### How can you use route parameters in a NestJS controller?
+    Route parameters in a NestJS controller can be accessed using the `@Param()` decorator in the controller methods.
     ```javascript
         @Patch('id')
         update(@Param('id') id: number, @Body() body: any ): string {
            return `This action updates the body of the cat`;
         }
     ```
-   **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Back to Top](#table-of-contents)**
 
-1. ### What is the role of the `@Body()` decorator?
-   The `@Body()` decorator in NestJS is used to extract the entire body of the incoming HTTP request. It's commonly used in methods that handle POST and PUT requests where data is sent in the body of the request.
+9. ### What is the role of the `@Body()` decorator?
+    The `@Body()` decorator in NestJS is used to extract the entire body of the incoming HTTP request. It's commonly used in methods that handle POST and PUT requests where data is sent in the body of the request.
 
-  For example, if you have a method in your controller to create a new user, you might use the `@Body()` decorator to get the user data from the request:
-   ```javascript
-   @Post()
-    create(@Body() createUserDto: CreateUserDto) {
+    For example, if you have a method in your controller to create a new user, you might use the `@Body()` decorator to get the user data from the request:
+    ```javascript
+     @Post()
+     create(@Body() createUserDto: CreateUserDto) {
       return this.usersService.create(createUserDto);
-    }
-   ```
-  In this example, createUserDto is an object that contains the data sent in the request body. The @Body() decorator automatically parses the JSON request body and assigns it to the createUserDto parameter.
+     }
+    ```
+    In this example, createUserDto is an object that contains the data sent in the request body. The @Body() decorator automatically parses the JSON request body and assigns it to the createUserDto parameter.
     
-   **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Back to Top](#table-of-contents)**
