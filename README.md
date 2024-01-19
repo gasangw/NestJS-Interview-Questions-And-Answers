@@ -20,7 +20,8 @@
 | 2   | [Who developed NestJS? Why did they develop NestJS?](#Who-developed-NestJS?-Why-did-they-develop-NestJS?)   
 | 3   | [When was NestJS first released?](#When-was-NestJS-first-released?)    
 | 4   | [How can you install NestJS and set up a new project on your machine?](#How-can-you-install-NestJS-and-set-up-a-new-project-on-your-machine?)                                  |
-| 5   | [How to declare a class as a controller in Nest.js](#How-to-declare-a-class-as-a-controller-in-Nest.js)  
+| 5   | [What’s the difference between NestJS and Angular?](#What’s-the-difference-between-NestJS-and-Angular?)                                  |
+| 6   | [How to declare a class as a controller in Nest.js](#How-to-declare-a-class-as-a-controller-in-Nest.js)  
 | 6   | [What is the main responsibility of controllers](#What-is-the-main-responsibility-of-controllers)  
 | 7   | [Can you explain how to use decorators in a NestJS controller?](#Can-you-explain-how-to-use-decorators-in-a-NestJS-controller?) 
 | 8   | [How can you use route parameters in a NestJS controller?](#How-can-you-use-route-parameters-in-a-NestJS-controller?) 
@@ -66,7 +67,10 @@
     If you choose to generate a REST API, it will also generate `DTO` (Data Transfer Object) classes for handling input data (e.g., `create-user.dto.ts, update-user.dto.ts`)
     If you choose to generate a GraphQL API, it will also generate a resolver (e.g., `users.resolver.ts`)
 
-5. ### How to declare a class as a controller in Nest.js
+5. ### What’s the difference between NestJS and Angular?
+    Angular is a framework for building client-side applications, while NestJS is a framework for building server-side applications. NestJS is built on top of TypeScript and Express, and it aims to provide a more robust and scalable architecture for enterprise-level applications.
+
+6. ### How to declare a class as a controller in Nest.js
 
     In Nest.js we can declare a class as a controller by using the **@Controller()** decorator. Here is a basic example.
 
@@ -86,13 +90,13 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-6. ### What is the main responsibility of controllers
+7. ### What is the main responsibility of controllers
 
     Controllers are responsible for handling incoming `requests` and returning `responses` to the client.Controllers organize routes and handle HTTP requests that come to those routes.
    
     **[⬆ Back to Top](#table-of-contents)**
 
-7. ### Can you explain how to use decorators in a NestJS controller?
+8. ### Can you explain how to use decorators in a NestJS controller?
     Decorators in a NestJS controller are used to define routes and to handle different types of HTTP requests. For example, `@Get()`, `@Post()`, `@Put()`, `@Delete()` are used to handle GET, POST, PUT, DELETE requests respectively.
     ```javascript
     import { Controller, Get, Param, Body, Post, Patch, Delete } from '@nestjs/common';
@@ -128,7 +132,7 @@
     ```
     **[⬆ Back to Top](#table-of-contents)**
   
-8. ### How can you use route parameters in a NestJS controller?
+9.  ### How can you use route parameters in a NestJS controller?
     Route parameters in a NestJS controller can be accessed using the `@Param()` decorator in the controller methods.
     ```javascript
         @Patch('id')
@@ -138,7 +142,7 @@
     ```
     **[⬆ Back to Top](#table-of-contents)**
 
-9. ### What is the role of the `@Body()` decorator?
+10. ### What is the role of the `@Body()` decorator?
     The `@Body()` decorator in NestJS is used to extract the entire body of the incoming HTTP request. It's commonly used in methods that handle POST and PUT requests where data is sent in the body of the request.
 
     For example, if you have a method in your controller to create a new user, you might use the `@Body()` decorator to get the user data from the request:
