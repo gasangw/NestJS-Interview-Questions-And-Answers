@@ -18,7 +18,7 @@
 | No. | Questions                                                                                                                                                                                       |
 | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1   | [What is Nestjs](#what-is-nestjs)                                                                                                                                                               |
-| 2   | [Who developed NestJS? Why did they develop NestJS?](#Who-developed-NestJS?-Why-did-they-develop-NestJS?)                                                                                       |
+| 2   | [Who developed NestJS? Why did they develop NestJS?](#Who-developed-NestJS-Why-did-they-develop-NestJS?)                                                                                       |
 | 3   | [When was NestJS first released?](#When-was-NestJS-first-released?)                                                                                                                             |
 | 4   | [How can you install NestJS and set up a new project on your machine?](#How-can-you-install-NestJS-and-set-up-a-new-project-on-your-machine?)                                                   |
 | 5   | [What’s the difference between NestJS and Angular?](#What’s-the-difference-between-NestJS-and-Angular?)                                                                                         |
