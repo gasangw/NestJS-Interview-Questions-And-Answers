@@ -28,6 +28,7 @@
 | 10   | [How can you use route parameters in a NestJS controller?](#How-can-you-use-route-parameters-in-a-NestJS-controller?) 
 | 11   | [What is the role of the `@Body()` decorator?](#What-is-the-role-of-the-`@Body()`-decorator?) 
 | 12   | [What is an interceptor in the context of NestJS?](#What-is-an-interceptor-in-the-context-of-NestJS?) 
+| 13   | [What are pipes in the context of NestJS?](#What-are-pipes-in-the-context-of-NestJS?) 
 
 
 ### Answers
@@ -190,5 +191,12 @@
         }
       }
     ```
+    **[⬆ Back to Top](#table-of-contents)**
+
+13. ###  What are pipes in the context of NestJS?
+    Pipes are a feature of NestJS that allows for validation or transformation of data before it is passed to a route handler and can either return the arguments as is, modify them, or throw an exception.
+    A pipe is a class annotated with the `@Injectable()` decorator, which implements the `PipeTransform interface`
+    `Validation:` This is the most common use case for pipes. They can be used to validate incoming data to ensure it matches a certain data schema. If the data is invalid, the pipe can throw an exception to prevent the route handler from being executed.
 
     **[⬆ Back to Top](#table-of-contents)**
+    
