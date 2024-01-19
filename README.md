@@ -17,7 +17,7 @@
 
 | No. | Questions                                                                                                                                                                                       |
 | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | [What is Nestjs](#what-is-nestjs)                                                                                                                                                               |
+| 1   | [What is Nestjs?](#what-is-nestjs?)                                                                                                                                                               |
 | 2   | [Who developed NestJS? Why did they develop NestJS?](#Who-developed-NestJS-Why-did-they-develop-NestJS?)                                                                                       |
 | 3   | [When was NestJS first released?](#When-was-NestJS-first-released?)                                                                                                                             |
 | 4   | [How can you install NestJS and set up a new project on your machine?](#How-can-you-install-NestJS-and-set-up-a-new-project-on-your-machine?)                                                   |
@@ -40,7 +40,7 @@
 
 ### Answers
 
-1. ### What is Nestjs
+1. ### What is Nestjs?
 
    Nest(NestJS) is a framework for building efficient, scalable Node.js server side applications. It uses progressive JavaScript and its built with and fully suports Typescript.
 
