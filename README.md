@@ -265,5 +265,8 @@
     Nest comes with nine pipes available out-of-the-box:
     `ParseIntPipe:` This pipe transforms an incoming string into an integer. If the string cannot be parsed into an integer, it throws an exception. As shown above.
     `ValidationPipe:` This pipe validates that the incoming request body matches a specific DTO (Data Transfer Object). If the data is invalid, it throws an exception.
-    `ParseFloatPipe:` Similar to `ParseIntPipe`, but transforms an incoming string into a float
+    `ParseFloatPipe:` Similar to `ParseIntPipe`, but transforms an incoming string into a float.
+    `ParseBoolPipe:` This pipe transforms an incoming string into a boolean. It accepts 'true' and 'false' as valid boolean strings.
+    `ParseArrayPipe:` This pipe transforms a comma-separated string into an array. It can also validate the items in the array if you provide a validation schema.
+
     **[⬆ Back to Top](#table-of-contents)**
