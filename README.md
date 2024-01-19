@@ -77,7 +77,10 @@
     As for Python, Ruby, or other languages, they can't be used directly with NestJS because NestJS relies on the Node.js runtime, which executes JavaScript. As for Python, Ruby, or other languages, they can't be used directly with NestJS because NestJS relies on the Node.js runtime, which executes JavaScript. However, you can certainly build separate services in Python, Ruby, or any other language, and have them communicate with your NestJS application via HTTP, gRPC, or any other communication protocol. This is a common pattern in microservices architecture.
 
 7. ### What are the main components of a NestJS application?
-    
+    The main contents of the nestjs application inlcude: 
+    `Modules:` Modules are a way of organizing related components into a single block. They provide a way to structure your application.
+    `Controllers:` Controllers handle incoming HTTP requests and return responses. They are responsible for validating input and mapping business operations to specific route handlers.
+    `Services:` services are responsible for business logic and interacting with data sources. They can be injected into controllers or other services, promoting code reusability and separation of concerns.
 
 8. ### How to declare a class as a controller in Nest.js
 
