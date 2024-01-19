@@ -18,7 +18,7 @@
 | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1   | [What is Nestjs](#what-is-nestjs)     
 | 2   | [Who developed NestJS? Why did they develop NestJS?](#Who-developed-NestJS?-Why-did-they-develop-NestJS?)    
-| 3   | [How do you install NestJS on your machine?](#How-do-you-install-NestJS-on-your-machine?)                                  |
+| 3   | [How can you install NestJS and set up a new project on your machine?](#How-can-you-install-NestJS-and-set-up-a-new-project-on-your-machine?)                                  |
 | 3   | [How to declare a class as a controller in Nest.js](#How-to-declare-a-class-as-a-controller-in-Nest.js)  
 | 3   | [What is the main responsibility of controllers](#What-is-the-main-responsibility-of-controllers)  
 | 4   | [Can you explain how to use decorators in a NestJS controller?](#Can-you-explain-how-to-use-decorators-in-a-NestJS-controller?) 
@@ -38,7 +38,7 @@
     
     NestJS was developed by Kamil Myśliwiec, who is a Polish software engineer. He developed NestJS to address the lack of a consistent structure in Node.js applications and to bring powerful features of frameworks like Angular to the server-side.
 
-3. ### How do you install NestJS on your machine?
+3. ### How can you install NestJS and set up a new project on your machine?
     To install NestJS on your machine, you need to have Node.js and npm (Node Package Manager) installed. Once you have those, you can install the NestJS CLI (Command Line Interface) globally on your machine using the following command:
     ```javascript
       $ npm i -g @nestjs/cli   
