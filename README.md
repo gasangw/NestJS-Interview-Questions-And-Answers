@@ -30,6 +30,7 @@
 | 11  | [What is the role of the `@Body()` decorator?](<#What-is-the-role-of-the-`@Body()`-decorator?>)                                                                                                 |
 | 12  | [What is an interceptor in the context of NestJS?](#What-is-an-interceptor-in-the-context-of-NestJS?)                                                                                           |
 | 13  | [What are pipes in the context of NestJS?](#What-are-pipes-in-the-context-of-NestJS?)                                                                                                           |
+| 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                           |
 
 ### Answers
 
@@ -272,5 +273,37 @@
     `ParseEnumPipe:` This pipe validates that an incoming string is a valid value of a specific TypeScript enum.
     `DefaultValuePipe:` This pipe provides a default value if the incoming value is `undefined` or `null`.
     `ParseFilePipe:` This pipe is used to handle file uploads or parse file data in some way.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+14. ### What are guards in the context of NestJS?
+    
+    
+
+
+15. ### What are guards in the context of NestJS?
+    
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+16. ### What are guards in the context of NestJS?
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+17. ### What are guards in the context of NestJS?
+ 
+    **[⬆ Back to Top](#table-of-contents)**
+
+18. ### What are guards in the context of NestJS?
+     
+    **[⬆ Back to Top](#table-of-contents)**
+
+19. ### What are guards in the context of NestJS?
+    
+
+    **[⬆ Back to Top](#table-of-contents)**
+    
+20. ### What are guards in the context of NestJS?
+
 
     **[⬆ Back to Top](#table-of-contents)**
