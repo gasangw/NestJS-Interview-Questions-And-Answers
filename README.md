@@ -255,9 +255,15 @@
     ```
     This `ParseIntPipe` is therefore used in this way
     ```javascript
+
       @Get()
       async findOne(@Query('id', ParseIntPipe) id: number) {
-        return this.catsService.findOne(id);
+        return this.usersService.findOne(id);
       }   
+
     ```
+    Nest comes with nine pipes available out-of-the-box:
+    `ParseIntPipe:` This pipe transforms an incoming string into an integer. If the string cannot be parsed into an integer, it throws an exception. As shown above.
+    `ValidationPipe:` This pipe validates that the incoming request body matches a specific DTO (Data Transfer Object). If the data is invalid, it throws an exception.
+    `ParseFloatPipe:` Similar to `ParseIntPipe`, but transforms an incoming string into a float
     **[⬆ Back to Top](#table-of-contents)**
