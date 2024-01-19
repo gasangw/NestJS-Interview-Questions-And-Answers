@@ -68,7 +68,7 @@
     If you choose to generate a GraphQL API, it will also generate a resolver (e.g., `users.resolver.ts`)
 
 5. ### What’s the difference between NestJS and Angular?
-    Angular is a framework for building client-side applications, while NestJS is a framework for building server-side applications. NestJS is built on top of TypeScript and Express, and it aims to provide a more robust and scalable architecture for enterprise-level applications.
+    Angular is a framework for building client-side applications and It provides a way to organize your frontend code using components, modules, services, etc. while NestJS is a framework for building server-side applications. NestJS is built on top of TypeScript and Express, and it aims to provide a more robust and scalable architecture for enterprise-level applications. However It's heavily inspired by Angular and shares similar concepts like modules, decorators, and dependency injection.
 
 6. ### How to declare a class as a controller in Nest.js
 
