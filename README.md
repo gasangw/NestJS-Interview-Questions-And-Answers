@@ -31,7 +31,7 @@
 | 12  | [What is an interceptor in the context of NestJS?](#What-is-an-interceptor-in-the-context-of-NestJS?)                                                                                           |
 | 13  | [What are pipes in the context of NestJS?](#What-are-pipes-in-the-context-of-NestJS?)                                                                                                           |
 | 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                         |
-| 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                         |
+| 15  | [What are middlewares in the context of NestJS?](#What-are-middlewares-in-the-context-of-NestJS?)                                                                                                         |
 | 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                         |
 | 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                         |
 | 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                         |
@@ -308,7 +308,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-15. ### What are guards in the context of NestJS?
+15. ### What are middlewares in the context of NestJS?
 
     **[⬆ Back to Top](#table-of-contents)**
 
