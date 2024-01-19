@@ -268,5 +268,9 @@
     `ParseFloatPipe:` Similar to `ParseIntPipe`, but transforms an incoming string into a float.
     `ParseBoolPipe:` This pipe transforms an incoming string into a boolean. It accepts 'true' and 'false' as valid boolean strings.
     `ParseArrayPipe:` This pipe transforms a comma-separated string into an array. It can also validate the items in the array if you provide a validation schema.
+    `ParseUUIDPipe:` This pipe validates that an incoming string is a valid UUID. If the string is not a valid UUID, it throws an exception.
+    `ParseEnumPipe:` This pipe validates that an incoming string is a valid value of a specific TypeScript enum.
+    `DefaultValuePipe:` This pipe provides a default value if the incoming value is `undefined` or `null`.
+    `ParseFilePipe:` This pipe is used to handle file uploads or parse file data in some way.
 
     **[⬆ Back to Top](#table-of-contents)**
