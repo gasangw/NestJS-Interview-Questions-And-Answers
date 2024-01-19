@@ -309,6 +309,14 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 15. ### What are middlewares in the context of NestJS?
+    Middleware is a function which is called before the route handler. Middleware functions have access to the `request` and `response` objects, and the `next()` middleware function in the application’s request-response cycle. The next middleware function is commonly denoted by a variable named `next`. Middlewares can be used for a variety of purposes, such as logging, authentication, and authorization. These functions are used to execute any code, make changes to the request and the response objects, end the request-response cycle, or call the next middleware function in the stack.
+    Middlewares can perform the following tasks:
+    1. Execute any code.
+    2. Make changes to the request and the response objects.
+    3. End the request-response cycle.
+    4. Call the next middleware function in the stack.
+    If the current middleware function does not end the request-response cycle, it must call next() to pass control to the next middleware function. Otherwise, the request will be left hanging.
+    On how to create a middleware check the [Nestjs Documentation](https://docs.nestjs.com/middleware)
 
     **[⬆ Back to Top](#table-of-contents)**
 
