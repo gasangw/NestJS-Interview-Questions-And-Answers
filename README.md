@@ -35,8 +35,8 @@
 | 16  | [Explain the concept of Dependency Injection in NestJS. How does it help in building modular and testable applications?](#Explain-the-concept-of-Dependency-Injection-in-NestJS.-How-does-it-help-in-building-modular-and-testable-applications?) |
 | 17  | [What’s the difference between @injectable() and @inject() decorators?](#What’s-the-difference-between-@injectable()-and-@inject()-decorators?)                                                                                                                                                           |
 | 18  | [How does the Nest logger differ from the standard console.log() and when would you prefer one over the other?](#How-does-the-Nest-logger-differ-from-the-standard-console.log()-and-when-would-you-prefer-one-over-the-other?)                                                                                                                                                           |
-| 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                                                                           |
-| 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                                                                           |
+| 19  | [What is the difference between interceptors and middleware?](#What-is-the-difference-between-interceptors-and-middleware?)                                                                                                                                                           |
+| 20  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                                                                           |
 
 ### Answers
 
@@ -392,7 +392,13 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-19. ### What are guards in the context of NestJS?
+19. ### What is the difference between interceptors and middleware?
+    In NestJS, both `interceptors` and `middleware` can be used to add extra logic before or after HTTP requests. However, they have some key differences:
+    `Interceptors:` have a more comprehensive scope than middleware. They can be used with both HTTP requests and other types of transport like WebSockets and microservices. Interceptors can also manipulate the response sent back to the client, for example by transforming the response object, adding extra headers, or changing the status code. They can also be used to implement performance tracking, logging, caching, etc.
+
+    `Middleware:` in NestJS is similar to Express middleware. It's specific to the HTTP request-response cycle and can't be used with other types of transport. Middleware functions have access to the request and response objects, and they can end the request-response cycle or call the next middleware function in the stack. They are useful for tasks like logging, error handling, or validating request data.
+    
+  >  In general, if you're working with HTTP requests and you need to add logic that doesn't modify   the response sent to the client, middleware can be a good choice. If you need to add logic that applies to other types of transport such as WebSockets and microservices, or if you need to modify the response, use an interceptor.
 
     **[⬆ Back to Top](#table-of-contents)**
 
