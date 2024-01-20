@@ -34,7 +34,7 @@
 | 15  | [What are middlewares in the context of NestJS?](#What-are-middlewares-in-the-context-of-NestJS?)                                                                                                                                                 |
 | 16  | [Explain the concept of Dependency Injection in NestJS. How does it help in building modular and testable applications?](#Explain-the-concept-of-Dependency-Injection-in-NestJS.-How-does-it-help-in-building-modular-and-testable-applications?) |
 | 17  | [What’s the difference between @injectable() and @inject() decorators?](#What’s-the-difference-between-@injectable()-and-@inject()-decorators?)                                                                                                                                                           |
-| 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                                                                           |
+| 18  | [How does the Nest logger differ from the standard console.log() and when would you prefer one over the other?](#How-does-the-Nest-logger-differ-from-the-standard-console.log()-and-when-would-you-prefer-one-over-the-other?)                                                                                                                                                           |
 | 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                                                                           |
 | 14  | [What are guards in the context of NestJS?](#What-are-guards-in-the-context-of-NestJS?)                                                                                                                                                           |
 
@@ -380,10 +380,9 @@
         constructor(@Inject('CatsService') private catsService: CatsService) {}
       }
     ```
-
     **[⬆ Back to Top](#table-of-contents)**
 
-18. ### What are guards in the context of NestJS?
+18. ### How does the Nest logger differ from the standard console.log() and when would you prefer one over the other?
 
     **[⬆ Back to Top](#table-of-contents)**
 
