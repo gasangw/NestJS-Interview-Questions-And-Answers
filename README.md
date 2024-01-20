@@ -36,7 +36,8 @@
 | 17  | [What’s the difference between @injectable() and @inject() decorators?](#what-s-the-difference-between-injectable-and-inject-decorators)                                                                                                                                                           |
 | 18  | [How does the Nest logger differ from the standard console.log() and when would you prefer one over the other?](#how-does-the-nest-logger-differ-from-the-standard-console-log-and-when-would-you-prefer-one-over-the-other)                                                                                                                                                           |
 | 19  | [What is the difference between interceptors and middleware?](#what-is-the-difference-between-interceptors-and-middleware)                                                                                                                                                           |
-| 20  | [What testing frameworks work best with NestJS?](#what-testing-frameworks-work-best-with-nestjs)                                                                                                                                                           |
+| 20  | [What testing frameworks work best with NestJS?](#what-testing-frameworks-work-best-with-nestjs)                                                                                                                |
+| 21  | [Explain the purpose of DTOs (Data Transfer Objects) in NestJS.](#explain-the-purpose-of-dtos-data-transfer-objects-in-nestjs.)                                                                                              |
 
 
 ### Answers
@@ -462,4 +463,33 @@
     NestJS is a Node.js framework, so any testing framework that works with Node.js will work with NestJS. Some popular options include `Jest`, `Mocha`, and `Jasmine.`
     NestJS is built with testing in mind and it comes with its own testing module called `@nestjs/testing.` This module provides utilities for testing, such as a testing module and HTTP testing utilities.
 
+    **[⬆ Back to Top](#table-of-contents)**
+
+21. ### Explain the purpose of DTOs (Data Transfer Objects) in NestJS.
+    DTOs are used to define the structure of data exchanged between different layers of an application.  They define the shape of data for a specific operation, such as creating, updating, or returning data.
+
+    DTOs serve several purposes which include:
+    `Validation:` With the `class-validator` package, you can add validation rules to the fields in your DTOs. NestJS can automatically validate incoming requests against these rules and return an error if the request is invalid.
+
+    `Documentation:` DTOs provide a clear model of what the data should look like. This can be helpful for other developers, and for tools like Swagger to automatically generate API documentation.
+
+    `Type Safety:` DTOs provide type safety in TypeScript, which can help catch errors at compile time.
+
+    ```javascript
+    import { IsString, IsInt } from 'class-validator';
+
+    export class CreateCatDto {
+      @IsString()
+      name: string;
+
+      @IsInt()
+      age: number;
+
+      @IsString()
+      breed: string;
+    }
+
+    ```
+    In the above example, CreateCatDto is a DTO that represents the data needed to create a cat. It expects a name and breed of type string, and an age of type number. The @IsString() and @IsInt() decorators are used to apply validation rules.
+    
     **[⬆ Back to Top](#table-of-contents)**
