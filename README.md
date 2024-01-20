@@ -321,7 +321,7 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 16. ### Explain the concept of Dependency Injection in NestJS. How does it help in building modular and testable applications?
-    Dependency Injection (DI) is a design pattern in which a class receives its dependencies from external sources rather than creating them itself. This pattern is fundamental to the way NestJS is designed.
+    Dependency Injection (DI) is a design pattern in which a class receives its dependencies from external sources rather than creating them itself. This pattern is fundamental to the way NestJS is designed.  dependency injection involves letting the framework manage the creation and injection of dependencies into the components (controllers, services, and more) as needed. This is achieved through decorators, providers, and the NestJS IoC (Inversion of Control) container
 
     **[⬆ Back to Top](#table-of-contents)**
 
