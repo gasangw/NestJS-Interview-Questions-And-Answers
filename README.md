@@ -445,5 +445,7 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 20. ### What testing frameworks work best with NestJS?
+    NestJS is a Node.js framework, so any testing framework that works with Node.js will work with NestJS. Some popular options include `Jest`, `Mocha`, and `Jasmine.`
+    NestJS is built with testing in mind and it comes with its own testing module called @nestjs/testing. This module provides utilities for testing, such as a testing module and HTTP testing utilities.
 
     **[⬆ Back to Top](#table-of-contents)**
