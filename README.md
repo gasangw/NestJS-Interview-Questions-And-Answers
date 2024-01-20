@@ -418,7 +418,7 @@
       export class CatsService {
         // ...
       }
-      
+
     ```
 
     `@Inject():`This decorator is used inside a class to inject a dependency. It's used in the constructor of a class to specify a dependency that should be injected. 
@@ -454,7 +454,7 @@
     
     They are useful for tasks like logging, error handling, or validating request data.
     
-   In general, if you're working with HTTP requests and you need to add logic that doesn't modify   the response sent to the client, middleware can be a good choice. If you need to add logic that applies to other types of transport such as WebSockets and microservices, or if you need to modify the response, use an interceptor.
+    In general, if you're working with HTTP requests and you need to add logic that doesn't modify   the response sent to the client, middleware can be a good choice. If you need to add logic that applies to other types of transport such as WebSockets and microservices, or if you need to modify the response, use an interceptor.
 
     **[⬆ Back to Top](#table-of-contents)**
 
