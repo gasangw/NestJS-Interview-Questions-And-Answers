@@ -383,6 +383,12 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 18. ### How does the Nest logger differ from the standard console.log() and when would you prefer one over the other?
+    The `NestJS Logger` provides additional features compared to `console.log()`. It includes context information, supports log levels such as (`log`, `fatal`, `error`,`warn`, `debug`, and `verbose`), and can be customized.
+
+    Use `console.log()` for quick debugging or simple logging needs.
+
+    Use NestJS Logger when you need more control over your logs, such as in larger or production applications. It helps in filtering logs based on levels and provides context, making it easier to trace the source of the log.
+    On how the `Nest logger` is implemented checkout [Nestjs Documentation](https://docs.nestjs.com/techniques/logger)
 
     **[⬆ Back to Top](#table-of-contents)**
 
