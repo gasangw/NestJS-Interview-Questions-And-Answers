@@ -38,7 +38,7 @@
 | 19  | [What is the difference between interceptors and middleware?](#what-is-the-difference-between-interceptors-and-middleware)                                                                                                                                                           |
 | 20  | [What testing frameworks work best with NestJS?](#what-testing-frameworks-work-best-with-nestjs)                                                                                                                |
 | 21  | [Explain the purpose of DTOs (Data Transfer Objects) in NestJS.](#explain-the-purpose-of-dtos-data-transfer-objects-in-nestjs.)                                                                                              |
-
+| 22  | [Explain the purpose of the @InjectRepository() decorator in NestJS.](#explain-the-purpose-of-the-InjectRepository-decorator-in-nestjs)                                                                                              |
 
 ### Answers
 
@@ -491,5 +491,8 @@
 
     ```
     In the above example, CreateCatDto is a DTO that represents the data needed to create a cat. It expects a name and breed of type string, and an age of type number. The @IsString() and @IsInt() decorators are used to apply validation rules.
-    
+
     **[⬆ Back to Top](#table-of-contents)**
+
+22. ### Explain the purpose of the @InjectRepository() decorator in NestJS.
+    
