@@ -15,32 +15,31 @@
 
 ### Table of Contents
 
-| No. | Questions                                                                                                                                                                                                                                         |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | [What is Nestjs?](#what-is-nestjs?)                                                                                                                                                                                                               |
-| 2   | [Who developed NestJS? Why did they develop NestJS?](#who-developed-nestjs-why-did-they-develop-nestjs)                                                                                                                                          |
-| 3   | [When was NestJS first released?](#when-was-nestjs-first-released)                                                                                                                                                                               |
-| 4   | [How can you install NestJS and set up a new project on your machine?](#how-can-you-install-nestjs-and-set-up-a-new-project-on-your-machine)                                                                                                     |
-| 5   | [What’s the difference between NestJS and Angular?](#what-s-the-difference-between-nestjs-and-angular?)                                                                                                                                           |
-| 6   | [Is it possible to use other languages like C++, Ruby or Python with NestJS? If yes, then how?](#is-it-possible-to-use-other-languages-like-c-ruby-or-python-with-nestjs-if-yes-then-how)                                                   |
-| 7   | [What are the main components of a NestJS application?](#what-are-the-main-components-of-a-nestjs-application)                                                                                                                                   |
-| 8   | [How to declare a class as a controller in Nest.js](#how-to-declare-a-class-as-a-controller-in-nestjs)                                                                                                                                           |
-| 9   | [Can you explain how to use decorators in a NestJS controller?](#can-you-explain-how-to-use-decorators-in-a-nestjs-controller)                                                                                                                   |
-| 10  | [How can you use route parameters in a NestJS controller?](#how-can-you-use-route-parameters-in-a-nestjs-controller)                                                                                                                             |
-| 11  | [What is the role of the `@Body()` decorator?](#what-is-the-role-of-the-body-decorator)                                                                                                                                                   |
-| 12  | [What is an interceptor in the context of NestJS?](#what-is-an-interceptor-in-the-context-of-nestjs)                                                                                                                                             |
-| 13  | [What are pipes in the context of NestJS?](#what-are-pipes-in-the-context-of-nestjs)                                                                                                                                                             |
-| 14  | [What are guards in the context of NestJS?](#what-are-guards-in-the-context-of-nestjs)                                                                                                                                                           |
-| 15  | [What are middlewares in the context of NestJS?](#what-are-middlewares-in-the-context-of-nestjs)                                                                                                                                                 |
+| No. | Questions                                                                                                                                                                                                                                       |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | [What is Nestjs?](#what-is-nestjs?)                                                                                                                                                                                                             |
+| 2   | [Who developed NestJS? Why did they develop NestJS?](#who-developed-nestjs-why-did-they-develop-nestjs)                                                                                                                                         |
+| 3   | [When was NestJS first released?](#when-was-nestjs-first-released)                                                                                                                                                                              |
+| 4   | [How can you install NestJS and set up a new project on your machine?](#how-can-you-install-nestjs-and-set-up-a-new-project-on-your-machine)                                                                                                    |
+| 5   | [What’s the difference between NestJS and Angular?](#what-s-the-difference-between-nestjs-and-angular?)                                                                                                                                         |
+| 6   | [Is it possible to use other languages like C++, Ruby or Python with NestJS? If yes, then how?](#is-it-possible-to-use-other-languages-like-c-ruby-or-python-with-nestjs-if-yes-then-how)                                                       |
+| 7   | [What are the main components of a NestJS application?](#what-are-the-main-components-of-a-nestjs-application)                                                                                                                                  |
+| 8   | [How to declare a class as a controller in Nest.js](#how-to-declare-a-class-as-a-controller-in-nestjs)                                                                                                                                          |
+| 9   | [Can you explain how to use decorators in a NestJS controller?](#can-you-explain-how-to-use-decorators-in-a-nestjs-controller)                                                                                                                  |
+| 10  | [How can you use route parameters in a NestJS controller?](#how-can-you-use-route-parameters-in-a-nestjs-controller)                                                                                                                            |
+| 11  | [What is the role of the `@Body()` decorator?](#what-is-the-role-of-the-body-decorator)                                                                                                                                                         |
+| 12  | [What is an interceptor in the context of NestJS?](#what-is-an-interceptor-in-the-context-of-nestjs)                                                                                                                                            |
+| 13  | [What are pipes in the context of NestJS?](#what-are-pipes-in-the-context-of-nestjs)                                                                                                                                                            |
+| 14  | [What are guards in the context of NestJS?](#what-are-guards-in-the-context-of-nestjs)                                                                                                                                                          |
+| 15  | [What are middlewares in the context of NestJS?](#what-are-middlewares-in-the-context-of-nestjs)                                                                                                                                                |
 | 16  | [Explain the concept of Dependency Injection in NestJS. How does it help in building modular and testable applications?](#explain-the-concept-of-dependency-injection-in-nestjs-how-does-it-help-in-building-modular-and-testable-applications) |
-| 17  | [What’s the difference between @injectable() and @inject() decorators?](#what-s-the-difference-between-injectable-and-inject-decorators)                                                                                                                                                           |
-| 18  | [How does the Nest logger differ from the standard console.log() and when would you prefer one over the other?](#how-does-the-nest-logger-differ-from-the-standard-console-log-and-when-would-you-prefer-one-over-the-other)                                                                                                                                                           |
-| 19  | [What is the difference between interceptors and middleware?](#what-is-the-difference-between-interceptors-and-middleware)                                                                                                                                                           |
-| 20  | [What testing frameworks work best with NestJS?](#what-testing-frameworks-work-best-with-nestjs)                                                                                                                |
-| 21  | [Explain the purpose of DTOs (Data Transfer Objects) in NestJS.](#explain-the-purpose-of-dtos-data-transfer-objects-in-nestjs.)                                                                                              |
-| 22  | [Explain the purpose of the @InjectRepository() decorator in NestJS.](#explain-the-purpose-of-the-InjectRepository-decorator-in-nestjs)                                                                                              |
-| 22  | [How can you handle asynchronous operations in NestJS, and what is the role of the Promise object?](#how-can-you-handle-asynchronous-operations-in-nestjs-and-what-is-the-role-of-the-promise-object)                                                                                              |
-
+| 17  | [What’s the difference between @injectable() and @inject() decorators?](#what-s-the-difference-between-injectable-and-inject-decorators)                                                                                                        |
+| 18  | [How does the Nest logger differ from the standard console.log() and when would you prefer one over the other?](#how-does-the-nest-logger-differ-from-the-standard-console-log-and-when-would-you-prefer-one-over-the-other)                    |
+| 19  | [What is the difference between interceptors and middleware?](#what-is-the-difference-between-interceptors-and-middleware)                                                                                                                      |
+| 20  | [What testing frameworks work best with NestJS?](#what-testing-frameworks-work-best-with-nestjs)                                                                                                                                                |
+| 21  | [Explain the purpose of DTOs (Data Transfer Objects) in NestJS.](#explain-the-purpose-of-dtos-data-transfer-objects-in-nestjs.)                                                                                                                 |
+| 22  | [How can you handle asynchronous operations in NestJS, and what is the role of the Promise object?](#how-can-you-handle-asynchronous-operations-in-nestjs-and-what-is-the-role-of-the-promise-object)                                           |
+| 23  | [Explain the purpose of the @InjectRepository() decorator in NestJS.](#explain-the-purpose-of-the-injectrepository-decorator-in-nestjs)                                                                                                         |
 
 ### Answers
 
@@ -95,15 +94,15 @@
 5. ### What’s the difference between NestJS and Angular?
 
    Angular is a framework for building client-side applications and It provides a way to organize your frontend code using components, modules, services, etc.
-   
+
    while NestJS is a framework for building server-side applications. NestJS is built on top of TypeScript and Express, and it aims to provide a more robust and scalable architecture for enterprise-level applications. However It's heavily inspired by Angular and shares similar concepts like modules, decorators, and dependency injection.
 
 6. ### Is it possible to use other languages like C++, Ruby or Python with NestJS? If yes, then how?
 
    Yes, it is possible to use other languages with NestJS. NestJS is language agnostic, meaning that it can work with any language that can compile to JavaScript.
 
-   As for Python, Ruby, or other languages, they can't be used directly with NestJS because NestJS relies on the Node.js runtime, which executes JavaScript. As for Python, Ruby, or other languages, they can't be used directly with NestJS because NestJS relies on the Node.js runtime, which executes JavaScript. 
-   
+   As for Python, Ruby, or other languages, they can't be used directly with NestJS because NestJS relies on the Node.js runtime, which executes JavaScript. As for Python, Ruby, or other languages, they can't be used directly with NestJS because NestJS relies on the Node.js runtime, which executes JavaScript.
+
    However, you can certainly build separate services in Python, Ruby, or any other language, and have them communicate with your NestJS application via HTTP, gRPC, or any other communication protocol. This is a common pattern in microservices architecture.
 
 7. ### What are the main components of a NestJS application?
@@ -218,7 +217,7 @@
     An Interceptor is function that can be used to intercept incoming requests to a NestJS application and perform some sort of manipulation before the request is handled by the route handler. This can be useful for things like logging, authentication and so on.
 
     An Interceptor has a set of useful capabilities which are inspired by the `Aspect Oriented Programming (AOP) technique`.
-    
+
     Aspect Oriented Programming is a `programming paradigm` that aims to increase `modularity` by allowing the separation of cross-cutting concern.
 
     Interceptors make it possible to:
@@ -325,7 +324,6 @@
     Here's an example of a basic guard:
 
     ```javascript
-
     import { Injectable, CanActivate, ExecutionContext } from "@nestjs/common";
 
     @Injectable()
@@ -337,7 +335,6 @@
         return true; // or false if the request should be denied
       }
     }
-
     ```
 
     In this example, AuthGuard allows all requests to proceed. In a real application, you would add your authentication logic in the canActivate method.
@@ -346,8 +343,8 @@
 
 15. ### What are middlewares in the context of NestJS?
 
-    Middleware is a function which is called before the route handler. Middleware functions have access to the `request` and `response` objects, and the `next()` middleware function in the application’s request-response cycle. 
-    
+    Middleware is a function which is called before the route handler. Middleware functions have access to the `request` and `response` objects, and the `next()` middleware function in the application’s request-response cycle.
+
     The next middleware function is commonly denoted by a variable named `next`. Middlewares can be used for a variety of purposes, such as logging, authentication, and authorization. These functions are used to execute any code, make changes to the request and the response objects, end the request-response cycle, or call the next middleware function in the stack.
 
     Middlewares can perform the following tasks:
@@ -363,13 +360,12 @@
 
 16. ### Explain the concept of Dependency Injection in NestJS. How does it help in building modular and testable applications?
 
-    Dependency Injection (DI) is a design pattern in which a class receives its dependencies from external sources rather than creating them itself. This pattern is fundamental to the way NestJS is designed. dependency injection involves letting the framework manage the creation and injection of dependencies into the components (controllers, services, and more) as needed. 
-    
+    Dependency Injection (DI) is a design pattern in which a class receives its dependencies from external sources rather than creating them itself. This pattern is fundamental to the way NestJS is designed. dependency injection involves letting the framework manage the creation and injection of dependencies into the components (controllers, services, and more) as needed.
+
     This is achieved through decorators, providers, and the NestJS IoC (Inversion of Control) container
     Here is an example:
 
     ```javascript
-
     import { Injectable } from "@nestjs/common";
 
     @Injectable()
@@ -378,7 +374,6 @@
         return "Hello World!";
       }
     }
-
     ```
 
     ```javascript
@@ -411,21 +406,20 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 17. ### What’s the difference between @injectable() and @inject() decorators?
-    `@Injectable():` This decorator marks a class as a provider that can be managed by the NestJS dependency injection system. It means that NestJS will create an instance of this class and can inject it where it's needed. 
+
+    `@Injectable():` This decorator marks a class as a provider that can be managed by the NestJS dependency injection system. It means that NestJS will create an instance of this class and can inject it where it's needed.
 
     It's typically used on services, which can then be injected into controllers or other services.
 
     ```javascript
-
-      @Injectable()
-      export class CatsService {
-        // ...
-      }
-
+    @Injectable()
+    export class CatsService {
+      // ...
+    }
     ```
 
-    `@Inject():`This decorator is used inside a class to inject a dependency. It's used in the constructor of a class to specify a dependency that should be injected. 
-    
+    `@Inject():`This decorator is used inside a class to inject a dependency. It's used in the constructor of a class to specify a dependency that should be injected.
+
     If you're injecting a class provider, you don't need to use @Inject() because TypeScript's reflection system can infer the type. But if you're injecting a non-class provider (like a value or a factory), or if you're working in JavaScript, you need to use @Inject() to tell NestJS what to inject.
 
     ```javascript
@@ -433,9 +427,11 @@
         constructor(@Inject('CatsService') private catsService: CatsService) {}
       }
     ```
+
     **[⬆ Back to Top](#table-of-contents)**
 
 18. ### How does the Nest logger differ from the standard console.log() and when would you prefer one over the other?
+
     The `NestJS Logger` provides additional features compared to `console.log()`. It includes context information, supports log levels such as (`log`, `fatal`, `error`,`warn`, `debug`, and `verbose`), and can be customized.
 
     Use `console.log()` for quick debugging or simple logging needs.
@@ -447,28 +443,31 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 19. ### What is the difference between interceptors and middleware?
+
     In NestJS, both `interceptors` and `middleware` can be used to add extra logic before or after HTTP requests. However, they have some key differences:
 
-    `Interceptors:` have a more comprehensive scope than middleware. They can be used with both HTTP requests and other types of transport like WebSockets and microservices. 
-    
+    `Interceptors:` have a more comprehensive scope than middleware. They can be used with both HTTP requests and other types of transport like WebSockets and microservices.
+
     Interceptors can also manipulate the response sent back to the client, for example by transforming the response object, adding extra headers, or changing the status code. They can also be used to implement performance tracking, logging, caching, etc.
 
-    `Middleware:` in NestJS is similar to Express middleware. It's specific to the HTTP request-response cycle and can't be used with other types of transport. Middleware functions have access to the request and response objects, and they can end the request-response cycle or call the next middleware function in the stack. 
-    
+    `Middleware:` in NestJS is similar to Express middleware. It's specific to the HTTP request-response cycle and can't be used with other types of transport. Middleware functions have access to the request and response objects, and they can end the request-response cycle or call the next middleware function in the stack.
+
     They are useful for tasks like logging, error handling, or validating request data.
-    
-    In general, if you're working with HTTP requests and you need to add logic that doesn't modify   the response sent to the client, middleware can be a good choice. If you need to add logic that applies to other types of transport such as WebSockets and microservices, or if you need to modify the response, use an interceptor.
+
+    In general, if you're working with HTTP requests and you need to add logic that doesn't modify the response sent to the client, middleware can be a good choice. If you need to add logic that applies to other types of transport such as WebSockets and microservices, or if you need to modify the response, use an interceptor.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 20. ### What testing frameworks work best with NestJS?
+
     NestJS is a Node.js framework, so any testing framework that works with Node.js will work with NestJS. Some popular options include `Jest`, `Mocha`, and `Jasmine.`
     NestJS is built with testing in mind and it comes with its own testing module called `@nestjs/testing.` This module provides utilities for testing, such as a testing module and HTTP testing utilities.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 21. ### Explain the purpose of DTOs (Data Transfer Objects) in NestJS.
-    DTOs are used to define the structure of data exchanged between different layers of an application.  They define the shape of data for a specific operation, such as creating, updating, or returning data.
+
+    DTOs are used to define the structure of data exchanged between different layers of an application. They define the shape of data for a specific operation, such as creating, updating, or returning data.
 
     DTOs serve several purposes which include:
     `Validation:` With the `class-validator` package, you can add validation rules to the fields in your DTOs. NestJS can automatically validate incoming requests against these rules and return an error if the request is invalid.
@@ -478,7 +477,7 @@
     `Type Safety:` DTOs provide type safety in TypeScript, which can help catch errors at compile time.
 
     ```javascript
-    import { IsString, IsInt } from 'class-validator';
+    import { IsString, IsInt } from "class-validator";
 
     export class CreateCatDto {
       @IsString()
@@ -490,30 +489,60 @@
       @IsString()
       breed: string;
     }
-
     ```
+
     In the above example, CreateCatDto is a DTO that represents the data needed to create a cat. It expects a name and breed of type string, and an age of type number. The @IsString() and @IsInt() decorators are used to apply validation rules.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 22. ### How can you handle asynchronous operations in NestJS, and what is the role of the Promise object?
-     NestJS supports asynchronous operations through the use of the `async` and `await` keywords. When a function returns a Promise, it can be awaited, allowing non-blocking execution. The Promise object represents a value that may be available now, or in the future, or never.
 
-     ```javascript
-      import { Injectable } from '@nestjs/common';
+    NestJS supports asynchronous operations through the use of the `async` and `await` keywords. When a function returns a Promise, it can be awaited, allowing non-blocking execution. The Promise object represents a value that may be available now, or in the future, or never.
 
-      @Injectable()
-      export class AppService {
-        async getHello(): Promise<string> {
-          const result = await someAsyncOperation();
-          return `Hello ${result}`;
-        }
+    ```javascript
+    import { Injectable } from "@nestjs/common";
+
+    @Injectable()
+    export class AppService {
+      async getHello(): Promise<string> {
+        const result = await someAsyncOperation();
+        return `Hello ${result}`;
       }
+    }
+    ```
 
-     ```
     In this example, `getHello()` is an asynchronous method that returns a Promise. The await keyword is used to pause the execution of the function until someAsyncOperation() completes and the Promise is resolved.
 
     Promises are useful for handling single asynchronous operations. If you need to handle a stream of asynchronous values, you might want to use Observables instead, which are provided by the RxJS library and are also integrated into NestJS.
 
+    **[⬆ Back to Top](#table-of-contents)**
+
 23. ### Explain the purpose of the @InjectRepository() decorator in NestJS.
-    
+
+    The `@InjectRepository()` decorator in NestJS is used to inject a repository instance into a service or controller. It is commonly used with `TypeORM` for database interaction, allowing the injection of repositories for specific entities.
+
+    A repository in TypeORM is a way to manage entities: it provides methods to insert, update, remove, and load entities. By injecting a repository, you can use these methods in your service or controller.
+
+    Here is an example:
+
+    ```javascript
+      import { Injectable } from '@nestjs/common';
+      import { InjectRepository } from '@nestjs/typeorm';
+      import { Repository } from 'typeorm';
+      import { User } from './user.entity';
+
+      @Injectable()
+      export class UserService {
+        constructor(
+          @InjectRepository(User)
+          private usersRepository: Repository<User>,
+        ) {}
+
+        findAll(): Promise<User[]> {
+          return this.usersRepository.find();
+        }
+      }
+    ```
+    In the above example `@InjectRepository(User)` is used to inject a repository for the `User` entity. This repository is then used in the `findAll` method to load all users.
+
+    **[⬆ Back to Top](#table-of-contents)**
