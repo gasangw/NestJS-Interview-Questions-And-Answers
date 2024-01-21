@@ -584,3 +584,20 @@
    4. The server verifies the token and checks the user's permissions. If the user has the necessary permissions, the server processes the request.
     
    In this way, tokens serve as proof of authentication and can carry information about user's permissions for authorization. They provide a stateless, scalable solution for securing APIs. 
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+26. ### Why is it important for tokens to have an expiration time? How can you implement token expiration in NestJS, and what role do refresh tokens play in maintaining user sessions?
+   Tokens having an expiration time is important for security reasons. If a token is stolen or leaked, it can be used to gain unauthorized access to the system. By setting an expiration time, you limit the time window in which a stolen token can be used.
+
+   In NestJS, you can set the expiration time of a JWT when you sign it using the JwtService. Here's an example:
+
+   ```javascript
+      this.jwtService.sign(payload, { expiresIn: '60s' });
+   ```
+
+   In this example, the token will expire 60 seconds after it's issued.
+
+   However, having tokens expire can be inconvenient for the user, as they would have to log in again every time their token expires. This is where `refresh tokens` come in.
+
+   **[⬆ Back to Top](#table-of-contents)**
