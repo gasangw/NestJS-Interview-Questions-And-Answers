@@ -570,58 +570,58 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 25. ### Discuss how tokens are used for authorization in an API. What is the difference between authentication and authorization, and how are these processes implemented with tokens?
-   Tokens, such as JWTs (JSON Web Tokens), are used for authorization in APIs to ensure that a user has permission to access certain resources or perform certain actions.
+    Tokens, such as JWTs (JSON Web Tokens), are used for authorization in APIs to ensure that a user has permission to access certain resources or perform certain actions.
 
-   `Authentication` is the process of verifying the identity of a user. When a user logs in with their credentials, the server verifies these credentials and if they are valid, the server generates a token. This token often contains information about the user and is sent back to the client.
+    `Authentication` is the process of verifying the identity of a user. When a user logs in with their credentials, the server verifies these credentials and if they are valid, the server generates a token. This token often contains information about the user and is sent back to the client.
 
-   `Authorization` on the other hand, is the process of verifying what a user has access to. Once a user is authenticated and their token is sent with each request, the server can verify the token and check if the user has the necessary permissions to perform the requested action.
+    `Authorization` on the other hand, is the process of verifying what a user has access to. Once a user is authenticated and their token is sent with each request, the server can verify the token and check if the user has the necessary permissions to perform the requested action.
 
-   Here's a basic process:
+    Here's a basic process:
 
-   1. User sends their credentials (like username and password) to the server.
+    1. User sends their credentials (like username and password) to the server.
     
-   2. Server verifies the credentials. If they're valid, the server generates a token and sends it back to the client.
+    2. Server verifies the credentials. If they're valid, the server generates a token and sends it back to the client.
     
-   3. In subsequent requests, the client sends this token in the header of the request.
+    3. In subsequent requests, the client sends this token in the header of the request.
     
-   4. The server verifies the token and checks the user's permissions. If the user has the necessary permissions, the server processes the request.
+    4. The server verifies the token and checks the user's permissions. If the user has the necessary permissions, the server processes the request.
     
-   In this way, tokens serve as proof of authentication and can carry information about user's permissions for authorization. They provide a stateless, scalable solution for securing APIs. 
+    In this way, tokens serve as proof of authentication and can carry information about user's permissions for authorization. They provide a stateless, scalable solution for securing APIs. 
 
     **[⬆ Back to Top](#table-of-contents)**
 
 26. ### Why is it important for tokens to have an expiration time? How can you implement token expiration in NestJS, and what role do refresh tokens play in maintaining user sessions?
-   Tokens having an expiration time is important for security reasons. If a token is stolen or leaked, it can be used to gain unauthorized access to the system. By setting an expiration time, you limit the time window in which a stolen token can be used.
+    Tokens having an expiration time is important for security reasons. If a token is stolen or leaked, it can be used to gain unauthorized access to the system. By setting an expiration time, you limit the time window in which a stolen token can be used.
 
-   In NestJS, you can set the expiration time of a JWT when you sign it using the JwtService. Here's an example:
+    In NestJS, you can set the expiration time of a JWT when you sign it using the JwtService. Here's an example:
 
-   ```javascript
+    ```javascript
       this.jwtService.sign(payload, { expiresIn: '60s' });
-   ```
+    ```
 
-   In this example, the token will expire 60 seconds after it's issued.
+    In this example, the token will expire 60 seconds after it's issued.
 
-   However, having tokens expire can be inconvenient for the user, as they would have to log in again every time their token expires. This is where `refresh tokens` come in.
+    However, having tokens expire can be inconvenient for the user, as they would have to log in again every time their token expires. This is where `refresh tokens` come in.
 
-   **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Back to Top](#table-of-contents)**
 
 27. ### Describe the mechanism for a token refresh in NestJS. How can you implement an automatic token refresh strategy to maintain user sessions?
-   In NestJS, a `token refresh strategy` involves issuing a refresh token when a user logs in.
+    In NestJS, a `token refresh strategy` involves issuing a refresh token when a user logs in.
 
-   A refresh token is a special kind of token that can be used to obtain a new access token when the current one expires. When the user logs in, along with the access token, a refresh token is also generated and sent to the client. 
+    A refresh token is a special kind of token that can be used to obtain a new access token when the current one expires. When the user logs in, along with the access token, a refresh token is also generated and sent to the client. 
    
-   When the access token expires, the client sends the refresh token to the server, the server verifies the refresh token and issues a new access token.
+    When the access token expires, the client sends the refresh token to the server, the server verifies the refresh token and issues a new access token.
 
-   This allows the user to stay authenticated without having to log in again, while still limiting the potential damage of a stolen access token. 
+    This allows the user to stay authenticated without having to log in again, while still limiting the potential damage of a stolen access token. 
    
-   Refresh tokens usually have a longer expiration time than access tokens, and they can be revoked by the server if needed, for example, in case of a logout.
+    Refresh tokens usually have a longer expiration time than access tokens, and they can be revoked by the server if needed, for example, in case of a logout.
 
-   Here is how you can implement a token refresh strategy:
+    Here is how you can implement a token refresh strategy:
 
-   `Issue a Refresh Token:` When a user logs in, along with the access token, issue a refresh token. This can be done similarly to how you issue an access token, but typically with a longer expiration time.
+    `Issue a Refresh Token:` When a user logs in, along with the access token, issue a refresh token. This can be done similarly to how you issue an access token, but typically with a longer expiration time.
 
-   `Store the Refresh Token:` Store the refresh token in your database associated with the user. This allows you to invalidate the refresh token when necessary, such as when the user logs out.
+    `Store the Refresh Token:` Store the refresh token in your database associated with the user. This allows you to invalidate the refresh token when necessary, such as when the user logs out.
 
-   `Create a Refresh Endpoint:` Create an endpoint in your application that accepts a refresh token and returns a new access token. In this endpoint, you should verify the refresh token, check that it hasn't been invalidated, and then issue a new access token.
+    `Create a Refresh Endpoint:` Create an endpoint in your application that accepts a refresh token and returns a new access token. In this endpoint, you should verify the refresh token, check that it hasn't been invalidated, and then issue a new access token.
 
-   `Use the Refresh Token:` On the client side, when you receive a 401 Unauthorized response, it means the access token has expired. In this case, send a request to the refresh endpoint with the refresh token to get a new access token. Replace the old access token with the new one in your client's storage.
+    `Use the Refresh Token:` On the client side, when you receive a 401 Unauthorized response, it means the access token has expired. In this case, send a request to the refresh endpoint with the refresh token to get a new access token. Replace the old access token with the new one in your client's storage.
