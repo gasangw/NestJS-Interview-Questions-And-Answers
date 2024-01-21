@@ -39,8 +39,9 @@
 | 20  | [What testing frameworks work best with NestJS?](#what-testing-frameworks-work-best-with-nestjs)                                                                                                                                                |
 | 21  | [Explain the purpose of DTOs (Data Transfer Objects) in NestJS.](#explain-the-purpose-of-dtos-data-transfer-objects-in-nestjs.)                                                                                                                 |
 | 22  | [How can you handle asynchronous operations in NestJS, and what is the role of the Promise object?](#how-can-you-handle-asynchronous-operations-in-nestjs-and-what-is-the-role-of-the-promise-object)                                           |
-| 23  | [Explain the purpose of the @InjectRepository() decorator in NestJS.](#explain-the-purpose-of-the-injectrepository-decorator-in-nestjs)                                                                                                         |
+| 23  | [Explain the purpose of the @InjectRepository() decorator in NestJS.](#explain-the-purpose-of-the-injectrepository-decorator-in-nestjs)                                                                                                     |
 | 24  | [Explain the purpose of the @nestjs/jwt package in NestJS?](#explain-the-purpose-of-the-nestjs-jwt-package-in-nestjs)                                                                                                         |
+| 24  | [Discuss how tokens are used for authorization in an API. What is the difference between authentication and authorization, and how are these processes implemented with tokens?](#discuss-how-tokens-are-used-for-authorization-in-an-api-what-is-the-difference-between-authentication-and-authorization-and-how-are-these-processes-implemented-with-tokens)                                                                                                         |
 
 ### Answers
 
@@ -564,3 +565,22 @@
     The `@nestjs/jwt` package is often used in combination with the `@nestjs/passport package`, which provides a way to handle authentication in a flexible, modular way. Together, these packages can be used to implement JWT authentication strategy.
 
      **[⬆ Back to Top](#table-of-contents)**
+
+25. ### Discuss how tokens are used for authorization in an API. What is the difference between authentication and authorization, and how are these processes implemented with tokens?
+   Tokens, such as JWTs (JSON Web Tokens), are used for authorization in APIs to ensure that a user has permission to access certain resources or perform certain actions.
+
+   `Authentication` is the process of verifying the identity of a user. When a user logs in with their credentials, the server verifies these credentials and if they are valid, the server generates a token. This token often contains information about the user and is sent back to the client.
+
+   `Authorization` on the other hand, is the process of verifying what a user has access to. Once a user is authenticated and their token is sent with each request, the server can verify the token and check if the user has the necessary permissions to perform the requested action.
+
+   Here's a basic process:
+
+   1. User sends their credentials (like username and password) to the server.
+    
+   2. Server verifies the credentials. If they're valid, the server generates a token and sends it back to the client.
+    
+   3. In subsequent requests, the client sends this token in the header of the request.
+    
+   4. The server verifies the token and checks the user's permissions. If the user has the necessary permissions, the server processes the request.
+    
+   In this way, tokens serve as proof of authentication and can carry information about user's permissions for authorization. They provide a stateless, scalable solution for securing APIs. 
