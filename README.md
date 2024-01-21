@@ -39,6 +39,8 @@
 | 20  | [What testing frameworks work best with NestJS?](#what-testing-frameworks-work-best-with-nestjs)                                                                                                                |
 | 21  | [Explain the purpose of DTOs (Data Transfer Objects) in NestJS.](#explain-the-purpose-of-dtos-data-transfer-objects-in-nestjs.)                                                                                              |
 | 22  | [Explain the purpose of the @InjectRepository() decorator in NestJS.](#explain-the-purpose-of-the-InjectRepository-decorator-in-nestjs)                                                                                              |
+| 22  | [How can you handle asynchronous operations in NestJS, and what is the role of the Promise object?](#how-can-you-handle-asynchronous-operations-in-nestjs-and-what-is-the-role-of-the-promise-object)                                                                                              |
+
 
 ### Answers
 
@@ -494,5 +496,9 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-22. ### Explain the purpose of the @InjectRepository() decorator in NestJS.
+22. ### How can you handle asynchronous operations in NestJS, and what is the role of the Promise object?
+     NestJS supports asynchronous operations through the use of the async and await keywords. When a function returns a Promise, it can be awaited, allowing non-blocking execution. The Promise object represents a value that may be available now, or in the future, or never.
+
+
+23. ### Explain the purpose of the @InjectRepository() decorator in NestJS.
     
