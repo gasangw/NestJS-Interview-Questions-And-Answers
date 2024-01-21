@@ -497,8 +497,23 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 22. ### How can you handle asynchronous operations in NestJS, and what is the role of the Promise object?
-     NestJS supports asynchronous operations through the use of the async and await keywords. When a function returns a Promise, it can be awaited, allowing non-blocking execution. The Promise object represents a value that may be available now, or in the future, or never.
+     NestJS supports asynchronous operations through the use of the `async` and `await` keywords. When a function returns a Promise, it can be awaited, allowing non-blocking execution. The Promise object represents a value that may be available now, or in the future, or never.
 
+     ```javascript
+      import { Injectable } from '@nestjs/common';
+
+      @Injectable()
+      export class AppService {
+        async getHello(): Promise<string> {
+          const result = await someAsyncOperation();
+          return `Hello ${result}`;
+        }
+      }
+
+     ```
+    In this example, `getHello()` is an asynchronous method that returns a Promise. The await keyword is used to pause the execution of the function until someAsyncOperation() completes and the Promise is resolved.
+
+    Promises are useful for handling single asynchronous operations. If you need to handle a stream of asynchronous values, you might want to use Observables instead, which are provided by the RxJS library and are also integrated into NestJS.
 
 23. ### Explain the purpose of the @InjectRepository() decorator in NestJS.
     
