@@ -551,6 +551,8 @@
 24. ### Explain the purpose of the @nestjs/jwt package in NestJS?
     The `@nestjs/jwt` package is a NestJS module that provides functionality around JSON Web Tokens (JWTs). JWTs are a popular method for handling authentication and authorization in web applications.
 
+    It includes decorators like `@AuthGuard('jwt')` to protect routes with JWT-based authentication and supports the generation and verification of JWTs.
+
     Here are some of the things you can do with the @nestjs/jwt package:
 
     `Generate JWTs:` You can create a new JWT with specific payloads and sign it with a secret key.
@@ -560,3 +562,5 @@
     `Decode JWTs:` You can decode a JWT to access the payload information.
 
     The `@nestjs/jwt` package is often used in combination with the `@nestjs/passport package`, which provides a way to handle authentication in a flexible, modular way. Together, these packages can be used to implement JWT authentication strategy.
+
+     **[⬆ Back to Top](#table-of-contents)**
