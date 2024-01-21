@@ -604,3 +604,5 @@
    However, having tokens expire can be inconvenient for the user, as they would have to log in again every time their token expires. This is where `refresh tokens` come in.
 
    **[⬆ Back to Top](#table-of-contents)**
+
+27. ### Describe the mechanism for a token refresh in NestJS. How can you implement an automatic token refresh strategy to maintain user sessions?
