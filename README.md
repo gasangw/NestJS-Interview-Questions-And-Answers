@@ -606,3 +606,22 @@
    **[⬆ Back to Top](#table-of-contents)**
 
 27. ### Describe the mechanism for a token refresh in NestJS. How can you implement an automatic token refresh strategy to maintain user sessions?
+   In NestJS, a `token refresh strategy` involves issuing a refresh token when a user logs in.
+
+   A refresh token is a special kind of token that can be used to obtain a new access token when the current one expires. When the user logs in, along with the access token, a refresh token is also generated and sent to the client. 
+   
+   When the access token expires, the client sends the refresh token to the server, the server verifies the refresh token and issues a new access token.
+
+   This allows the user to stay authenticated without having to log in again, while still limiting the potential damage of a stolen access token. 
+   
+   Refresh tokens usually have a longer expiration time than access tokens, and they can be revoked by the server if needed, for example, in case of a logout.
+
+   Here is how you can implement a token refresh strategy:
+
+   `Issue a Refresh Token:` When a user logs in, along with the access token, issue a refresh token. This can be done similarly to how you issue an access token, but typically with a longer expiration time.
+
+   `Store the Refresh Token:` Store the refresh token in your database associated with the user. This allows you to invalidate the refresh token when necessary, such as when the user logs out.
+
+   `Create a Refresh Endpoint:` Create an endpoint in your application that accepts a refresh token and returns a new access token. In this endpoint, you should verify the refresh token, check that it hasn't been invalidated, and then issue a new access token.
+
+   `Use the Refresh Token:` On the client side, when you receive a 401 Unauthorized response, it means the access token has expired. In this case, send a request to the refresh endpoint with the refresh token to get a new access token. Replace the old access token with the new one in your client's storage.
