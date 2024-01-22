@@ -739,4 +739,47 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-31. ### How can you generate API documentation using Swagger in NestJS? Discuss the importance of documenting your API and how it benefits developers.
+31. ### How can you generate API documentation using Swagger in NestJS? Discuss the importance of documenting your API and how it benefits developers?
+
+    Generating API documentation in NestJS can be done using the `@nestjs/swagger` package. This package provides decorators and a `SwaggerModule` to easily create Swagger documentation.
+
+    Here is a basic setup:
+
+    - Start by installing the required dependency.
+    - `npm install --save @nestjs/swagger`
+
+    ```javascript
+    import { NestFactory } from "@nestjs/core";
+    import { SwaggerModule, DocumentBuilder } from "@nestjs/swagger";
+    import { AppModule } from "./app.module";
+
+    async function bootstrap() {
+      const app = await NestFactory.create(AppModule);
+
+      const config = new DocumentBuilder()
+        .setTitle("Cats example")
+        .setDescription("The cats API description")
+        .setVersion("1.0")
+        .addTag("cats")
+        .build();
+      const document = SwaggerModule.createDocument(app, config);
+      SwaggerModule.setup("api", app, document);
+
+      await app.listen(3000);
+    }
+    bootstrap();
+    ```
+
+    In the above example, `SwaggerModule.createDocument(app, config)` generates the Swagger JSON. `SwaggerModule.setup('api', app, document)` serves the Swagger UI at the specified path ('api' in this case).
+
+    Documenting your API is important for several reasons:
+
+    `Ease of Use:` It helps other developers understand how to use your API. They can see the available endpoints, the expected request format, and the response format.
+
+    `Testing:` Tools like Swagger UI allow developers to test the API directly from the browser.
+
+    `Maintenance:` It helps maintain the API. When changes are made, the documentation serves as a reference to ensure the API's behavior remains consistent.
+
+    `Onboarding:` It speeds up the process of onboarding new developers. They can quickly understand the API's functionality without needing to dig into the codebase.
+
+     **[⬆ Back to Top](#table-of-contents)**
