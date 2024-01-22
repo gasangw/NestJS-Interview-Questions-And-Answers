@@ -830,5 +830,56 @@
     `@ApiOperation()` is used to provide a summary for the create operation. This summary will be displayed in the Swagger UI.
 
     There are more decorators that are used to display error messages to the user such as `@ApiNotFoundResponse`,`@ApiBadRequestResponse`, `@ApiInternalServerErrorResponse` and many more. While decorators that display success messages include ` @ApiOkResponse`, `@ApiCreatedResponse` etc.
+ 
+     **[⬆ Back to Top](#table-of-contents)**
 
 33. ### Explain the purpose of the Dockerfile in a NestJS application, and how it facilitates containerization?
+
+    A `Dockerfile` is a text document that contains all the commands a user could call on the command line to assemble an image. In the context of a NestJS application, a Dockerfile is used to create a Docker image of the application.
+
+    A `Docker image` is a lightweight, standalone, executable package of software that includes everything needed to run an application. It includes code, runtime, system tools, system libraries, and settings.
+
+    This image can be run consistently on any machine that has Docker installed, regardless of the underlying operating system.
+
+    Here is an example of a Dockerfile for Nest application:
+
+    ```javascript
+        // Start from a base image
+        FROM node:14-alpine // or node:latest to use the latest version of node
+
+        // Set the working directory
+        WORKDIR /usr/src/app
+
+        //Install dependencies
+        COPY package*.json ./
+        RUN npm install
+
+        // Copy source code
+        COPY . .
+
+        // Expose the application on port 3000
+        EXPOSE 3000
+
+        // Start the application
+        CMD ["npm", "run", "start"]
+    ```
+
+    This Dockerfile does the following:
+
+    Starts from a base image with Node.js installed (node:14-alpine).
+
+    Sets the working directory in the container to /usr/src/app.
+
+    Copies package.json and package-lock.json (if available) to the working directory.
+
+    Installs the dependencies using npm install.
+
+    Copies the rest of the source code to the working directory.
+
+    Exposes port 3000, which the application uses.
+
+    Defines the command to start the application (npm run start).
+
+    _Note_: The benefit of this is that it encloses the application and its environment into a single runnable entity `(a container)`. This ensures that the application runs the same way, regardless of where it's deployed, providing consistency and reliability across different deployment environments.
+
+     **[⬆ Back to Top](#table-of-contents)**
