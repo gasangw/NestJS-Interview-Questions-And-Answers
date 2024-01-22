@@ -783,6 +783,26 @@
 
     `Onboarding:` It speeds up the process of onboarding new developers. They can quickly understand the API's functionality without needing to dig into the codebase.
 
-     **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Back to Top](#table-of-contents)**
 
-32. ### Explain the purpose of the @nestjs/swagger  ApiProperty(), ApiOperation() decorators?
+32. ### Explain the purpose of the @nestjs/swagger ApiProperty(), ApiOperation() decorators?
+
+    The `@nestjs/swagger` package provides several decorators to help with creating Swagger documentation for your API. Two of these decorators are `@ApiProperty()` and `@ApiOperation()`.
+
+    `@ApiProperty()`: This decorator is used within DTO (Data Transfer Object) classes to provide metadata for properties. This metadata is used to generate the Swagger documentation for the model that the API expects in the request body or returns in the response.
+
+    ```javascript
+    import { ApiProperty } from "@nestjs/swagger";
+
+    export class CreateUserDto {
+      @ApiProperty({
+        description: "The id of the user.",
+        minimum: 1,
+        example: 42,
+      })
+      id: number;
+
+      @ApiProperty({ description: "The name of the user.", example: "Thomas" })
+      username: string;
+    }
+    ```
