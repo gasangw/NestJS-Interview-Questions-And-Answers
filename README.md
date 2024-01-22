@@ -51,6 +51,7 @@
 | 30 | [What are custom providers and how do they differ from standard Providers in Nest.js?](#what-are-custom-providers-and-how-do-they-differ-from-standard-providers-in-nestjs) |
 | 31 | [How can you generate API documentation using Swagger in NestJS? Discuss the importance of documenting your API and how it benefits developers?](#how-can-you-generate-api-documentation-using-swagger-in-nestjs-discuss-the-importance-of-documenting-your-api-and-how-it-benefits-developers) |
 | 32 | [Explain the purpose of the @nestjs/swagger ApiProperty(), ApiOperation() decorators?](#explain-the-purpose-of-the-nestjs-swagger-apiproperty-apioperation-decorators) |
+| 33 | [Explain the purpose of the Dockerfile in a NestJS application, and how it facilitates containerization?](#explain-the-purpose-of-the-dockerfile-in-a-nestjs-application-and-how-it-facilitates-containerization) |
 
 ### Answers
 
@@ -829,3 +830,5 @@
     `@ApiOperation()` is used to provide a summary for the create operation. This summary will be displayed in the Swagger UI.
 
     There are more decorators that are used to display error messages to the user such as `@ApiNotFoundResponse`,`@ApiBadRequestResponse`, `@ApiInternalServerErrorResponse` and many more. While decorators that display success messages include ` @ApiOkResponse`, `@ApiCreatedResponse` etc.
+
+33. ### Explain the purpose of the Dockerfile in a NestJS application, and how it facilitates containerization?
