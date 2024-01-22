@@ -698,4 +698,32 @@
 30. ### What are custom providers and how do they differ from standard Providers in Nest.js?
        A `provider` is something that can be injected into a class via the class's constructor. A provider can be a value, a class, a factory function, or an async factory function.
 
-       A standard provider in NestJS is typically a class decorated with @Injectable(). This class can have dependencies, which are injected through the constructor. Here's an example:
+       A standard provider in NestJS is typically a class decorated with `@Injectable().` This class can have dependencies, which are injected through the constructor. Here's an example:
+
+       ```javascript
+          import { Injectable } from '@nestjs/common';
+
+          @Injectable()
+          export class CatsService {
+            constructor(private readonly catsRepository: CatsRepository) {}
+          }
+       ```
+       In this case, `CatsService` is a standard provider that can be injected into other classes, and it has a dependency on `CatsRepository.` But not all providers are services.
+       
+       `A custom provider` is a more flexible way to provide values for injection,it can also be a simple value or a factory function. And these types of providers don't need the `@Injectable()` decorator. For example, you can have a provider that always provides the number 42:
+
+       ```javascript
+
+        {
+          provide: 'MagicNumber',
+          useValue: 42,
+        }
+
+       ```
+
+       In this case, `MagicNumber` is a token that you can use to get the number `42`.
+
+       `Custom providers` are a way to create providers that aren't just services. They can be values, factory functions, or async factory functions. They give you more flexibility in how you create the things that your app needs.
+
+       **[⬆ Back to Top](#table-of-contents)**
+
