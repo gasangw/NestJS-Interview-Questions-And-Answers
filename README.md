@@ -47,14 +47,10 @@
 | 28  | [How does NestJS support authentication and authorization?](#how-does-nestjs-support-authentication-and-authorization) |
 
 | 29 | [How does NestJS support authentication and authorization?](#how-does-nestjs-support-authentication-and-authorization) |
-
 | 30 | [What is the difference between Provider and Services in Nestjs, can we have a provider without an injectable decorator, Give examples?](#what-is-the-difference-between-provider-and-services-in-nestjs-can-we-have-a-provider-without-an-injectable-decorator-give-examples.) |
-
 | 31 | [What are custom providers and how do they differ from standard Providers in Nest.js?](#what-are-custom-providers-and-how-do-they-differ-from-standard-providers-in-nestjs) |
 | 32 | [How can you generate API documentation using Swagger in NestJS? Discuss the importance of documenting your API and how it benefits developers?](#how-can-you-generate-api-documentation-using-swagger-in-nestjs-discuss-the-importance-of-documenting-your-api-and-how-it-benefits-developers) |
-
 | 33 | [Explain the purpose of the @nestjs/swagger ApiProperty(), ApiOperation() decorators?](#explain-the-purpose-of-the-nestjs-swagger-apiproperty-apioperation-decorators) |
-
 | 34 | [Explain the purpose of the Dockerfile in a NestJS application, and how it facilitates containerization?](#explain-the-purpose-of-the-dockerfile-in-a-nestjs-application-and-how-it-facilitates-containerization) |
 
 ### Answers
