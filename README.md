@@ -50,6 +50,7 @@
 | 29 | [What is the difference between Provider and Services in Nestjs, can we have a provider without an injectable decorator, Give examples?](#what-is-the-difference-between-provider-and-services-in-nestjs-can-we-have-a-provider-without-an-injectable-decorator-give-examples.) |
 | 30 | [What are custom providers and how do they differ from standard Providers in Nest.js?](#what-are-custom-providers-and-how-do-they-differ-from-standard-providers-in-nestjs) |
 | 31 | [How can you generate API documentation using Swagger in NestJS? Discuss the importance of documenting your API and how it benefits developers?](#how-can-you-generate-api-documentation-using-swagger-in-nestjs-discuss-the-importance-of-documenting-your-api-and-how-it-benefits-developers) |
+| 32 | [Explain the purpose of the @nestjs/swagger ApiProperty(), ApiOperation() decorators?](#explain-the-purpose-of-the-nestjs-swagger-apiproperty-apioperation-decorators) |
 
 ### Answers
 
@@ -783,3 +784,5 @@
     `Onboarding:` It speeds up the process of onboarding new developers. They can quickly understand the API's functionality without needing to dig into the codebase.
 
      **[⬆ Back to Top](#table-of-contents)**
+
+32. ### Explain the purpose of the @nestjs/swagger  ApiProperty(), ApiOperation() decorators?
