@@ -641,4 +641,21 @@
      4. `Decorators:` Custom decorators can be used to provide metadata about routes, such as required roles for accessing a route.
 
      5. `Interceptors:` Interceptors can be used to bind user data to the request based on the provided token.
+     ```javascript
+      import { Controller, UseGuards, Post, Request } from '@nestjs/common';
+      import { AuthService } from './auth/auth.service';
+      import { LocalAuthGuard } from './auth/local-auth.guard';
+
+      @Controller('auth')
+      export class AuthController {
+        constructor(private authService: AuthService) {}
+
+        @UseGuards(LocalAuthGuard)
+        @Post('login')
+        async login(@Request() req) {
+          return this.authService.login(req.user);
+        }
+      }
+     ```
+     In this example, the LocalAuthGuard is a custom guard that uses Passport's local strategy to validate the user's username and password. The login() method then generates a JWT for the authenticated user using the AuthService.
         
