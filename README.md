@@ -664,4 +664,33 @@
 
       **[⬆ Back to Top](#table-of-contents)**
 
-29. ### What is the difference between Provider and Services in Nestjs, can we have a provider without an injectable decorator, Give examples.
+29. ### What is the difference between Provider and Services in Nestjs, can we have a provider without an injectable decorator, Give examples?
+     A `provider` is a more general concept, while a `service` is a specific type of provider. Providers are a fundamental concept in NestJS system of dependency injection. They can be used to inject not only services, but also values, factories, and more.
+
+     A `service` is a class annotated with `@Injectable()` decorator, typically used to handle complex business logic or to provide access to shared data. Here's an example:
+
+      ```javascript
+
+       import { Injectable } from '@nestjs/common';
+
+        @Injectable()
+        export class CatsService {
+          // ...
+        }
+
+      ```
+      However, a provider doesn't necessarily need to be a service. It can be any value that should be available for injection. For example, you can provide a simple string:
+
+      ```javascript
+
+        {
+          provide: 'HelloMessage',
+          useValue: 'Hello, World!',
+        }
+
+      ```
+      In this case, `HelloMessage` is a token that can be used to inject the string `Hello, World!`.
+
+      While services are typically decorated with `@Injectable()`, other types of providers don't need this decorator. The `@Injectable()` decorator is needed when a class has its own dependencies that need to be injected. If the provider doesn't have any dependencies, like in the string example above, you don't need @Injectable().
+
+      **[⬆ Back to Top](#table-of-contents)**
