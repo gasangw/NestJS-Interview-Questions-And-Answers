@@ -15,41 +15,41 @@
 
 ### Table of Contents
 
-| No. | Questions                                                                                                                                                                                                                                       |
-| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | [What is Nestjs?](#what-is-nestjs?)                                                                                                                                                                                                             |
-| 2   | [Who developed NestJS? Why did they develop NestJS?](#who-developed-nestjs-why-did-they-develop-nestjs)                                                                                                                                         |
-| 3   | [When was NestJS first released?](#when-was-nestjs-first-released)                                                                                                                                                                              |
-| 4   | [How can you install NestJS and set up a new project on your machine?](#how-can-you-install-nestjs-and-set-up-a-new-project-on-your-machine)                                                                                                    |
-| 5   | [What’s the difference between NestJS and Angular?](#what-s-the-difference-between-nestjs-and-angular?)                                                                                                                                         |
-| 6   | [Is it possible to use other languages like C++, Ruby or Python with NestJS? If yes, then how?](#is-it-possible-to-use-other-languages-like-c-ruby-or-python-with-nestjs-if-yes-then-how)                                                       |
-| 7   | [What are the main components of a NestJS application?](#what-are-the-main-components-of-a-nestjs-application)                                                                                                                                  |
-| 8   | [How to declare a class as a controller in Nest.js](#how-to-declare-a-class-as-a-controller-in-nestjs)                                                                                                                                          |
-| 9   | [Can you explain how to use decorators in a NestJS controller?](#can-you-explain-how-to-use-decorators-in-a-nestjs-controller)                                                                                                                  |
-| 10  | [How can you use route parameters in a NestJS controller?](#how-can-you-use-route-parameters-in-a-nestjs-controller)                                                                                                                            |
-| 11  | [What is the role of the `@Body()` decorator?](#what-is-the-role-of-the-body-decorator)                                                                                                                                                         |
-| 12  | [What is an interceptor in the context of NestJS?](#what-is-an-interceptor-in-the-context-of-nestjs)                                                                                                                                            |
-| 13  | [What are pipes in the context of NestJS?](#what-are-pipes-in-the-context-of-nestjs)                                                                                                                                                            |
-| 14  | [What are guards in the context of NestJS?](#what-are-guards-in-the-context-of-nestjs)                                                                                                                                                          |
-| 15  | [What are middlewares in the context of NestJS?](#what-are-middlewares-in-the-context-of-nestjs)                                                                                                                                                |
-| 16  | [Explain the concept of Dependency Injection in NestJS. How does it help in building modular and testable applications?](#explain-the-concept-of-dependency-injection-in-nestjs-how-does-it-help-in-building-modular-and-testable-applications) |
-| 17  | [What’s the difference between @injectable() and @inject() decorators?](#what-s-the-difference-between-injectable-and-inject-decorators)                                                                                                        |
-| 18  | [How does the Nest logger differ from the standard console.log() and when would you prefer one over the other?](#how-does-the-nest-logger-differ-from-the-standard-console-log-and-when-would-you-prefer-one-over-the-other)                    |
-| 19  | [What is the difference between interceptors and middleware?](#what-is-the-difference-between-interceptors-and-middleware)                                                                                                                      |
-| 20  | [What testing frameworks work best with NestJS?](#what-testing-frameworks-work-best-with-nestjs)                                                                                                                                                |
-| 21  | [Explain the purpose of DTOs (Data Transfer Objects) in NestJS.](#explain-the-purpose-of-dtos-data-transfer-objects-in-nestjs.)                                                                                                                 |
-| 22  | [How can you handle asynchronous operations in NestJS, and what is the role of the Promise object?](#how-can-you-handle-asynchronous-operations-in-nestjs-and-what-is-the-role-of-the-promise-object)                                           |
-| 23  | [Explain the purpose of the @InjectRepository() decorator in NestJS.](#explain-the-purpose-of-the-injectrepository-decorator-in-nestjs)                                                                                                     |
-| 24  | [Explain the purpose of the @nestjs/jwt package in NestJS?](#explain-the-purpose-of-the-nestjs-jwt-package-in-nestjs)                                                                                                         |
-| 25  | [Discuss how tokens are used for authorization in an API. What is the difference between authentication and authorization, and how are these processes implemented with tokens?](#discuss-how-tokens-are-used-for-authorization-in-an-api-what-is-the-difference-between-authentication-and-authorization-and-how-are-these-processes-implemented-with-tokens)                                                                                                         |
-| 26  | [Why is it important for tokens to have an expiration time? How can you implement token expiration in NestJS, and what role do refresh tokens play in maintaining user sessions?](#why-is-it-important-for-tokens-to-have-an-expiration-time-How-can-you-implement-token-expiration-in-nestjs-and-what-role-do-refresh-tokens-play-in-maintaining-user-sessions)                                                                                                         |
-| 27  | [Describe the mechanism for a token refresh in NestJS. How can you implement an automatic token refresh strategy to maintain user sessions?](#describe-the-mechanism-for-a-token-refresh-in-nestjs-how-can-you-implement-an-automatic-token-refresh-strategy-to-maintain-user-sessions)                                                                                                         |
-| 28  | [How does NestJS support authentication and authorization?](#how-does-nestjs-support-authentication-and-authorization)                                                                                                         |
+| No. | Questions                                                                                                                                                                                                                                                                                                                                                        |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | [What is Nestjs?](#what-is-nestjs?)                                                                                                                                                                                                                                                                                                                              |
+| 2   | [Who developed NestJS? Why did they develop NestJS?](#who-developed-nestjs-why-did-they-develop-nestjs)                                                                                                                                                                                                                                                          |
+| 3   | [When was NestJS first released?](#when-was-nestjs-first-released)                                                                                                                                                                                                                                                                                               |
+| 4   | [How can you install NestJS and set up a new project on your machine?](#how-can-you-install-nestjs-and-set-up-a-new-project-on-your-machine)                                                                                                                                                                                                                     |
+| 5   | [What’s the difference between NestJS and Angular?](#what-s-the-difference-between-nestjs-and-angular?)                                                                                                                                                                                                                                                          |
+| 6   | [Is it possible to use other languages like C++, Ruby or Python with NestJS? If yes, then how?](#is-it-possible-to-use-other-languages-like-c-ruby-or-python-with-nestjs-if-yes-then-how)                                                                                                                                                                        |
+| 7   | [What are the main components of a NestJS application?](#what-are-the-main-components-of-a-nestjs-application)                                                                                                                                                                                                                                                   |
+| 8   | [How to declare a class as a controller in Nest.js](#how-to-declare-a-class-as-a-controller-in-nestjs)                                                                                                                                                                                                                                                           |
+| 9   | [Can you explain how to use decorators in a NestJS controller?](#can-you-explain-how-to-use-decorators-in-a-nestjs-controller)                                                                                                                                                                                                                                   |
+| 10  | [How can you use route parameters in a NestJS controller?](#how-can-you-use-route-parameters-in-a-nestjs-controller)                                                                                                                                                                                                                                             |
+| 11  | [What is the role of the `@Body()` decorator?](#what-is-the-role-of-the-body-decorator)                                                                                                                                                                                                                                                                          |
+| 12  | [What is an interceptor in the context of NestJS?](#what-is-an-interceptor-in-the-context-of-nestjs)                                                                                                                                                                                                                                                             |
+| 13  | [What are pipes in the context of NestJS?](#what-are-pipes-in-the-context-of-nestjs)                                                                                                                                                                                                                                                                             |
+| 14  | [What are guards in the context of NestJS?](#what-are-guards-in-the-context-of-nestjs)                                                                                                                                                                                                                                                                           |
+| 15  | [What are middlewares in the context of NestJS?](#what-are-middlewares-in-the-context-of-nestjs)                                                                                                                                                                                                                                                                 |
+| 16  | [Explain the concept of Dependency Injection in NestJS. How does it help in building modular and testable applications?](#explain-the-concept-of-dependency-injection-in-nestjs-how-does-it-help-in-building-modular-and-testable-applications)                                                                                                                  |
+| 17  | [What’s the difference between @injectable() and @inject() decorators?](#what-s-the-difference-between-injectable-and-inject-decorators)                                                                                                                                                                                                                         |
+| 18  | [How does the Nest logger differ from the standard console.log() and when would you prefer one over the other?](#how-does-the-nest-logger-differ-from-the-standard-console-log-and-when-would-you-prefer-one-over-the-other)                                                                                                                                     |
+| 19  | [What is the difference between interceptors and middleware?](#what-is-the-difference-between-interceptors-and-middleware)                                                                                                                                                                                                                                       |
+| 20  | [What testing frameworks work best with NestJS?](#what-testing-frameworks-work-best-with-nestjs)                                                                                                                                                                                                                                                                 |
+| 21  | [Explain the purpose of DTOs (Data Transfer Objects) in NestJS.](#explain-the-purpose-of-dtos-data-transfer-objects-in-nestjs.)                                                                                                                                                                                                                                  |
+| 22  | [How can you handle asynchronous operations in NestJS, and what is the role of the Promise object?](#how-can-you-handle-asynchronous-operations-in-nestjs-and-what-is-the-role-of-the-promise-object)                                                                                                                                                            |
+| 23  | [Explain the purpose of the @InjectRepository() decorator in NestJS.](#explain-the-purpose-of-the-injectrepository-decorator-in-nestjs)                                                                                                                                                                                                                          |
+| 24  | [Explain the purpose of the @nestjs/jwt package in NestJS?](#explain-the-purpose-of-the-nestjs-jwt-package-in-nestjs)                                                                                                                                                                                                                                            |
+| 25  | [Discuss how tokens are used for authorization in an API. What is the difference between authentication and authorization, and how are these processes implemented with tokens?](#discuss-how-tokens-are-used-for-authorization-in-an-api-what-is-the-difference-between-authentication-and-authorization-and-how-are-these-processes-implemented-with-tokens)   |
+| 26  | [Why is it important for tokens to have an expiration time? How can you implement token expiration in NestJS, and what role do refresh tokens play in maintaining user sessions?](#why-is-it-important-for-tokens-to-have-an-expiration-time-How-can-you-implement-token-expiration-in-nestjs-and-what-role-do-refresh-tokens-play-in-maintaining-user-sessions) |
+| 27  | [Describe the mechanism for a token refresh in NestJS. How can you implement an automatic token refresh strategy to maintain user sessions?](#describe-the-mechanism-for-a-token-refresh-in-nestjs-how-can-you-implement-an-automatic-token-refresh-strategy-to-maintain-user-sessions)                                                                          |
+| 28  | [How does NestJS support authentication and authorization?](#how-does-nestjs-support-authentication-and-authorization)                                                                                                                                                                                                                                           |
 
-| 29  | [How does NestJS support authentication and authorization?](#how-does-nestjs-support-authentication-and-authorization)                                                                                                         |
-| 29  | [What is the difference between Provider and Services in Nestjs, can we have a provider without an injectable decorator, Give examples?](#what-is-the-difference-between-provider-and-services-in-nestjs-can-we-have-a-provider-without-an-injectable-decorator-give-examples.)                                                                                                         |
-| 30  | [What are custom providers and how do they differ from standard Providers in Nest.js?](#what-are-custom-providers-and-how-do-they-differ-from-standard-providers-in-nestjs)                                                                                                         |
-| 31  | [What are custom providers and how do they differ from standard Providers in Nest.js?](#what-are-custom-providers-and-how-do-they-differ-from-standard-providers-in-nestjs)                                                                                                         |
+| 29 | [How does NestJS support authentication and authorization?](#how-does-nestjs-support-authentication-and-authorization) |
+| 29 | [What is the difference between Provider and Services in Nestjs, can we have a provider without an injectable decorator, Give examples?](#what-is-the-difference-between-provider-and-services-in-nestjs-can-we-have-a-provider-without-an-injectable-decorator-give-examples.) |
+| 30 | [What are custom providers and how do they differ from standard Providers in Nest.js?](#what-are-custom-providers-and-how-do-they-differ-from-standard-providers-in-nestjs) |
+| 31 | [How can you generate API documentation using Swagger in NestJS? Discuss the importance of documenting your API and how it benefits developers?](#how-can-you-generate-api-documentation-using-swagger-in-nestjs-discuss-the-importance-of-documenting-your-api-and-how-it-benefits-developers) |
 
 ### Answers
 
@@ -553,11 +553,13 @@
         }
       }
     ```
+
     In the above example `@InjectRepository(User)` is used to inject a repository for the `User` entity. This repository is then used in the `findAll` method to load all users.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 24. ### Explain the purpose of the @nestjs/jwt package in NestJS?
+
     The `@nestjs/jwt` package is a NestJS module that provides functionality around JSON Web Tokens (JWTs). JWTs are a popular method for handling authentication and authorization in web applications.
 
     It includes decorators like `@AuthGuard('jwt')` to protect routes with JWT-based authentication and supports the generation and verification of JWTs.
@@ -572,9 +574,10 @@
 
     The `@nestjs/jwt` package is often used in combination with the `@nestjs/passport package`, which provides a way to handle authentication in a flexible, modular way. Together, these packages can be used to implement JWT authentication strategy.
 
-     **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Back to Top](#table-of-contents)**
 
 25. ### Discuss how tokens are used for authorization in an API. What is the difference between authentication and authorization, and how are these processes implemented with tokens?
+
     Tokens, such as JWTs (JSON Web Tokens), are used for authorization in APIs to ensure that a user has permission to access certain resources or perform certain actions.
 
     `Authentication` is the process of verifying the identity of a user. When a user logs in with their credentials, the server verifies these credentials and if they are valid, the server generates a token. This token often contains information about the user and is sent back to the client.
@@ -584,41 +587,43 @@
     Here's a basic process:
 
     1. User sends their credentials (like username and password) to the server.
-    
+
     2. Server verifies the credentials. If they're valid, the server generates a token and sends it back to the client.
-    
+
     3. In subsequent requests, the client sends this token in the header of the request.
-    
+
     4. The server verifies the token and checks the user's permissions. If the user has the necessary permissions, the server processes the request.
-    
-    In this way, tokens serve as proof of authentication and can carry information about user's permissions for authorization. They provide a stateless, scalable solution for securing APIs. 
+
+    In this way, tokens serve as proof of authentication and can carry information about user's permissions for authorization. They provide a stateless, scalable solution for securing APIs.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 26. ### Why is it important for tokens to have an expiration time? How can you implement token expiration in NestJS, and what role do refresh tokens play in maintaining user sessions?
+
     Tokens having an expiration time is important for security reasons. If a token is stolen or leaked, it can be used to gain unauthorized access to the system. By setting an expiration time, you limit the time window in which a stolen token can be used.
 
     In NestJS, you can set the expiration time of a JWT when you sign it using the JwtService. Here's an example:
 
     ```javascript
-      this.jwtService.sign(payload, { expiresIn: '60s' });
+    this.jwtService.sign(payload, { expiresIn: "60s" });
     ```
 
     In this example, the token will expire 60 seconds after it's issued.
 
     However, having tokens expire can be inconvenient for the user, as they would have to log in again every time their token expires. This is where `refresh tokens` come in.
 
-     **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Back to Top](#table-of-contents)**
 
 27. ### Describe the mechanism for a token refresh in NestJS. How can you implement an automatic token refresh strategy to maintain user sessions?
+
     In NestJS, a `token refresh strategy` involves issuing a refresh token when a user logs in.
 
-    A refresh token is a special kind of token that can be used to obtain a new access token when the current one expires. When the user logs in, along with the access token, a refresh token is also generated and sent to the client. 
-   
+    A refresh token is a special kind of token that can be used to obtain a new access token when the current one expires. When the user logs in, along with the access token, a refresh token is also generated and sent to the client.
+
     When the access token expires, the client sends the refresh token to the server, the server verifies the refresh token and issues a new access token.
 
-    This allows the user to stay authenticated without having to log in again, while still limiting the potential damage of a stolen access token. 
-   
+    This allows the user to stay authenticated without having to log in again, while still limiting the potential damage of a stolen access token.
+
     Refresh tokens usually have a longer expiration time than access tokens, and they can be revoked by the server if needed, for example, in case of a logout.
 
     Here is how you can implement a token refresh strategy:
@@ -631,20 +636,23 @@
 
     `Use the Refresh Token:` On the client side, when you receive a 401 Unauthorized response, it means the access token has expired. In this case, send a request to the refresh endpoint with the refresh token to get a new access token. Replace the old access token with the new one in your client's storage.
 
-     **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Back to Top](#table-of-contents)**
 
 28. ### How does NestJS support authentication and authorization?
-     Nest supports authentication and authorization through various ways:
-     1. `Passport.js Integration:` NestJS integrates smoothly with Passport.js, a popular authentication middleware for Node.js. Passport supports a variety of authentication strategies, such as OAuth, JWT, and local (username and password).
-    
-     2. `JWT Module:` NestJS provides a JWT module (@nestjs/jwt) for generating and validating JSON Web Tokens, which are commonly used for stateless, server-side authentication.
 
-     3. `Guards:` In NestJS, guards are classes that control whether a given request is allowed to proceed to the route handler. They're often used to implement authorization checks.
+    Nest supports authentication and authorization through various ways:
 
-     4. `Decorators:` Custom decorators can be used to provide metadata about routes, such as required roles for accessing a route.
+    1. `Passport.js Integration:` NestJS integrates smoothly with Passport.js, a popular authentication middleware for Node.js. Passport supports a variety of authentication strategies, such as OAuth, JWT, and local (username and password).
 
-     5. `Interceptors:` Interceptors can be used to bind user data to the request based on the provided token.
-     ```javascript
+    2. `JWT Module:` NestJS provides a JWT module (@nestjs/jwt) for generating and validating JSON Web Tokens, which are commonly used for stateless, server-side authentication.
+
+    3. `Guards:` In NestJS, guards are classes that control whether a given request is allowed to proceed to the route handler. They're often used to implement authorization checks.
+
+    4. `Decorators:` Custom decorators can be used to provide metadata about routes, such as required roles for accessing a route.
+
+    5. `Interceptors:` Interceptors can be used to bind user data to the request based on the provided token.
+
+    ```javascript
       import { Controller, UseGuards, Post, Request } from '@nestjs/common';
       import { AuthService } from './auth/auth.service';
       import { LocalAuthGuard } from './auth/local-auth.guard';
@@ -659,71 +667,76 @@
           return this.authService.login(req.user);
         }
       }
-     ```
-     In this example, the LocalAuthGuard is a custom guard that uses Passport's local strategy to validate the user's username and password. The login() method then generates a JWT for the authenticated user using the AuthService.
+    ```
 
-      **[⬆ Back to Top](#table-of-contents)**
+    In this example, the LocalAuthGuard is a custom guard that uses Passport's local strategy to validate the user's username and password. The login() method then generates a JWT for the authenticated user using the AuthService.
+
+    **[⬆ Back to Top](#table-of-contents)**
 
 29. ### What is the difference between Provider and Services in Nestjs, can we have a provider without an injectable decorator, Give examples?
-     A `provider` is a more general concept, while a `service` is a specific type of provider. Providers are a fundamental concept in NestJS system of dependency injection. They can be used to inject not only services, but also values, factories, and more.
 
-     A `service` is a class annotated with `@Injectable()` decorator, typically used to handle complex business logic or to provide access to shared data. Here's an example:
+    A `provider` is a more general concept, while a `service` is a specific type of provider. Providers are a fundamental concept in NestJS system of dependency injection. They can be used to inject not only services, but also values, factories, and more.
 
-      ```javascript
+    A `service` is a class annotated with `@Injectable()` decorator, typically used to handle complex business logic or to provide access to shared data. Here's an example:
 
-       import { Injectable } from '@nestjs/common';
+    ```javascript
+    import { Injectable } from "@nestjs/common";
 
-        @Injectable()
-        export class CatsService {
-          // ...
-        }
+    @Injectable()
+    export class CatsService {
+      // ...
+    }
+    ```
 
-      ```
-      However, a provider doesn't necessarily need to be a service. It can be any value that should be available for injection. For example, you can provide a simple string:
+    However, a provider doesn't necessarily need to be a service. It can be any value that should be available for injection. For example, you can provide a simple string:
 
-      ```javascript
+    ```javascript
 
         {
           provide: 'HelloMessage',
           useValue: 'Hello, World!',
         }
 
-      ```
-      In this case, `HelloMessage` is a token that can be used to inject the string `Hello, World!`.
+    ```
 
-      While services are typically decorated with `@Injectable()`, other types of providers don't need this decorator. The `@Injectable()` decorator is needed when a class has its own dependencies that need to be injected. If the provider doesn't have any dependencies, like in the string example above, you don't need @Injectable().
+    In this case, `HelloMessage` is a token that can be used to inject the string `Hello, World!`.
 
-      **[⬆ Back to Top](#table-of-contents)**
+    While services are typically decorated with `@Injectable()`, other types of providers don't need this decorator. The `@Injectable()` decorator is needed when a class has its own dependencies that need to be injected. If the provider doesn't have any dependencies, like in the string example above, you don't need @Injectable().
+
+    **[⬆ Back to Top](#table-of-contents)**
 
 30. ### What are custom providers and how do they differ from standard Providers in Nest.js?
-       A `provider` is something that can be injected into a class via the class's constructor. A provider can be a value, a class, a factory function, or an async factory function.
 
-       A standard provider in NestJS is typically a class decorated with `@Injectable().` This class can have dependencies, which are injected through the constructor. Here's an example:
+    A `provider` is something that can be injected into a class via the class's constructor. A provider can be a value, a class, a factory function, or an async factory function.
 
-       ```javascript
-          import { Injectable } from '@nestjs/common';
+    A standard provider in NestJS is typically a class decorated with `@Injectable().` This class can have dependencies, which are injected through the constructor. Here's an example:
 
-          @Injectable()
-          export class CatsService {
-            constructor(private readonly catsRepository: CatsRepository) {}
-          }
-       ```
-       In this case, `CatsService` is a standard provider that can be injected into other classes, and it has a dependency on `CatsRepository.` But not all providers are services.
-       
-       `A custom provider` is a more flexible way to provide values for injection,it can also be a simple value or a factory function. And these types of providers don't need the `@Injectable()` decorator. For example, you can have a provider that always provides the number 42:
+    ```javascript
+       import { Injectable } from '@nestjs/common';
 
-       ```javascript
+       @Injectable()
+       export class CatsService {
+         constructor(private readonly catsRepository: CatsRepository) {}
+       }
+    ```
 
-        {
-          provide: 'MagicNumber',
-          useValue: 42,
-        }
+    In this case, `CatsService` is a standard provider that can be injected into other classes, and it has a dependency on `CatsRepository.` But not all providers are services.
 
-       ```
+    `A custom provider` is a more flexible way to provide values for injection,it can also be a simple value or a factory function. And these types of providers don't need the `@Injectable()` decorator. For example, you can have a provider that always provides the number 42:
 
-       In this case, `MagicNumber` is a token that you can use to get the number `42`.
+    ```javascript
 
-       `Custom providers` are a way to create providers that aren't just services. They can be values, factory functions, or async factory functions. They give you more flexibility in how you create the things that your app needs.
+     {
+       provide: 'MagicNumber',
+       useValue: 42,
+     }
 
-       **[⬆ Back to Top](#table-of-contents)**
+    ```
 
+    In this case, `MagicNumber` is a token that you can use to get the number `42`.
+
+    `Custom providers` are a way to create providers that aren't just services. They can be values, factory functions, or async factory functions. They give you more flexibility in how you create the things that your app needs.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+31. ### How can you generate API documentation using Swagger in NestJS? Discuss the importance of documenting your API and how it benefits developers.
