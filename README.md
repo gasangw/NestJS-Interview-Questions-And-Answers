@@ -48,8 +48,8 @@
 
 | 29  | [How does NestJS support authentication and authorization?](#how-does-nestjs-support-authentication-and-authorization)                                                                                                         |
 | 29  | [What is the difference between Provider and Services in Nestjs, can we have a provider without an injectable decorator, Give examples?](#what-is-the-difference-between-provider-and-services-in-nestjs-can-we-have-a-provider-without-an-injectable-decorator-give-examples.)                                                                                                         |
-| 30  | [What is the difference between Provider and Services in Nestjs, can we have a provider without an injectable decorator, Give examples?](#what-is-the-difference-between-provider-and-services-in-nestjs-can-we-have-a-provider-without-an-injectable-decorator-give-examples.)                                                                                                         |
-
+| 30  | [What are custom providers and how do they differ from standard Providers in Nest.js?](#what-are-custom-providers-and-how-do-they-differ-from-standard-providers-in-nestjs)                                                                                                         |
+| 31  | [What are custom providers and how do they differ from standard Providers in Nest.js?](#what-are-custom-providers-and-how-do-they-differ-from-standard-providers-in-nestjs)                                                                                                         |
 
 ### Answers
 
@@ -694,3 +694,8 @@
       While services are typically decorated with `@Injectable()`, other types of providers don't need this decorator. The `@Injectable()` decorator is needed when a class has its own dependencies that need to be injected. If the provider doesn't have any dependencies, like in the string example above, you don't need @Injectable().
 
       **[⬆ Back to Top](#table-of-contents)**
+
+30. ### What are custom providers and how do they differ from standard Providers in Nest.js?
+       A `provider` is something that can be injected into a class via the class's constructor. A provider can be a value, a class, a factory function, or an async factory function.
+
+       A standard provider in NestJS is typically a class decorated with @Injectable(). This class can have dependencies, which are injected through the constructor. Here's an example:
