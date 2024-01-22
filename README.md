@@ -47,6 +47,9 @@
 | 28  | [How does NestJS support authentication and authorization?](#how-does-nestjs-support-authentication-and-authorization)                                                                                                         |
 
 | 29  | [How does NestJS support authentication and authorization?](#how-does-nestjs-support-authentication-and-authorization)                                                                                                         |
+| 29  | [What is the difference between Provider and Services in Nestjs, can we have a provider without an injectable decorator, Give examples?](#what-is-the-difference-between-provider-and-services-in-nestjs-can-we-have-a-provider-without-an-injectable-decorator-give-examples.)                                                                                                         |
+| 30  | [What is the difference between Provider and Services in Nestjs, can we have a provider without an injectable decorator, Give examples?](#what-is-the-difference-between-provider-and-services-in-nestjs-can-we-have-a-provider-without-an-injectable-decorator-give-examples.)                                                                                                         |
+
 
 ### Answers
 
@@ -659,4 +662,6 @@
      ```
      In this example, the LocalAuthGuard is a custom guard that uses Passport's local strategy to validate the user's username and password. The login() method then generates a JWT for the authenticated user using the AuthService.
 
-29. ### 
+      **[⬆ Back to Top](#table-of-contents)**
+
+29. ### What is the difference between Provider and Services in Nestjs, can we have a provider without an injectable decorator, Give examples.
