@@ -806,10 +806,26 @@
       username: string;
     }
     ```
+
     The `@ApiProperty` is used to indicate that `id` and `name` are properties of the `CreateUserDto`
 
-    `@ApiOperation():` This decorator is used within controller methods to provide metadata for operations (API endpoints). This metadata is used to generate the Swagger documentation for the operation.  It allows developers to provide additional information such as operation summary, description, and custom tags, enhancing the generated Swagger documentation.
+    `@ApiOperation():` This decorator is used within controller methods to provide metadata for operations (API endpoints). This metadata is used to generate the Swagger documentation for the operation. It allows developers to provide additional information such as operation summary, description, and custom tags, enhancing the generated Swagger documentation.
 
     Below is an example:
 
-    
+    ```javascript
+    import { ApiOperation } from "@nestjs/swagger";
+
+    @Controller("users")
+    export class UsersController {
+      @Post()
+      @ApiOperation({ summary: "Create user" })
+      create(@Body() createUserDto: CreateUserDto) {
+        // ...
+      }
+    }
+    ```
+
+    `@ApiOperation()` is used to provide a summary for the create operation. This summary will be displayed in the Swagger UI.
+
+    There are more decorators that are used to display error messages to the user such as `@ApiNotFoundResponse`,`@ApiBadRequestResponse`, `@ApiInternalServerErrorResponse` and many more. While decorators that display success messages include ` @ApiOkResponse`, `@ApiCreatedResponse` etc.
