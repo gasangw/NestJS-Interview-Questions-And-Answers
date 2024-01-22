@@ -631,4 +631,14 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 28. ### How does NestJS support authentication and authorization?
-    Authorization is the process of determining what permissions an authenticated user has for a specific resource. It involves checking the rights or privileges of a user to perform an action.
+     Nest supports authentication and authorization through various ways:
+     1. `Passport.js Integration:` NestJS integrates smoothly with Passport.js, a popular authentication middleware for Node.js. Passport supports a variety of authentication strategies, such as OAuth, JWT, and local (username and password).
+    
+     2. `JWT Module:` NestJS provides a JWT module (@nestjs/jwt) for generating and validating JSON Web Tokens, which are commonly used for stateless, server-side authentication.
+
+     3. `Guards:` In NestJS, guards are classes that control whether a given request is allowed to proceed to the route handler. They're often used to implement authorization checks.
+
+     4. `Decorators:` Custom decorators can be used to provide metadata about routes, such as required roles for accessing a route.
+
+     5. `Interceptors:` Interceptors can be used to bind user data to the request based on the provided token.
+        
