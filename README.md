@@ -44,7 +44,7 @@
 | 25  | [Discuss how tokens are used for authorization in an API. What is the difference between authentication and authorization, and how are these processes implemented with tokens?](#discuss-how-tokens-are-used-for-authorization-in-an-api-what-is-the-difference-between-authentication-and-authorization-and-how-are-these-processes-implemented-with-tokens)   |
 | 26  | [Why is it important for tokens to have an expiration time? How can you implement token expiration in NestJS, and what role do refresh tokens play in maintaining user sessions?](#why-is-it-important-for-tokens-to-have-an-expiration-time-How-can-you-implement-token-expiration-in-nestjs-and-what-role-do-refresh-tokens-play-in-maintaining-user-sessions) |
 | 27  | [Describe the mechanism for a token refresh in NestJS. How can you implement an automatic token refresh strategy to maintain user sessions?](#describe-the-mechanism-for-a-token-refresh-in-nestjs-how-can-you-implement-an-automatic-token-refresh-strategy-to-maintain-user-sessions)                                                                          |
-| 28  | [How does NestJS support authentication and authorization?](#how-does-nestjs-support-authentication-and-authorization)                                                                                                                                            |
+| 28  | [How does NestJS support authentication and authorization?](#how-does-nestjs-support-authentication-and-authorization) |
 
 | 29 | [How does NestJS support authentication and authorization?](#how-does-nestjs-support-authentication-and-authorization) |
 
