@@ -45,6 +45,7 @@
 | 26  | [Why is it important for tokens to have an expiration time? How can you implement token expiration in NestJS, and what role do refresh tokens play in maintaining user sessions?](#why-is-it-important-for-tokens-to-have-an-expiration-time-How-can-you-implement-token-expiration-in-nestjs-and-what-role-do-refresh-tokens-play-in-maintaining-user-sessions) |
 | 27  | [Describe the mechanism for a token refresh in NestJS. How can you implement an automatic token refresh strategy to maintain user sessions?](#describe-the-mechanism-for-a-token-refresh-in-nestjs-how-can-you-implement-an-automatic-token-refresh-strategy-to-maintain-user-sessions)                                                                          |
 | 28  | [How does NestJS support authentication and authorization?](#how-does-nestjs-support-authentication-and-authorization) |
+| 28  | [How does NestJS support authentication and authorization?](#how-does-nestjs-support-authentication-and-authorization) |
 
 | 29 | [How does NestJS support authentication and authorization?](#how-does-nestjs-support-authentication-and-authorization) |
 | 30 | [What is the difference between Provider and Services in Nestjs, can we have a provider without an injectable decorator, Give examples?](#what-is-the-difference-between-provider-and-services-in-nestjs-can-we-have-a-provider-without-an-injectable-decorator-give-examples.) |
