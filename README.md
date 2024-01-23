@@ -50,7 +50,9 @@
 | 31  | [How can you generate API documentation using Swagger in NestJS? Discuss the importance of documenting your API and how it benefits developers?](#how-can-you-generate-api-documentation-using-swagger-in-nestjs-discuss-the-importance-of-documenting-your-api-and-how-it-benefits-developers)                                                                  |
 | 32  | [Explain the purpose of the @nestjs/swagger ApiProperty(), ApiOperation() decorators?](#explain-the-purpose-of-the-nestjs-swagger-apiproperty-apioperation-decorators)                                                                                                                                                                                           |
 | 33  | [Explain the purpose of the Dockerfile in a NestJS application, and how it facilitates containerization?](#explain-the-purpose-of-the-dockerfile-in-a-nestjs-application-and-how-it-facilitates-containerization)                                                                                                                                                |
-| 34  | [How can you use Docker Compose with NestJS, and what is its role in a multi-container setup?](#how-can-you-use-docker-compose-with-nestjs-and-what-is-its-role-in-a-multi-container-setup)  
+
+| 34  | [How can you use Docker Compose with NestJS, and what is its role in a multi-container setup?](#how-can-you-use-docker-compose-with-nestjs-and-what-is-its-role-in-a-multi-container-setup)  |
+
 | 35  | [What is the purpose of the @nestjs/passport package, and how does it facilitate authentication in NestJS?](what-is-the-purpose-of-the-nestjs-passport-package-and-how-does-it-facilitate-authentication-in-nestjs)                                                                                          |
 
 ### Answers
