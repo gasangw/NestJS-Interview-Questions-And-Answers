@@ -54,9 +54,7 @@
 |     |
 | 35  | [What is the purpose of the @nestjs/passport package, and how does it facilitate authentication in NestJS?](#what-is-the-purpose-of-the-nestjs-passport-package-and-how-does-it-facilitate-authentication-in-nestjs)                                                                                                                                             |
 |     |
-| 35  | [What is the purpose of the @nestjs/passport package, and how does it facilitate authentication in NestJS?](#what-is-the-purpose-of-the-nestjs-passport-package-and-how-does-it-facilitate-authentication-in-nestjs)                                                                                                                                             |
-
-| 36 | [How can you handle file uploads in NestJS, and what is the role of the Multer library?](#how-can-you-handle-file-uploads-in-nestjs-and-what-is-the-role-of-the-multer-library)
+| 36  | [How can you handle file uploads in NestJS, and what is the role of the Multer library?](#how-can-you-handle-file-uploads-in-nestjs-and-what-is-the-role-of-the-multer-library)                                                                                                                                                                                  |
 
 ### Answers
 
