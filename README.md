@@ -884,3 +884,5 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 34. ### How can you use Docker Compose with NestJS, and what is its role in a multi-container setup?
+     `Docker Compose` Docker Compose is a tool for defining and running multi-container applications. Compose simplifies the control of your entire application stack, making it easy to manage services, networks, and volumes in a single, comprehensible YAML configuration file. Then, with a single command, you create and start all the services from your configuration file.
+     
