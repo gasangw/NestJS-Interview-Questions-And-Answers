@@ -917,3 +917,4 @@
     The benefit of using Docker Compose is that it simplifies the management of multi-container applications. You can start, stop, and rebuild services with a single command, and it ensures that your application's services are started in the correct order.
 
 35. ### What is the purpose of the @nestjs/passport package, and how does it facilitate authentication in NestJS?
+    The main purpose of @nestjs/passport is to facilitate authentication in a NestJS application. It does this by providing a way to implement different authentication strategies (like local, JWT, OAuth, etc.) in a consistent and modular way
