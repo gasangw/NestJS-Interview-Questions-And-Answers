@@ -44,13 +44,13 @@
 | 25  | [Discuss how tokens are used for authorization in an API. What is the difference between authentication and authorization, and how are these processes implemented with tokens?](#discuss-how-tokens-are-used-for-authorization-in-an-api-what-is-the-difference-between-authentication-and-authorization-and-how-are-these-processes-implemented-with-tokens)   |
 | 26  | [Why is it important for tokens to have an expiration time? How can you implement token expiration in NestJS, and what role do refresh tokens play in maintaining user sessions?](#why-is-it-important-for-tokens-to-have-an-expiration-time-How-can-you-implement-token-expiration-in-nestjs-and-what-role-do-refresh-tokens-play-in-maintaining-user-sessions) |
 | 27  | [Describe the mechanism for a token refresh in NestJS. How can you implement an automatic token refresh strategy to maintain user sessions?](#describe-the-mechanism-for-a-token-refresh-in-nestjs-how-can-you-implement-an-automatic-token-refresh-strategy-to-maintain-user-sessions)                                                                          |
-| 28  | [How does NestJS support authentication and authorization?](#how-does-nestjs-support-authentication-and-authorization) |
-| 29 | [What is the difference between Provider and Services in Nestjs, can we have a provider without an injectable decorator, Give examples?](#what-is-the-difference-between-provider-and-services-in-nestjs-can-we-have-a-provider-without-an-injectable-decorator-give-examples.) |
-| 30 | [What are custom providers and how do they differ from standard Providers in Nest.js?](#what-are-custom-providers-and-how-do-they-differ-from-standard-providers-in-nestjs) |
-| 31 | [How can you generate API documentation using Swagger in NestJS? Discuss the importance of documenting your API and how it benefits developers?](#how-can-you-generate-api-documentation-using-swagger-in-nestjs-discuss-the-importance-of-documenting-your-api-and-how-it-benefits-developers) |
-| 32 | [Explain the purpose of the @nestjs/swagger ApiProperty(), ApiOperation() decorators?](#explain-the-purpose-of-the-nestjs-swagger-apiproperty-apioperation-decorators) |
-| 33 | [Explain the purpose of the Dockerfile in a NestJS application, and how it facilitates containerization?](#explain-the-purpose-of-the-dockerfile-in-a-nestjs-application-and-how-it-facilitates-containerization) |
-| 34 | [How can you use Docker Compose with NestJS, and what is its role in a multi-container setup?](#how-can-you-use-docker-compose-with-nestjs-and-what-is-its-role-in-a-multi-container-setup) |
+| 28  | [How does NestJS support authentication and authorization?](#how-does-nestjs-support-authentication-and-authorization)                                                                                                                                                                                                                                           |
+| 29  | [What is the difference between Provider and Services in Nestjs, can we have a provider without an injectable decorator, Give examples?](#what-is-the-difference-between-provider-and-services-in-nestjs-can-we-have-a-provider-without-an-injectable-decorator-give-examples.)                                                                                  |
+| 30  | [What are custom providers and how do they differ from standard Providers in Nest.js?](#what-are-custom-providers-and-how-do-they-differ-from-standard-providers-in-nestjs)                                                                                                                                                                                      |
+| 31  | [How can you generate API documentation using Swagger in NestJS? Discuss the importance of documenting your API and how it benefits developers?](#how-can-you-generate-api-documentation-using-swagger-in-nestjs-discuss-the-importance-of-documenting-your-api-and-how-it-benefits-developers)                                                                  |
+| 32  | [Explain the purpose of the @nestjs/swagger ApiProperty(), ApiOperation() decorators?](#explain-the-purpose-of-the-nestjs-swagger-apiproperty-apioperation-decorators)                                                                                                                                                                                           |
+| 33  | [Explain the purpose of the Dockerfile in a NestJS application, and how it facilitates containerization?](#explain-the-purpose-of-the-dockerfile-in-a-nestjs-application-and-how-it-facilitates-containerization)                                                                                                                                                |
+| 34  | [How can you use Docker Compose with NestJS, and what is its role in a multi-container setup?](#how-can-you-use-docker-compose-with-nestjs-and-what-is-its-role-in-a-multi-container-setup)                                                                                                                                                                      |
 
 ### Answers
 
@@ -829,8 +829,8 @@
     `@ApiOperation()` is used to provide a summary for the create operation. This summary will be displayed in the Swagger UI.
 
     There are more decorators that are used to display error messages to the user such as `@ApiNotFoundResponse`,`@ApiBadRequestResponse`, `@ApiInternalServerErrorResponse` and many more. While decorators that display success messages include ` @ApiOkResponse`, `@ApiCreatedResponse` etc.
- 
-     **[⬆ Back to Top](#table-of-contents)**
+
+    **[⬆ Back to Top](#table-of-contents)**
 
 33. ### Explain the purpose of the Dockerfile in a NestJS application, and how it facilitates containerization?
 
@@ -881,8 +881,38 @@
 
     _Note_: The benefit of this is that it encloses the application and its environment into a single runnable entity `(a container)`. This ensures that the application runs the same way, regardless of where it's deployed, providing consistency and reliability across different deployment environments.
 
-     **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Back to Top](#table-of-contents)**
 
 34. ### How can you use Docker Compose with NestJS, and what is its role in a multi-container setup?
-     `Docker Compose` Docker Compose is a tool for defining and running multi-container applications. Compose simplifies the control of your entire application stack, making it easy to manage services, networks, and volumes in a single, comprehensible YAML configuration file. Then, with a single command, you create and start all the services from your configuration file.
-     
+
+    `Docker Compose` Docker Compose is a tool for defining and running multi-container applications. Compose simplifies the control of your entire application stack, making it easy to manage services, networks, and volumes in a single, comprehensible YAML configuration file. Then, with a single command, you create and start all the services from your configuration file.
+
+    Here's a basic example of a `docker-compose.yml` file for a NestJS application with a PostgreSQL database:
+
+    ```javascript
+      version: '3'
+       services:
+         app:
+           build: .
+           ports:
+             - 3000:3000
+           depends_on:
+             - db
+         db:
+           image: postgres:13-alpine
+           environment:
+             POSTGRES_USER: user
+             POSTGRES_PASSWORD: password
+             POSTGRES_DB: dbname
+    ```
+    In this example, there are two services: `app` and `db`. The app service is built using the Dockerfile in the current directory, and it exposes port 3000. The db service uses the `postgres:13-alpine` image and sets some environment variables to configure the database.
+
+    The depends_on option is used to express dependency between services, which has two effects:
+
+    `db` will be started before `app`.
+    Docker Compose will wait until db is "ready" before starting app.
+    To start the application with Docker Compose, you would use the command `docker-compose up`.
+
+    The benefit of using Docker Compose is that it simplifies the management of multi-container applications. You can start, stop, and rebuild services with a single command, and it ensures that your application's services are started in the correct order.
+
+35. ### 
