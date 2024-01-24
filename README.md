@@ -953,7 +953,8 @@
      `Sequelize:` Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite, and Microsoft SQL Server. It supports the standard CRUD operations, transactions, migrations, and more.
 
      `Prisma:` Prisma is an open-source database toolkit. It replaces traditional ORMs and can be used to build GraphQL servers, REST APIs, microservices & more.
-
+ 
+     On how each of these libraries is integrated in nestjs you can vist the [Nest documentation](https://docs.nestjs.com/techniques/database)
     
 38. ### What is Circular dependency (dependency cycle) in Nestjs, and how can they be fixed? 
      **[⬆ Back to Top](#table-of-contents)**
