@@ -980,8 +980,20 @@
 
        ```
 
+       Now let's do the same with CommonService
 
-       2.`ModuleRef class` 
-       To retrieve a provider instance from the DI container as another.
+       ```javascript
+       import { forwardRef } from '@nestjs/common'
+
+       @Injectable()
+        export class CommonService {
+          constructor(
+            @Inject(forwardRef(() => CatsService))
+            private catsService: CatsService,
+          ) {}
+        }
+       ```
+
+       2.`ModuleRef class`: An alternative to using `forwardRef()`. for an example you can refactor the above examples and use the `ModuleRef`  class to retrieve a provider on one side of the (otherwise) circular relationship. 
 
     **[⬆ Back to Top](#table-of-contents)**
