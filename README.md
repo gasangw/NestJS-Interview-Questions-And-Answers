@@ -53,7 +53,7 @@
 | 34  | [How can you use Docker Compose with NestJS, and what is its role in a multi-container setup?](#how-can-you-use-docker-compose-with-nestjs-and-what-is-its-role-in-a-multi-container-setup)                                                                                                                                                                      |
 | 35  | [What is the purpose of the @nestjs/passport package, and how does it facilitate authentication in NestJS?](#what-is-the-purpose-of-the-nestjs-passport-package-and-how-does-it-facilitate-authentication-in-nestjs)                                                                                                                                             |
 | 36  | [How can you handle file uploads in NestJS, and what is the role of the Multer library?](#how-can-you-handle-file-uploads-in-nestjs-and-what-is-the-role-of-the-multer-library)                                                                                                                                                                                  |
-| 36  | [How does NestJS handle database interactions, and what are the supported databases?](#how-does-nestjs-handle-database-interactions-and-what-are-the-supported-databases)                                                                                                                                                                                  |
+| 36  | [How does NestJS handle database interactions, and what are the supported databases?](#how-does-nestjs-handle-database-interactions-and-what-are-the-supported-databases)                                                                                                                                                                                        |
 
 ### Answers
 
@@ -846,24 +846,24 @@
     Here is an example of a Dockerfile for Nest application:
 
     ```javascript
-        // Start from a base image
-        FROM node:14-alpine // or node:latest to use the latest version of node
+       // Start from a base image
+       FROM node:14-alpine // or node:latest to use the latest version of node
 
-        // Set the working directory
-        WORKDIR /usr/src/app
+       // Set the working directory
+       WORKDIR /usr/src/app
 
-        //Install dependencies
-        COPY package*.json ./
-        RUN npm install
+       //Install dependencies
+       COPY package*.json ./
+       RUN npm install
 
-        // Copy source code
-        COPY . .
+       // Copy source code
+       COPY . .
 
-        // Expose the application on port 3000
-        EXPOSE 3000
+       // Expose the application on port 3000
+       EXPOSE 3000
 
-        // Start the application
-        CMD ["npm", "run", "start"]
+       // Start the application
+       CMD ["npm", "run", "start"]
     ```
 
     This Dockerfile does the following:
@@ -893,20 +893,20 @@
     Here's a basic example of a `docker-compose.yml` file for a NestJS application with a PostgreSQL database:
 
     ```javascript
-      version: '3'
-       services:
-         app:
-           build: .
-           ports:
-             - 3000:3000
-           depends_on:
-             - db
-         db:
-           image: postgres:13-alpine
-           environment:
-             POSTGRES_USER: user
-             POSTGRES_PASSWORD: password
-             POSTGRES_DB: dbname
+     version: '3'
+      services:
+        app:
+          build: .
+          ports:
+            - 3000:3000
+          depends_on:
+            - db
+        db:
+          image: postgres:13-alpine
+          environment:
+            POSTGRES_USER: user
+            POSTGRES_PASSWORD: password
+            POSTGRES_DB: dbname
     ```
 
     In this example, there are two services: `app` and `db`. The app service is built using the Dockerfile in the current directory, and it exposes port 3000. The db service uses the `postgres:13-alpine` image and sets some environment variables to configure the database.
@@ -923,38 +923,41 @@
 
 35. ### What is the purpose of the @nestjs/passport package, and how does it facilitate authentication in NestJS?
 
-     `@nestjs/passport` is a popular node.js authentication library. The main purpose is to facilitate authentication in a NestJS application. It does this by providing a way to implement different authentication strategies (like local, JWT, OAuth, etc.) in a consistent and modular way. It provides a set of tools that make it easier to implement authentication in a NestJS application using Passport.js.
+    `@nestjs/passport` is a popular node.js authentication library. The main purpose is to facilitate authentication in a NestJS application. It does this by providing a way to implement different authentication strategies (like local, JWT, OAuth, etc.) in a consistent and modular way. It provides a set of tools that make it easier to implement authentication in a NestJS application using Passport.js.
 
-     Here is a basic example of how you might use `@nestjs/passport`
+    Here is a basic example of how you might use `@nestjs/passport`
 
-     ```javascript
-     import { Injectable } from "@nestjs/common";
-     import { AuthGuard } from "@nestjs/passport";
+    ```javascript
+    import { Injectable } from "@nestjs/common";
+    import { AuthGuard } from "@nestjs/passport";
 
-     @Injectable()
-     export class JwtAuthGuard extends AuthGuard("jwt") {}
-     ```
+    @Injectable()
+    export class JwtAuthGuard extends AuthGuard("jwt") {}
+    ```
 
     **[⬆ Back to Top](#table-of-contents)**
 
 36. ### How can you handle file uploads in NestJS, and what is the role of the Multer library?
 
-     File uploads in NestJS can be handled using the `multer library`, which is a middleware for handling `multipart/form-data`. By using the `@UseInterceptors()` decorator with FileInterceptor or FilesInterceptor, you can handle single or multiple file uploads in your application.
+    File uploads in NestJS can be handled using the `multer library`, which is a middleware for handling `multipart/form-data`. By using the `@UseInterceptors()` decorator with FileInterceptor or FilesInterceptor, you can handle single or multiple file uploads in your application.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 37. ### How does NestJS handle database interactions, and what are the supported databases?
-     NestJS doesn't directly handle database interactions. Instead, it provides integration with several libraries that do, allowing you to choose the one that best fits your needs. Here are some of the most commonly used ones:
 
-     `TypeORM:` This is an Object-Relational Mapping (ORM) library that can be used with a wide variety of databases, including MySQL, PostgreSQL, MongoDB, SQLite, and more. It provides a high-level API for managing database records as JavaScript objects.
+    NestJS doesn't directly handle database interactions. Instead, it provides integration with several libraries that do, allowing you to choose the one that best fits your needs. Here are some of the most commonly used ones:
 
-     `Mongoose:` If you're working with MongoDB, Mongoose is a great choice. It provides a straight-forward, schema-based solution to model your application data and includes built-in type casting, validation, query building, and business logic hooks.
+    `TypeORM:` This is an Object-Relational Mapping (ORM) library that can be used with a wide variety of databases, including MySQL, PostgreSQL, MongoDB, SQLite, and more. It provides a high-level API for managing database records as JavaScript objects.
 
-     `Sequelize:` Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite, and Microsoft SQL Server. It supports the standard CRUD operations, transactions, migrations, and more.
+    `Mongoose:` If you're working with MongoDB, Mongoose is a great choice. It provides a straight-forward, schema-based solution to model your application data and includes built-in type casting, validation, query building, and business logic hooks.
 
-     `Prisma:` Prisma is an open-source database toolkit. It replaces traditional ORMs and can be used to build GraphQL servers, REST APIs, microservices & more.
- 
-     On how each of these libraries is integrated in nestjs you can vist the [Nest documentation](https://docs.nestjs.com/techniques/database)
-    
-38. ### What is Circular dependency (dependency cycle) in Nestjs, and how can they be fixed? 
-     **[⬆ Back to Top](#table-of-contents)**
+    `Sequelize:` Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite, and Microsoft SQL Server. It supports the standard CRUD operations, transactions, migrations, and more.
+
+    `Prisma:` Prisma is an open-source database toolkit. It replaces traditional ORMs and can be used to build GraphQL servers, REST APIs, microservices & more.
+
+    On how each of these libraries is integrated in nestjs you can vist the [Nest documentation](https://docs.nestjs.com/techniques/database)
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+38. ### What is Circular dependency (dependency cycle) in Nestjs, and how can they be fixed?
+    **[⬆ Back to Top](#table-of-contents)**
