@@ -57,6 +57,7 @@
 | 38  | [What is Circular dependency (dependency cycle) in Nestjs, and how can they be fixed?](#what-is-circular-dependency-dependency-cycle-in-nestjs-and-how-can-they-be-fixed)                                                                                                                                                                                        |
 | 39  | [How can you handle errors in NestJS?](#how-can-you-handle-errors-in-nestjs)                                                                                                                                                                                                                                                                                     |
 | 40  | [How does NestJS handle CORS (Cross-Origin Resource Sharing)?](#how-does-nestjs-handle-cors-cross-origin-resource-sharing)                                                                                                                                                                                                                                       |
+| 41  | [Explain the purpose of the ExecutionContext in NestJS Middleware?](#explain-the-purpose-of-the-executioncontext-in-nestjs-middleware)                                                                                                                                                                                                                           |
 
 ### Answers
 
@@ -1021,30 +1022,34 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 40. ### How does NestJS handle CORS (Cross-Origin Resource Sharing)?
-     `CORS (Cross-Origin Resource Sharing)` is a mechanism that allows many resources (e.g., fonts, JavaScript, etc.) on a web page to be requested from another domain outside the domain from which the resource originated.
 
-     In the context of web development, an API server runs on a different domain or port from the client-side web application. For security reasons, browsers prohibit web pages from making requests to a different domain than the one the web page came from, unless the server supports CORS.
+    `CORS (Cross-Origin Resource Sharing)` is a mechanism that allows many resources (e.g., fonts, JavaScript, etc.) on a web page to be requested from another domain outside the domain from which the resource originated.
 
-     By enabling CORS on the server, you're allowing the server to respond to cross-origin requests. This means that your server's resources can be accessed from a different domain, protocol, or port than the one your server is hosted on.
+    In the context of web development, an API server runs on a different domain or port from the client-side web application. For security reasons, browsers prohibit web pages from making requests to a different domain than the one the web page came from, unless the server supports CORS.
 
-     NestJS uses the capabilities of the underlying platform (Express or Fastify) to handle `Cross-Origin Resource Sharing (CORS)`.
-     For Express, you can enable CORS globally for all routes in your `main.ts` file like this:
+    By enabling CORS on the server, you're allowing the server to respond to cross-origin requests. This means that your server's resources can be accessed from a different domain, protocol, or port than the one your server is hosted on.
 
-     ```javascript
-        import { NestFactory } from '@nestjs/core';
-        import { AppModule } from './app.module';
+    NestJS uses the capabilities of the underlying platform (Express or Fastify) to handle `Cross-Origin Resource Sharing (CORS)`.
+    For Express, you can enable CORS globally for all routes in your `main.ts` file like this:
 
-        async function bootstrap() {
-          const app = await NestFactory.create(AppModule);
-          app.enableCors({
-              origin: 'http://localhost:3000',
-              methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-              allowedHeaders: 'Content-Type',
-            });
-          await app.listen(3000);
-        }
-          bootstrap();
-     ```
-     In this example, CORS is enabled only for requests from 'http://localhost:3000' and for the specified methods and headers.
+    ```javascript
+    import { NestFactory } from "@nestjs/core";
+    import { AppModule } from "./app.module";
 
-     **[⬆ Back to Top](#table-of-contents)**
+    async function bootstrap() {
+      const app = await NestFactory.create(AppModule);
+      app.enableCors({
+        origin: "http://localhost:3000",
+        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+        allowedHeaders: "Content-Type",
+      });
+      await app.listen(3000);
+    }
+    bootstrap();
+    ```
+
+    In this example, CORS is enabled only for requests from 'http://localhost:3000' and for the specified methods and headers.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+41. ### Explain the purpose of the ExecutionContext in NestJS Middleware?
