@@ -961,4 +961,27 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 38. ### What is Circular dependency (dependency cycle) in Nestjs, and how can they be fixed?
+       A `circular dependency` occurs when two classes depend on each other. For example, `class A` needs `class B`, and `class B` also needs `class A`. Circular dependencies can arise in Nest between modules and between providers.
+
+       Nest enables resolving circular dependencies between providers in two ways. 
+
+       1.`forward referencing`: allows Nest to reference classes which aren't yet defined using the `forwardRef()` utility function. For example, if `CatsService` and `CommonService` depend on each other, both sides of the relationship can use `@Inject()` and the `forwardRef()` utility to resolve the circular dependency. Otherwise Nest won't instantiate them because all of the essential metadata won't be available. Here's an example:
+
+       ```javascript
+         import { forwardRef } from '@nestjs/common'
+
+        @Injectable()
+        export class CatsService {
+          constructor(
+            @Inject(forwardRef(() => CommonService))
+            private commonService: CommonService,
+          ) {}
+        }
+
+       ```
+
+
+       2.`ModuleRef class` 
+       To retrieve a provider instance from the DI container as another.
+
     **[⬆ Back to Top](#table-of-contents)**
