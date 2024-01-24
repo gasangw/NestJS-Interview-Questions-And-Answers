@@ -58,6 +58,7 @@
 | 39  | [How can you handle errors in NestJS?](#how-can-you-handle-errors-in-nestjs)                                                                                                                                                                                                                                                                                     |
 | 40  | [How does NestJS handle CORS (Cross-Origin Resource Sharing)?](#how-does-nestjs-handle-cors-cross-origin-resource-sharing)                                                                                                                                                                                                                                       |
 | 41  | [Explain the purpose of the ExecutionContext in NestJS Middleware?](#explain-the-purpose-of-the-executioncontext-in-nestjs-middleware)                                                                                                                                                                                                                           |
+| 42  | [How can you implement soft deletes in NestJS using TypeORM, and why might soft deletes be preferred over hard deletes?](#how-can-you-implement-soft-deletes-in-nestjs-using-typeorm-and-why-might-soft-deletes-be-preferred-over-hard-deletes)                                                                                                                                                                                                                           |
 
 ### Answers
 
@@ -1054,3 +1055,7 @@
 
 41. ### Explain the purpose of the ExecutionContext in NestJS Middleware?
      `ExecutionContext` can be used to access the `Request` and `Response` objects, or any other details about the current request-response cycle. This can be useful for tasks like logging, validation, transformation, and other operations that need to be performed before the request reaches the route handler.
+
+      **[⬆ Back to Top](#table-of-contents)**
+
+42. ### How can you implement soft deletes in NestJS using TypeORM, and why might soft deletes be preferred over hard deletes?
