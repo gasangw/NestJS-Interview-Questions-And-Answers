@@ -60,142 +60,142 @@
 
 ### Answers
 
-1. ### What is Nestjs?
+1.  ### What is Nestjs?
 
-   Nest(NestJS) is a framework for building efficient, scalable Node.js server side applications. It uses progressive JavaScript and its built with and fully suports Typescript.
+    Nest(NestJS) is a framework for building efficient, scalable Node.js server side applications. It uses progressive JavaScript and its built with and fully suports Typescript.
 
-2. ### Who developed NestJS? Why did they develop NestJS?
+2.  ### Who developed NestJS? Why did they develop NestJS?
 
-   NestJS was developed by Kamil Myśliwiec, who is a Polish software engineer. He developed NestJS to address the lack of a consistent structure in Node.js applications and to bring powerful features of frameworks like Angular to the server-side.
+    NestJS was developed by Kamil Myśliwiec, who is a Polish software engineer. He developed NestJS to address the lack of a consistent structure in Node.js applications and to bring powerful features of frameworks like Angular to the server-side.
 
-3. ### When was NestJS first released?
+3.  ### When was NestJS first released?
 
-   NestJS was first released on October 5, 2016.
+    NestJS was first released on October 5, 2016.
 
-4. ### How can you install NestJS and set up a new project on your machine?
+4.  ### How can you install NestJS and set up a new project on your machine?
 
-   To install NestJS on your machine, you need to have Node.js and npm (Node Package Manager) installed. Once you have those, you can install the NestJS CLI (Command Line Interface) globally on your machine using the following command:
+    To install NestJS on your machine, you need to have Node.js and npm (Node Package Manager) installed. Once you have those, you can install the NestJS CLI (Command Line Interface) globally on your machine using the following command:
 
-   ```javascript
-     $ npm i -g @nestjs/cli
-   ```
+    ```javascript
+      $ npm i -g @nestjs/cli
+    ```
 
-   This command installs the `NestJS CLI` globally, which allows you to use the nest command from anywhere on your machine. With the NestJS CLI, you can create new projects using
+    This command installs the `NestJS CLI` globally, which allows you to use the nest command from anywhere on your machine. With the NestJS CLI, you can create new projects using
 
-   ```javascript
-     $ nest new project-name
-   ```
+    ```javascript
+      $ nest new project-name
+    ```
 
-   and after creating a project you can generate NestJS modules, services, etc.
+    and after creating a project you can generate NestJS modules, services, etc.
 
-   ```javascript
-    $ nest generate module users
-   ```
+    ```javascript
+     $ nest generate module users
+    ```
 
-   running
+    running
 
-   ```javascript
-     $ nest g resource users
-   ```
+    ```javascript
+      $ nest g resource users
+    ```
 
-   will several files that work together to handle CRUD (Create, Read, Update, Delete) operations for a particular entity, in this case, "users". It will generate:
-   A `controller` for handling HTTP requests (e.g., users.controller.ts)
+    will several files that work together to handle CRUD (Create, Read, Update, Delete) operations for a particular entity, in this case, "users". It will generate:
+    A `controller` for handling HTTP requests (e.g., users.controller.ts)
 
-   A `service` for business logic (e.g., users.service.ts)
+    A `service` for business logic (e.g., users.service.ts)
 
-   A `module` to encapsulate the resource (e.g., users.module.ts)
+    A `module` to encapsulate the resource (e.g., users.module.ts)
 
-   If you choose to generate a REST API, it will also generate `DTO` (Data Transfer Object) classes for handling input data (e.g., `create-user.dto.ts, update-user.dto.ts`)
-   If you choose to generate a GraphQL API, it will also generate a resolver (e.g., `users.resolver.ts`)
+    If you choose to generate a REST API, it will also generate `DTO` (Data Transfer Object) classes for handling input data (e.g., `create-user.dto.ts, update-user.dto.ts`)
+    If you choose to generate a GraphQL API, it will also generate a resolver (e.g., `users.resolver.ts`)
 
-5. ### What’s the difference between NestJS and Angular?
+5.  ### What’s the difference between NestJS and Angular?
 
-   Angular is a framework for building client-side applications and It provides a way to organize your frontend code using components, modules, services, etc.
+    Angular is a framework for building client-side applications and It provides a way to organize your frontend code using components, modules, services, etc.
 
-   while NestJS is a framework for building server-side applications. NestJS is built on top of TypeScript and Express, and it aims to provide a more robust and scalable architecture for enterprise-level applications. However It's heavily inspired by Angular and shares similar concepts like modules, decorators, and dependency injection.
+    while NestJS is a framework for building server-side applications. NestJS is built on top of TypeScript and Express, and it aims to provide a more robust and scalable architecture for enterprise-level applications. However It's heavily inspired by Angular and shares similar concepts like modules, decorators, and dependency injection.
 
-6. ### Is it possible to use other languages like C++, Ruby or Python with NestJS? If yes, then how?
+6.  ### Is it possible to use other languages like C++, Ruby or Python with NestJS? If yes, then how?
 
-   Yes, it is possible to use other languages with NestJS. NestJS is language agnostic, meaning that it can work with any language that can compile to JavaScript.
+    Yes, it is possible to use other languages with NestJS. NestJS is language agnostic, meaning that it can work with any language that can compile to JavaScript.
 
-   As for Python, Ruby, or other languages, they can't be used directly with NestJS because NestJS relies on the Node.js runtime, which executes JavaScript. As for Python, Ruby, or other languages, they can't be used directly with NestJS because NestJS relies on the Node.js runtime, which executes JavaScript.
+    As for Python, Ruby, or other languages, they can't be used directly with NestJS because NestJS relies on the Node.js runtime, which executes JavaScript. As for Python, Ruby, or other languages, they can't be used directly with NestJS because NestJS relies on the Node.js runtime, which executes JavaScript.
 
-   However, you can certainly build separate services in Python, Ruby, or any other language, and have them communicate with your NestJS application via HTTP, gRPC, or any other communication protocol. This is a common pattern in microservices architecture.
+    However, you can certainly build separate services in Python, Ruby, or any other language, and have them communicate with your NestJS application via HTTP, gRPC, or any other communication protocol. This is a common pattern in microservices architecture.
 
-7. ### What are the main components of a NestJS application?
+7.  ### What are the main components of a NestJS application?
 
-   The main contents of the nestjs application inlcude:
-   `Modules:` Modules are a way of organizing related components into a single block. They provide a way to structure your application.
+    The main contents of the nestjs application inlcude:
+    `Modules:` Modules are a way of organizing related components into a single block. They provide a way to structure your application.
 
-   `Controllers:` Controllers are responsible for handling incoming `requests` and returning `responses` to the client.Controllers organize routes and handle HTTP requests that come to those routes.
+    `Controllers:` Controllers are responsible for handling incoming `requests` and returning `responses` to the client.Controllers organize routes and handle HTTP requests that come to those routes.
 
-   `Services:` services are responsible for business logic and interacting with data sources. They can be injected into controllers or other services, promoting code reusability and separation of concerns.
+    `Services:` services are responsible for business logic and interacting with data sources. They can be injected into controllers or other services, promoting code reusability and separation of concerns.
 
-8. ### How to declare a class as a controller in Nest.js
+8.  ### How to declare a class as a controller in Nest.js
 
-   In Nest.js we can declare a class as a controller by using the **@Controller()** decorator. Here is a basic example.
+    In Nest.js we can declare a class as a controller by using the **@Controller()** decorator. Here is a basic example.
 
-   ```javascript
-   import { Controller, Get } from "@nestjs/common";
+    ```javascript
+    import { Controller, Get } from "@nestjs/common";
 
-   @Controller("example")
-   class ExampleController {
-     @Get()
-     getHello(): string {
-       return "Hello world!";
-     }
-   }
-   ```
+    @Controller("example")
+    class ExampleController {
+      @Get()
+      getHello(): string {
+        return "Hello world!";
+      }
+    }
+    ```
 
-   In this example the `ExampleController` is a controller class. **@Controller('example')** decorator tells Nest.js that this class is a controller that should handle requests to the `example` route. The **@Get()** decorator on the `getHello` method indicates that this method should handle HTTP GET requests.
+    In this example the `ExampleController` is a controller class. **@Controller('example')** decorator tells Nest.js that this class is a controller that should handle requests to the `example` route. The **@Get()** decorator on the `getHello` method indicates that this method should handle HTTP GET requests.
 
-   **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Back to Top](#table-of-contents)**
 
-9. ### Can you explain how to use decorators in a NestJS controller?
+9.  ### Can you explain how to use decorators in a NestJS controller?
 
-   Decorators in a NestJS controller are used to define routes and to handle different types of HTTP requests. For example, `@Get()`, `@Post()`, `@Put()`, `@Delete()` are used to handle GET, POST, PUT, DELETE requests respectively.
+    Decorators in a NestJS controller are used to define routes and to handle different types of HTTP requests. For example, `@Get()`, `@Post()`, `@Put()`, `@Delete()` are used to handle GET, POST, PUT, DELETE requests respectively.
 
-   ```javascript
-   import {
-     Controller,
-     Get,
-     Param,
-     Body,
-     Post,
-     Patch,
-     Delete,
-   } from "@nestjs/common";
+    ```javascript
+    import {
+      Controller,
+      Get,
+      Param,
+      Body,
+      Post,
+      Patch,
+      Delete,
+    } from "@nestjs/common";
 
-   @Controller("cats")
-   export class CatsController {
-     @Get()
-     findAll(): string {
-       return "This action returns all cats";
-     }
+    @Controller("cats")
+    export class CatsController {
+      @Get()
+      findAll(): string {
+        return "This action returns all cats";
+      }
 
-     @Get(":id")
-     findOne(@Param("id") id: number): string {
-       return `This action returns a cat with the provided id`;
-     }
+      @Get(":id")
+      findOne(@Param("id") id: number): string {
+        return `This action returns a cat with the provided id`;
+      }
 
-     @Post()
-     create(@Body() body: any): string {
-       return `This action returns the body of the cat`;
-     }
+      @Post()
+      create(@Body() body: any): string {
+        return `This action returns the body of the cat`;
+      }
 
-     @Patch("id")
-     update(@Param("id") id: number, @Body() body: any): string {
-       return `This action updates the body of the cat`;
-     }
+      @Patch("id")
+      update(@Param("id") id: number, @Body() body: any): string {
+        return `This action updates the body of the cat`;
+      }
 
-     @Delete("id")
-     remove(@Param("id") id: number): string {
-       return `This action removes a cat`;
-     }
-   }
-   ```
+      @Delete("id")
+      remove(@Param("id") id: number): string {
+        return `This action removes a cat`;
+      }
+    }
+    ```
 
-   **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Back to Top](#table-of-contents)**
 
 10. ### How can you use route parameters in a NestJS controller?
 
@@ -1021,3 +1021,25 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 40. ### How does NestJS handle CORS (Cross-Origin Resource Sharing)?
+
+     NestJS uses the capabilities of the underlying platform (Express or Fastify) to handle `Cross-Origin Resource Sharing (CORS)`.
+     For Express, you can enable CORS globally for all routes in your `main.ts` file like this:
+
+     ```javascript
+        import { NestFactory } from '@nestjs/core';
+        import { AppModule } from './app.module';
+
+        async function bootstrap() {
+          const app = await NestFactory.create(AppModule);
+          app.enableCors({
+              origin: 'http://localhost:3000',
+              methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+              allowedHeaders: 'Content-Type',
+            });
+          await app.listen(3000);
+        }
+          bootstrap();
+     ```
+     In this example, CORS is enabled only for requests from 'http://localhost:3000' and for the specified methods and headers.
+
+     **[⬆ Back to Top](#table-of-contents)**
