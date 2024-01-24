@@ -1053,3 +1053,4 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 41. ### Explain the purpose of the ExecutionContext in NestJS Middleware?
+     `ExecutionContext` can be used to access the `Request` and `Response` objects, or any other details about the current request-response cycle. This can be useful for tasks like logging, validation, transformation, and other operations that need to be performed before the request reaches the route handler.
