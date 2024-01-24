@@ -58,7 +58,7 @@
 | 39  | [How can you handle errors in NestJS?](#how-can-you-handle-errors-in-nestjs)                                                                                                                                                                                                                                                                                     |
 | 40  | [How does NestJS handle CORS (Cross-Origin Resource Sharing)?](#how-does-nestjs-handle-cors-cross-origin-resource-sharing)                                                                                                                                                                                                                                       |
 | 41  | [Explain the purpose of the ExecutionContext in NestJS Middleware?](#explain-the-purpose-of-the-executioncontext-in-nestjs-middleware)                                                                                                                                                                                                                           |
-| 42  | [How can you implement soft deletes in NestJS using TypeORM, and why might soft deletes be preferred over hard deletes?](#how-can-you-implement-soft-deletes-in-nestjs-using-typeorm-and-why-might-soft-deletes-be-preferred-over-hard-deletes)                                                                                                                                                                                                                           |
+| 42  | [How can you implement soft deletes in NestJS using TypeORM, and why might soft deletes be preferred over hard deletes?](#how-can-you-implement-soft-deletes-in-nestjs-using-typeorm-and-why-might-soft-deletes-be-preferred-over-hard-deletes)                                                                                                                  |
 
 ### Answers
 
@@ -1054,8 +1054,36 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 41. ### Explain the purpose of the ExecutionContext in NestJS Middleware?
-     `ExecutionContext` can be used to access the `Request` and `Response` objects, or any other details about the current request-response cycle. This can be useful for tasks like logging, validation, transformation, and other operations that need to be performed before the request reaches the route handler.
 
-      **[⬆ Back to Top](#table-of-contents)**
+    `ExecutionContext` can be used to access the `Request` and `Response` objects, or any other details about the current request-response cycle. This can be useful for tasks like logging, validation, transformation, and other operations that need to be performed before the request reaches the route handler.
+
+    **[⬆ Back to Top](#table-of-contents)**
 
 42. ### How can you implement soft deletes in NestJS using TypeORM, and why might soft deletes be preferred over hard deletes?
+     `Soft deletes` in TypeORM are implemented using the `@DeleteDateColumn` decorator.When you delete an entity that has a @DeleteDateColumn, TypeORM doesn't actually remove it from the database. Instead, it sets the @DeleteDateColumn to the current timestamp. This is known as a "soft delete".
+
+     Here's an example of how you might use `@DeleteDateColumn` in an entity:
+
+     ```javascript
+      import { Entity, PrimaryGeneratedColumn, Column, DeleteDateColumn } from 'typeorm';
+
+        @Entity()
+        export class User {
+          @PrimaryGeneratedColumn()
+          id: number;
+
+          @Column()
+          name: string;
+
+          @DeleteDateColumn()
+          deletedAt?: Date;
+        }
+
+     ```
+     In this example, when you call `userRepository.softDelete(user.id)`, TypeORM will set `deletedAt` to the current timestamp, but the User will remain in the database.
+
+     Soft deletes can be preferred over hard deletes for a few reasons:
+
+     1.`Data recovery:` If a record is accidentally deleted, it can be easily restored.
+     2. `Audit trail:` Soft deletes allow you to keep a history of all records, even ones that are deleted.
+     3. `Relationship integrity:` If other tables reference the deleted record, those relationships won't be broken by a soft delete.
