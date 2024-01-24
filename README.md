@@ -1001,3 +1001,19 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 39. ### How can you handle errors in NestJS?
+     NestJS handles errors using exceptions such as `throw new HttpException()` syntax.
+
+     When an exception is thrown, NestJS will automatically send an appropriate HTTP response with a status code and message.
+
+     ```javascript
+     import { HttpException, HttpStatus } from '@nestjs/common';
+
+     throw new HttpException('Resource not found', HttpStatus.NOT_FOUND);
+     ```
+
+     In the above example, an `HttpException` is thrown with a message of 'Resource not found' and a status code of 404 (Not Found).
+
+     For more complex error handling, you can create custom exceptions by extending the HttpException class.
+     Nestjs has many built-in standard HTTP exceptions that inherit from the base HttpException and one can use: These are exposed from the `@nestjs/common` package, and represent many of the most common HTTP exceptions which includes: `BadRequestException`,`UnauthorizedException`,`NotFoundException`,`ForbiddenException`, `NotAcceptableException`,`ConflictException`,`NotImplementedException` and so on.
+
+
