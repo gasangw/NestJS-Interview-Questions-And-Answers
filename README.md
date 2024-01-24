@@ -56,6 +56,7 @@
 | 37  | [How does NestJS handle database interactions, and what are the supported databases?](#how-does-nestjs-handle-database-interactions-and-what-are-the-supported-databases)                                                                                                                                                                                        |
 | 38  | [What is Circular dependency (dependency cycle) in Nestjs, and how can they be fixed?](#what-is-circular-dependency-dependency-cycle-in-nestjs-and-how-can-they-be-fixed)                                                                                                                                                                                        |
 | 39  | [How can you handle errors in NestJS?](#how-can-you-handle-errors-in-nestjs)                                                                                                                                                                                                                                                                                     |
+| 40  | [How does NestJS handle CORS (Cross-Origin Resource Sharing)?](#how-does-nestjs-handle-cors-cross-origin-resource-sharing)                                                                                                                                                                                                                                       |
 
 ### Answers
 
@@ -1001,19 +1002,22 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 39. ### How can you handle errors in NestJS?
-     NestJS handles errors using exceptions such as `throw new HttpException()` syntax.
 
-     When an exception is thrown, NestJS will automatically send an appropriate HTTP response with a status code and message.
+    NestJS handles errors using exceptions such as `throw new HttpException()` syntax.
 
-     ```javascript
-     import { HttpException, HttpStatus } from '@nestjs/common';
+    When an exception is thrown, NestJS will automatically send an appropriate HTTP response with a status code and message.
 
-     throw new HttpException('Resource not found', HttpStatus.NOT_FOUND);
-     ```
+    ```javascript
+    import { HttpException, HttpStatus } from "@nestjs/common";
 
-     In the above example, an `HttpException` is thrown with a message of 'Resource not found' and a status code of 404 (Not Found).
+    throw new HttpException("Resource not found", HttpStatus.NOT_FOUND);
+    ```
 
-     For more complex error handling, you can create custom exceptions by extending the HttpException class.
-     Nestjs has many built-in standard HTTP exceptions that inherit from the base HttpException and one can use: These are exposed from the `@nestjs/common` package, and represent many of the most common HTTP exceptions which includes: `BadRequestException`,`UnauthorizedException`,`NotFoundException`,`ForbiddenException`, `NotAcceptableException`,`ConflictException`,`NotImplementedException` and so on.
+    In the above example, an `HttpException` is thrown with a message of 'Resource not found' and a status code of 404 (Not Found).
 
+    For more complex error handling, you can create custom exceptions by extending the HttpException class.
+    Nestjs has many built-in standard HTTP exceptions that inherit from the base HttpException and one can use: These are exposed from the `@nestjs/common` package, and represent many of the most common HTTP exceptions which includes: `BadRequestException`,`UnauthorizedException`,`NotFoundException`,`ForbiddenException`, `NotAcceptableException`,`ConflictException`,`NotImplementedException` and so on.
 
+    **[⬆ Back to Top](#table-of-contents)**
+
+40. ### How does NestJS handle CORS (Cross-Origin Resource Sharing)?
