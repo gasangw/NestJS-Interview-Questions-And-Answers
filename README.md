@@ -1021,6 +1021,11 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 40. ### How does NestJS handle CORS (Cross-Origin Resource Sharing)?
+     `CORS (Cross-Origin Resource Sharing)` is a mechanism that allows many resources (e.g., fonts, JavaScript, etc.) on a web page to be requested from another domain outside the domain from which the resource originated.
+
+     In the context of web development, an API server runs on a different domain or port from the client-side web application. For security reasons, browsers prohibit web pages from making requests to a different domain than the one the web page came from, unless the server supports CORS.
+
+     By enabling CORS on the server, you're allowing the server to respond to cross-origin requests. This means that your server's resources can be accessed from a different domain, protocol, or port than the one your server is hosted on.
 
      NestJS uses the capabilities of the underlying platform (Express or Fastify) to handle `Cross-Origin Resource Sharing (CORS)`.
      For Express, you can enable CORS globally for all routes in your `main.ts` file like this:
