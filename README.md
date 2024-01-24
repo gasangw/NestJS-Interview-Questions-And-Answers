@@ -54,7 +54,8 @@
 | 35  | [What is the purpose of the @nestjs/passport package, and how does it facilitate authentication in NestJS?](#what-is-the-purpose-of-the-nestjs-passport-package-and-how-does-it-facilitate-authentication-in-nestjs)                                                                                                                                             |
 | 36  | [How can you handle file uploads in NestJS, and what is the role of the Multer library?](#how-can-you-handle-file-uploads-in-nestjs-and-what-is-the-role-of-the-multer-library)                                                                                                                                                                                  |
 | 37  | [How does NestJS handle database interactions, and what are the supported databases?](#how-does-nestjs-handle-database-interactions-and-what-are-the-supported-databases)                                                                                                                                                                                        |
-| 37  | [What is Circular dependency (dependency cycle) in Nestjs, and how can they be fixed?](#what-is-circular-dependency-dependency-cycle-in-nestjs-and-how-can-they-be-fixed)                                                                                                                                                                                        |
+| 38  | [What is Circular dependency (dependency cycle) in Nestjs, and how can they be fixed?](#what-is-circular-dependency-dependency-cycle-in-nestjs-and-how-can-they-be-fixed)                                                                                                                                                                                        |
+| 39  | [How can you handle errors in NestJS?](#how-can-you-handle-errors-in-nestjs)                                                                                                                                                                                                                                                                                     |
 
 ### Answers
 
@@ -961,39 +962,42 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 38. ### What is Circular dependency (dependency cycle) in Nestjs, and how can they be fixed?
-       A `circular dependency` occurs when two classes depend on each other. For example, `class A` needs `class B`, and `class B` also needs `class A`. Circular dependencies can arise in Nest between modules and between providers.
 
-       Nest enables resolving circular dependencies between providers in two ways. 
+    A `circular dependency` occurs when two classes depend on each other. For example, `class A` needs `class B`, and `class B` also needs `class A`. Circular dependencies can arise in Nest between modules and between providers.
 
-       1.`forward referencing`: allows Nest to reference classes which aren't yet defined using the `forwardRef()` utility function. For example, if `CatsService` and `CommonService` depend on each other, both sides of the relationship can use `@Inject()` and the `forwardRef()` utility to resolve the circular dependency. Otherwise Nest won't instantiate them because all of the essential metadata won't be available. Here's an example:
+    Nest enables resolving circular dependencies between providers in two ways.
 
-       ```javascript
-         import { forwardRef } from '@nestjs/common'
+    1.`forward referencing`: allows Nest to reference classes which aren't yet defined using the `forwardRef()` utility function. For example, if `CatsService` and `CommonService` depend on each other, both sides of the relationship can use `@Inject()` and the `forwardRef()` utility to resolve the circular dependency. Otherwise Nest won't instantiate them because all of the essential metadata won't be available. Here's an example:
 
-        @Injectable()
-        export class CatsService {
-          constructor(
-            @Inject(forwardRef(() => CommonService))
-            private commonService: CommonService,
-          ) {}
-        }
+    ```javascript
+      import { forwardRef } from '@nestjs/common'
 
-       ```
+     @Injectable()
+     export class CatsService {
+       constructor(
+         @Inject(forwardRef(() => CommonService))
+         private commonService: CommonService,
+       ) {}
+     }
 
-       Now let's do the same with CommonService
+    ```
 
-       ```javascript
-       import { forwardRef } from '@nestjs/common'
+    Now let's do the same with CommonService
 
-       @Injectable()
-        export class CommonService {
-          constructor(
-            @Inject(forwardRef(() => CatsService))
-            private catsService: CatsService,
-          ) {}
-        }
-       ```
+    ```javascript
+    import { forwardRef } from '@nestjs/common'
 
-       2.`ModuleRef class`: An alternative to using `forwardRef()`. for an example you can refactor the above examples and use the `ModuleRef`  class to retrieve a provider on one side of the (otherwise) circular relationship. 
+    @Injectable()
+     export class CommonService {
+       constructor(
+         @Inject(forwardRef(() => CatsService))
+         private catsService: CatsService,
+       ) {}
+     }
+    ```
+
+    2.`ModuleRef class`: An alternative to using `forwardRef()`. for an example you can refactor the above examples and use the `ModuleRef` class to retrieve a provider on one side of the (otherwise) circular relationship.
 
     **[⬆ Back to Top](#table-of-contents)**
+
+39. ### How can you handle errors in NestJS?
