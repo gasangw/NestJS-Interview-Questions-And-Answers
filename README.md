@@ -1100,15 +1100,15 @@
 
 43. ### Explain the concept of environment variables in NestJS, and how can they be utilized for configuration management?
 
-    Environment variables are a way to store configuration settings that can change between different environments (like development, staging, production, etc.). They are often used to store sensitive information like database credentials, API keys, or any other configuration that might change depending on the environment.
+     Environment variables are a way to store configuration settings that can change between different environments (like development, staging, production, etc.). They are often used to store sensitive information like database credentials, API keys, or any other configuration that might change depending on the environment.
 
-    NestJS provides a `ConfigModule` that uses the dotenv package to load environment variables from a `.env` file into `process.env`.
+     NestJS provides a `ConfigModule` that uses the dotenv package to load environment variables from a `.env` file into `process.env`.
 
-    Here's an example of how you might use ConfigModule to load environment variables:
-    ```javascript
+     Here's an example of how you might use ConfigModule to load environment variables:
+     ```javascript
 
-    import { Module } from '@nestjs/common';
-    import { ConfigModule } from '@nestjs/config';
+     import { Module } from '@nestjs/common';
+     import { ConfigModule } from '@nestjs/config';
 
       @Module({
         imports: [
@@ -1117,10 +1117,10 @@
       })
       export class AppModule {}
 
-    ```
-    In the above example, `ConfigModule.forRoot()` loads the `.env` file and the variables can be accessed anywhere in your application using `process.env`.
+     ```
+     In the above example, `ConfigModule.forRoot()` loads the `.env` file and the variables can be accessed anywhere in your application using `process.env`.
 
-    **[⬆ Back to Top](#table-of-contents)**
+     **[⬆ Back to Top](#table-of-contents)**
 
 44. ### What is the role of migration scripts in TypeORM, and how can you create and run migrations in a NestJS application?
     **[⬆ Back to Top](#table-of-contents)**
