@@ -1332,6 +1332,8 @@
     > const value = await this.cacheManager.get('key');
 
     To add an item to the cache, use the `set` method:
-    > 
+    > await this.cacheManager.set('key', 'value');
+    
+    
 
     **[⬆ Back to Top](#table-of-contents)**
