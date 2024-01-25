@@ -63,6 +63,7 @@
 | 44  | [What is the role of migration scripts in TypeORM, and how can you create and run migrations in a NestJS application?](#what-is-the-role-of-migration-scripts-in-typeorm-and-how-can-you-create-and-run-migrations-in-a-nestjs-application)                                                                                                                      |
 | 45  | [What is the purpose of ExecutionContext in NestJS?](#what-is-the-purpose-of-executioncontext-in-nestjs)                                                                                                                                                                                                                                                         |
 | 46  | [What is the purpose of the @Res() decorator in NestJS controllers?](#what-is-the-purpose-of-the-res-decorator-in-nestjs-controllers)                                                                                                                                                                                                                            |
+| 47  | [Explain the various Modules in NestJS?](#explain-the-various-modules-in-nestjs)                                                                                                                                                                                                                                                                                 |
 
 ### Answers
 
@@ -1183,18 +1184,34 @@
         res.status(200).send("This action returns all cats");
       }
     }
-    
     ```
+
     **Note** When you inject either `@Res()` or `@Response()` in a method handler, you put Nest into Library-specific mode for that handler, and you become responsible for managing the response. When doing so, you must issue some kind of response by making a call on the response object (e.g., res.json(...) or res.send(...)), or the HTTP server will hang.
 
     **[⬆ Back to Top](#table-of-contents)**
 
-47. ### Explain the concept of Dynamic Modules in NestJS?
+47. ### Explain the various Modules in NestJS?
+
+     A `module` is a class annotated with a `@Module()` decorator. The`@Module()` decorator provides metadata that Nest makes use of to organize the application structure.
+
+     `modules` are a fundamental aspect of the framework's architecture. They help organize the application into logical and manageable sections. There are three main types of modules in NestJS:
+
+     1. `Feature Modules:` These are the most common type of modules and are used to group related features together. They keep the code organized and establish clear boundaries. This helps us manage complexity and develop with SOLID principles, especially as the size of the application and/or team grow.
+
+     For example: The `CatsController` and `CatsService` belong to the same application domain. As they are closely related, it makes sense to move them into a feature module.
+     
+  
+     
+    
+
     **[⬆ Back to Top](#table-of-contents)**
+
 48. ### How can you secure your NestJS application?
     **[⬆ Back to Top](#table-of-contents)**
 49. ### What is the entry file of NestJs application?
+
     **[⬆ Back to Top](#table-of-contents)**
+
 50. ### What is the difference between dependency injection and inversion of control (IoC)?
     **[⬆ Back to Top](#table-of-contents)**
 51. ### How can you implement Caching in NestJS?
