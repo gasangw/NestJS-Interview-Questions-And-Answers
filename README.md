@@ -1334,6 +1334,10 @@
     To add an item to the cache, use the `set` method:
     > await this.cacheManager.set('key', 'value');
     
-    
+    The default expiration time of the cache is 5 seconds, however you can change this.
+    >await this.cacheManager.set('key', 'value', 1000);
+
+    To disable expiration of the cache, `set` the `ttl` configuration property to 0:
+    >
 
     **[⬆ Back to Top](#table-of-contents)**
