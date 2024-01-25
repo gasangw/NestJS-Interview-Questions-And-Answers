@@ -1106,8 +1106,19 @@
 
     Here's an example of how you might use ConfigModule to load environment variables:
     ```javascript
-    
+
+    import { Module } from '@nestjs/common';
+    import { ConfigModule } from '@nestjs/config';
+
+      @Module({
+        imports: [
+          ConfigModule.forRoot(),
+        ],
+      })
+      export class AppModule {}
+
     ```
+    In the above example, `ConfigModule.forRoot()` loads the `.env` file and the variables can be accessed anywhere in your application using `process.env`.
 
     **[⬆ Back to Top](#table-of-contents)**
 
