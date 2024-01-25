@@ -1164,18 +1164,28 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 46. ### What is the purpose of the @Res() decorator in NestJS controllers?
-     Nest provides `@Res()` and `@Response()` decorators. `@Res()` is simply an alias for `@Response()`. 
-     `@Res()` or `@Response()`allows you to directly interact with the `response` object and use its methods.
 
-     When using them, you should also import the typings for the underlying library (e.g., `@types/express`) to take full advantage.
-     
-     **Note** When you inject either `@Res()` or `@Response()` in a method handler, you put Nest into Library-specific mode for that handler, and you become responsible for managing the response. When doing so, you must issue some kind of response by making a call on the response object (e.g., res.json(...) or res.send(...)), or the HTTP server will hang.
+    Nest provides `@Res()` and `@Response()` decorators. `@Res()` is simply an alias for `@Response()`.
+    `@Res()` or `@Response()`allows you to directly interact with the `response` object and use its methods.
 
-     Here is an example of using `@Res()` decorator:
+    When using them, you should also import the typings for the underlying library (e.g., `@types/express`) to take full advantage.
 
-     ```javascript
-      
-     ```
+        Here is an example of using `@Res()` decorator:
+
+    ```javascript
+    import { Controller, Get, Res } from "@nestjs/common";
+    import { Response } from "express";
+
+    @Controller("cats")
+    export class CatsController {
+      @Get()
+      findAll(@Res() res: Response) {
+        res.status(200).send("This action returns all cats");
+      }
+    }
+    
+    ```
+    **Note** When you inject either `@Res()` or `@Response()` in a method handler, you put Nest into Library-specific mode for that handler, and you become responsible for managing the response. When doing so, you must issue some kind of response by making a call on the response object (e.g., res.json(...) or res.send(...)), or the HTTP server will hang.
 
     **[⬆ Back to Top](#table-of-contents)**
 
