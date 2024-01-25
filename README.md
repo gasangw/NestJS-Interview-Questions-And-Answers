@@ -64,7 +64,9 @@
 | 45  | [What is the purpose of ExecutionContext in NestJS?](#what-is-the-purpose-of-executioncontext-in-nestjs)                                                                                                                                                                                                                                                         |
 | 46  | [What is the purpose of the @Res() decorator in NestJS controllers?](#what-is-the-purpose-of-the-res-decorator-in-nestjs-controllers)                                                                                                                                                                                                                            |
 | 47  | [Explain the various Modules in NestJS?](#explain-the-various-modules-in-nestjs)                                                                                                                                                                                                                                                                                 |
-| 47  | [How can you secure your NestJS application?](#how-can-you-secure-your-nestjs-application)                                                                                                                                                                                                                                                                       |
+| 48  | [How can you secure your NestJS application?](#how-can-you-secure-your-nestjs-application)                                                                                                                                                                                                                                                                       |
+| 49  | [What is the entry file of NestJs application?](#what-is-the-entry-file-of-nestjs-application)                                                                                                                                                                                                                                                                   |
+| 50  | [What is the entry file of NestJs application?](#what-is-the-entry-file-of-nestjs-application)                                                                                                                                                                                                                                                                   |
 
 ### Answers
 
@@ -1280,9 +1282,31 @@
 
 49. ### What is the entry file of NestJs application?
 
+    The entry file of a NestJS application is typically `main.ts`. This is where the application's root module is bootstrapped, which kickstarts the application.
+
+    Here's an example of what the `main.ts` file might look like:
+
+    ```javascript
+    import { NestFactory } from "@nestjs/core";
+    import { AppModule } from "./app.module";
+
+    async function bootstrap() {
+      const app = await NestFactory.create(AppModule);
+      await app.listen(3000);
+    }
+    bootstrap();
+    ```
+
+    `NestFactory.create(AppModule)` initializes the application with the root module (``AppModule`), and `app.listen(3000)` starts the application, listening for incoming requests on port 3000.
+
     **[⬆ Back to Top](#table-of-contents)**
 
 50. ### What is the difference between dependency injection and inversion of control (IoC)?
+
     **[⬆ Back to Top](#table-of-contents)**
+
 51. ### How can you implement Caching in NestJS?
+
     NestJS supports caching through various mechanisms, including the use of caching libraries like `cache-manager` and built-in decorators such as `@CacheKey` and `@CacheTTL`. By incorporating caching strategies in your application, you can enhance performance and reduce response times for frequently requested data.
+
+    **[⬆ Back to Top](#table-of-contents)**
