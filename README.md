@@ -1248,7 +1248,7 @@
     ```
     The `@Global()` decorator makes the module global-scoped. Global modules should be registered only once, generally by the root or core module. In the above example, the CatsService provider will be present, and modules that wish to inject the service will not need to import the CatsModule in their imports array.
 
-    4.  `Dynamic Modules:` These are modules that can be configured at runtime. Dynamic modules are useful when you need to pass configuration options to a module. They are created using the `register()` method, which takes an options object and returns a dynamic module.
+    4.  `Dynamic Modules:` enables you to easily create customizable modules that can register and configure providers dynamically. They are created using the `register()` method, which takes an options object and returns a dynamic module.
 
     **[⬆ Back to Top](#table-of-contents)**
 
