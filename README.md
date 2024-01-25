@@ -1091,3 +1091,5 @@
      For information you can read [Nestjs-Query](https://doug-martin.github.io/nestjs-query/docs/persistence/typeorm/soft-delete)
 
      **[⬆ Back to Top](#table-of-contents)**
+
+43. ### 
