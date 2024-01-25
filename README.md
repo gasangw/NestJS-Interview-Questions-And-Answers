@@ -1087,3 +1087,7 @@
      1.`Data recovery:` If a record is accidentally deleted, it can be easily restored.
      2. `Audit trail:` Soft deletes allow you to keep a history of all records, even ones that are deleted.
      3. `Relationship integrity:` If other tables reference the deleted record, those relationships won't be broken by a soft delete.
+     
+     For information you can read [Nestjs-Query](https://doug-martin.github.io/nestjs-query/docs/persistence/typeorm/soft-delete)
+
+     **[⬆ Back to Top](#table-of-contents)**
