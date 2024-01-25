@@ -1211,7 +1211,10 @@
       })
       export class CatsModule {}
      ```
+     2. `Shared Modules:` modules are singletons by default, and thus you can share the same instance of any provider between multiple modules effortlessly. When a module is imported into another module, all of its providers are made available to the importing module. Therefore, any module that provides shared functionality should be imported wherever that functionality is needed.
+    
      
+     3. `Dynamic Modules:` These are modules that can be configured at runtime. Dynamic modules are useful when you need to pass configuration options to a module. They are created using the `register()` method, which takes an options object and returns a dynamic module.
     
 
     **[⬆ Back to Top](#table-of-contents)**
