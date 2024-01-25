@@ -1124,10 +1124,37 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 44. ### What is the role of migration scripts in TypeORM, and how can you create and run migrations in a NestJS application?
+     `Migration scripts` in TypeORM are a way to manage changes to your database schema over time. They allow you to version control your database schema and apply updates in a controlled manner. This is especially useful when working in a team or when you need to ensure that your database schema is consistent across different environments (development, staging, production, etc.).
 
+     1. First, you need to set up TypeORM in your NestJS application. This typically involves importing the `TypeOrmModule` into your application module and configuring it with your database connection details.
+
+     2. After you need to add a `migrations` path and a cli configuration to your `ormconfig.json` or `ormconfig.js file:`
+
+     ```javascript
+      {
+          "type": "postgres",
+          "host": "localhost",
+          "port": 5432,
+          "username": "test",
+          "password": "test",
+          "database": "test",
+          "entities": ["src/**/*.entity.ts"],
+          "migrations": ["src/migrations/*.ts"],
+          "cli": {
+            "migrationsDir": "src/migrations"
+          }
+        }
+     ```
+     3. To generate a new migration, you can use the TypeORM CLI command `typeorm migration:generate -n MigrationName`. This will create a new migration file in the `src/migrations` directory with a name like `TIMESTAMP-MigrationName.ts.`
+
+     4. The generated migration file will have `up` and `down` methods. In the `up` method, you write the SQL to apply the migration, and in the `down` method, you write the SQL to undo the migration.
+    
+     5. To run the migrations, you can use the TypeORM CLI command `typeorm migration:run`. This will apply all pending migrations in the order they were created.
+
+     6. To undo the last migration, you can use the TypeORM CLI command `typeorm migration:revert`. This will run the `down` method of the last applied migration.
 
     **[⬆ Back to Top](#table-of-contents)**
-    
+
 45. ### What is the purpose of ExecutionContext in NestJS?
 
     **[⬆ Back to Top](#table-of-contents)**
