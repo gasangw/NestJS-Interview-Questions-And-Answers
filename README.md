@@ -1227,12 +1227,28 @@
       exports: [CatsService],
     })
     export class CatsModule {}
-
     ```
+
     Now any module that imports the CatsModule has access to the CatsService and will share the same instance with all other modules that import it as well.
 
+    3. `Global modules:` When you want to provide a set of providers which should be available everywhere out-of-the-box (e.g., helpers, database connections, etc.), make the module global with the `@Global()` decorator.
 
-    3.  `Dynamic Modules:` These are modules that can be configured at runtime. Dynamic modules are useful when you need to pass configuration options to a module. They are created using the `register()` method, which takes an options object and returns a dynamic module.
+    ```javascript
+    import { Module, Global } from "@nestjs/common";
+    import { CatsController } from "./cats.controller";
+    import { CatsService } from "./cats.service";
+
+    @Global()
+    @Module({
+      controllers: [CatsController],
+      providers: [CatsService],
+      exports: [CatsService],
+    })
+    export class CatsModule {}
+    ```
+    The `@Global()` decorator makes the module global-scoped. Global modules should be registered only once, generally by the root or core module. In the above example, the CatsService provider will be present, and modules that wish to inject the service will not need to import the CatsModule in their imports array.
+
+    4.  `Dynamic Modules:` These are modules that can be configured at runtime. Dynamic modules are useful when you need to pass configuration options to a module. They are created using the `register()` method, which takes an options object and returns a dynamic module.
 
     **[⬆ Back to Top](#table-of-contents)**
 
