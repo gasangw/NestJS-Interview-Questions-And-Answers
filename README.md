@@ -59,7 +59,7 @@
 | 40  | [How does NestJS handle CORS (Cross-Origin Resource Sharing)?](#how-does-nestjs-handle-cors-cross-origin-resource-sharing)                                                                                                                                                                                                                                       |
 | 41  | [Explain the purpose of the ExecutionContext in NestJS Middleware?](#explain-the-purpose-of-the-executioncontext-in-nestjs-middleware)                                                                                                                                                                                                                           |
 | 42  | [How can you implement soft deletes in NestJS using TypeORM, and why might soft deletes be preferred over hard deletes?](#how-can-you-implement-soft-deletes-in-nestjs-using-typeorm-and-why-might-soft-deletes-be-preferred-over-hard-deletes)                                                                                                                  |
-| 43  | [Explain the concept of environment variables in NestJS, and how can they be utilized for configuration management?](#explain-the-concept-of-environment-variables-in-nestjs-and-how-can-they-be-utilized-for-configuration-management)                                                                                                                  |
+| 43  | [Explain the concept of environment variables in NestJS, and how can they be utilized for configuration management?](#explain-the-concept-of-environment-variables-in-nestjs-and-how-can-they-be-utilized-for-configuration-management)                                                                                                                          |
 
 ### Answers
 
@@ -717,9 +717,9 @@
 
 30. ### What are custom providers and how do they differ from standard Providers in Nest.js?
 
-     `Providers` are essential in NestJS as they form the backbone of the dependency injection system. Their primary role is to create and manage instances of classes that can be injected into different components, promoting modularity and testability. By using providers, NestJS ensures a robust and organized approach to handling dependencies.
+    `Providers` are essential in NestJS as they form the backbone of the dependency injection system. Their primary role is to create and manage instances of classes that can be injected into different components, promoting modularity and testability. By using providers, NestJS ensures a robust and organized approach to handling dependencies.
 
-     A standard provider in NestJS is typically a class decorated with `@Injectable().` This class can have dependencies, which are injected through the constructor. Here's an example:
+    A standard provider in NestJS is typically a class decorated with `@Injectable().` This class can have dependencies, which are injected through the constructor. Here's an example:
 
     ```javascript
        import { Injectable } from '@nestjs/common';
@@ -944,7 +944,7 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 36. ### How can you handle file uploads in NestJS, and what is the role of the Multer library?
-    
+
     NestJS offers convenient ways to handle file uploads, and one common approach is using the `multer` middleware. Additionally, the framework provides the `@UploadedFile` decorator, which simplifies the process of accessing and processing uploaded files in NestJS controllers. These tools collectively offer a flexible and efficient solution for managing file uploads in NestJS applications.
 
     By using the `@UseInterceptors()` decorator with FileInterceptor or FilesInterceptor, you can handle single or multiple file uploads in your application.
@@ -1063,60 +1063,70 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 42. ### How can you implement soft deletes in NestJS using TypeORM, and why might soft deletes be preferred over hard deletes?
-     `Soft deletes` in TypeORM are implemented using the `@DeleteDateColumn` decorator.When you delete an entity that has a @DeleteDateColumn, TypeORM doesn't actually remove it from the database. Instead, it sets the @DeleteDateColumn to the current timestamp. This is known as a "soft delete".
 
-     Here's an example of how you might use `@DeleteDateColumn` in an entity:
+    `Soft deletes` in TypeORM are implemented using the `@DeleteDateColumn` decorator.When you delete an entity that has a @DeleteDateColumn, TypeORM doesn't actually remove it from the database. Instead, it sets the @DeleteDateColumn to the current timestamp. This is known as a "soft delete".
 
-     ```javascript
-      import { Entity, PrimaryGeneratedColumn, Column, DeleteDateColumn } from 'typeorm';
+    Here's an example of how you might use `@DeleteDateColumn` in an entity:
 
-        @Entity()
-        export class User {
-          @PrimaryGeneratedColumn()
-          id: number;
+    ```javascript
+     import { Entity, PrimaryGeneratedColumn, Column, DeleteDateColumn } from 'typeorm';
 
-          @Column()
-          name: string;
+       @Entity()
+       export class User {
+         @PrimaryGeneratedColumn()
+         id: number;
 
-          @DeleteDateColumn()
-          deletedAt?: Date;
-        }
+         @Column()
+         name: string;
 
-     ```
-     In this example, when you call `userRepository.softDelete(user.id)`, TypeORM will set `deletedAt` to the current timestamp, but the User will remain in the database.
+         @DeleteDateColumn()
+         deletedAt?: Date;
+       }
 
-     Soft deletes can be preferred over hard deletes for a few reasons:
+    ```
 
-     1.`Data recovery:` If a record is accidentally deleted, it can be easily restored.
-     1. `Audit trail:` Soft deletes allow you to keep a history of all records, even ones that are deleted.
-     2. `Relationship integrity:` If other tables reference the deleted record, those relationships won't be broken by a soft delete.
-     
-     For information you can read [Nestjs-Query](https://doug-martin.github.io/nestjs-query/docs/persistence/typeorm/soft-delete)
+    In this example, when you call `userRepository.softDelete(user.id)`, TypeORM will set `deletedAt` to the current timestamp, but the User will remain in the database.
 
-     **[⬆ Back to Top](#table-of-contents)**
+    Soft deletes can be preferred over hard deletes for a few reasons:
+
+    1.`Data recovery:` If a record is accidentally deleted, it can be easily restored.
+
+    1.  `Audit trail:` Soft deletes allow you to keep a history of all records, even ones that are deleted.
+    2.  `Relationship integrity:` If other tables reference the deleted record, those relationships won't be broken by a soft delete.
+
+    For information you can read [Nestjs-Query](https://doug-martin.github.io/nestjs-query/docs/persistence/typeorm/soft-delete)
+
+    **[⬆ Back to Top](#table-of-contents)**
 
 43. ### Explain the concept of environment variables in NestJS, and how can they be utilized for configuration management?
 
-     **[⬆ Back to Top](#table-of-contents)**
+    Environment variables are a way to store configuration settings that can change between different environments (like development, staging, production, etc.). They are often used to store sensitive information like database credentials, API keys, or any other configuration that might change depending on the environment.
+
+    NestJS provides a `ConfigModule` that uses the dotenv package to load environment variables from a `.env` file into `process.env`.
+
+    Here's an example of how you might use ConfigModule to load environment variables:
+    ```javascript
+    
+    ```
+
+    **[⬆ Back to Top](#table-of-contents)**
 
 44. ### What is the role of migration scripts in TypeORM, and how can you create and run migrations in a NestJS application?
-     **[⬆ Back to Top](#table-of-contents)**
-     
+    **[⬆ Back to Top](#table-of-contents)**
 45. ### What is the purpose of ExecutionContext in NestJS?
-     **[⬆ Back to Top](#table-of-contents)**
+
+    **[⬆ Back to Top](#table-of-contents)**
 
 46. ### What is the purpose of the @Res() decorator in NestJS controllers?
-     **[⬆ Back to Top](#table-of-contents)**
+
+    **[⬆ Back to Top](#table-of-contents)**
 
 47. ### Explain the concept of Dynamic Modules in NestJS?
-     **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Back to Top](#table-of-contents)**
 48. ### How can you secure your NestJS application?
-     **[⬆ Back to Top](#table-of-contents)**   
+    **[⬆ Back to Top](#table-of-contents)**
 49. ### What is the entry file of NestJs application?
-     **[⬆ Back to Top](#table-of-contents)**
-50. ### What is the difference between dependency injection and inversion of  control (IoC)?
-     **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Back to Top](#table-of-contents)**
+50. ### What is the difference between dependency injection and inversion of control (IoC)?
+    **[⬆ Back to Top](#table-of-contents)**
 51. ### How can you implement Caching in NestJS?
-
-
-
