@@ -1307,10 +1307,23 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 51. ### How can you implement Caching in NestJS?
+
     Caching is a great and simple `technique` that helps improve your app's performance. It acts as a temporary data store providing high performance data access.
 
     NestJS supports caching through various mechanisms, including the use of caching libraries like `cache-manager` and built-in decorators such as `@CacheKey` and `@CacheTTL`. By incorporating caching strategies in your application, you can enhance performance and reduce response times for frequently requested data.
 
     In order to enable caching, import the `CacheModule` and call its `register() method`
+
+    ```javascript
+    import { Module } from "@nestjs/common";
+    import { CacheModule } from "@nestjs/cache-manager";
+    import { AppController } from "./app.controller";
+
+    @Module({
+      imports: [CacheModule.register()],
+      controllers: [AppController],
+    })
+    export class AppModule {}
+    ```
 
     **[⬆ Back to Top](#table-of-contents)**
