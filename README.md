@@ -60,6 +60,7 @@
 | 41  | [Explain the purpose of the ExecutionContext in NestJS Middleware?](#explain-the-purpose-of-the-executioncontext-in-nestjs-middleware)                                                                                                                                                                                                                           |
 | 42  | [How can you implement soft deletes in NestJS using TypeORM, and why might soft deletes be preferred over hard deletes?](#how-can-you-implement-soft-deletes-in-nestjs-using-typeorm-and-why-might-soft-deletes-be-preferred-over-hard-deletes)                                                                                                                  |
 | 43  | [Explain the concept of environment variables in NestJS, and how can they be utilized for configuration management?](#explain-the-concept-of-environment-variables-in-nestjs-and-how-can-they-be-utilized-for-configuration-management)                                                                                                                          |
+| 44  | [What is the role of migration scripts in TypeORM, and how can you create and run migrations in a NestJS application?](#what-is-the-role-of-migration-scripts-in-typeorm-and-how-can-you-create-and-run-migrations-in-a-nestjs-application)                                                                                                                          |
 
 ### Answers
 
@@ -1123,7 +1124,10 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 44. ### What is the role of migration scripts in TypeORM, and how can you create and run migrations in a NestJS application?
+
+
     **[⬆ Back to Top](#table-of-contents)**
+    
 45. ### What is the purpose of ExecutionContext in NestJS?
 
     **[⬆ Back to Top](#table-of-contents)**
