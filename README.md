@@ -1335,9 +1335,15 @@
     > await this.cacheManager.set('key', 'value');
     
     The default expiration time of the cache is 5 seconds, however you can change this.
-    >await this.cacheManager.set('key', 'value', 1000);
+    > await this.cacheManager.set('key', 'value', 1000);
 
     To disable expiration of the cache, `set` the `ttl` configuration property to 0:
-    >
+    > await this.cacheManager.set('key', 'value', 0);
+
+    To remove an item from the cache, use the `del` method:
+    > await this.cacheManager.del('key');
+
+    To clear the entire cache, use the `reset` method:
+    > await this.cacheManager.reset();
 
     **[⬆ Back to Top](#table-of-contents)**
