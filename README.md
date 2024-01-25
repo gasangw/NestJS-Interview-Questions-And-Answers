@@ -1199,8 +1199,18 @@
      1. `Feature Modules:` These are the most common type of modules and are used to group related features together. They keep the code organized and establish clear boundaries. This helps us manage complexity and develop with SOLID principles, especially as the size of the application and/or team grow.
 
      For example: The `CatsController` and `CatsService` belong to the same application domain. As they are closely related, it makes sense to move them into a feature module.
-     
-  
+
+     ```javascript
+      import { Module } from '@nestjs/common';
+      import { CatsController } from './cats.controller';
+      import { CatsService } from './cats.service';
+
+      @Module({
+        controllers: [CatsController],
+        providers: [CatsService],
+      })
+      export class CatsModule {}
+     ```
      
     
 
