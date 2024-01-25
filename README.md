@@ -60,7 +60,9 @@
 | 41  | [Explain the purpose of the ExecutionContext in NestJS Middleware?](#explain-the-purpose-of-the-executioncontext-in-nestjs-middleware)                                                                                                                                                                                                                           |
 | 42  | [How can you implement soft deletes in NestJS using TypeORM, and why might soft deletes be preferred over hard deletes?](#how-can-you-implement-soft-deletes-in-nestjs-using-typeorm-and-why-might-soft-deletes-be-preferred-over-hard-deletes)                                                                                                                  |
 | 43  | [Explain the concept of environment variables in NestJS, and how can they be utilized for configuration management?](#explain-the-concept-of-environment-variables-in-nestjs-and-how-can-they-be-utilized-for-configuration-management)                                                                                                                          |
-| 44  | [What is the role of migration scripts in TypeORM, and how can you create and run migrations in a NestJS application?](#what-is-the-role-of-migration-scripts-in-typeorm-and-how-can-you-create-and-run-migrations-in-a-nestjs-application)                                                                                                                          |
+| 44  | [What is the role of migration scripts in TypeORM, and how can you create and run migrations in a NestJS application?](#what-is-the-role-of-migration-scripts-in-typeorm-and-how-can-you-create-and-run-migrations-in-a-nestjs-application)                                                                                                                      |
+| 45  | [What is the purpose of ExecutionContext in NestJS?](#what-is-the-purpose-of-executioncontext-in-nestjs)                                                                                                                                                                                                                                                         |
+| 46  | [What is the purpose of the @Res() decorator in NestJS controllers?](#what-is-the-purpose-of-the-res-decorator-in-nestjs-controllers)                                                                                                                                                                                                                            |
 
 ### Answers
 
@@ -1101,66 +1103,79 @@
 
 43. ### Explain the concept of environment variables in NestJS, and how can they be utilized for configuration management?
 
-     Environment variables are a way to store configuration settings that can change between different environments (like development, staging, production, etc.). They are often used to store sensitive information like database credentials, API keys, or any other configuration that might change depending on the environment.
+    Environment variables are a way to store configuration settings that can change between different environments (like development, staging, production, etc.). They are often used to store sensitive information like database credentials, API keys, or any other configuration that might change depending on the environment.
 
-     NestJS provides a `ConfigModule` that uses the dotenv package to load environment variables from a `.env` file into `process.env`.
+    NestJS provides a `ConfigModule` that uses the dotenv package to load environment variables from a `.env` file into `process.env`.
 
-     Here's an example of how you might use ConfigModule to load environment variables:
-     ```javascript
+    Here's an example of how you might use ConfigModule to load environment variables:
 
-     import { Module } from '@nestjs/common';
-     import { ConfigModule } from '@nestjs/config';
+    ```javascript
+    import { Module } from "@nestjs/common";
+    import { ConfigModule } from "@nestjs/config";
 
-      @Module({
-        imports: [
-          ConfigModule.forRoot(),
-        ],
-      })
-      export class AppModule {}
+    @Module({
+      imports: [ConfigModule.forRoot()],
+    })
+    export class AppModule {}
+    ```
 
-     ```
-     In the above example, `ConfigModule.forRoot()` loads the `.env` file and the variables can be accessed anywhere in your application using `process.env`.
+    In the above example, `ConfigModule.forRoot()` loads the `.env` file and the variables can be accessed anywhere in your application using `process.env`.
 
-     **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Back to Top](#table-of-contents)**
 
 44. ### What is the role of migration scripts in TypeORM, and how can you create and run migrations in a NestJS application?
-     `Migration scripts` in TypeORM are a way to manage changes to your database schema over time. They allow you to version control your database schema and apply updates in a controlled manner. This is especially useful when working in a team or when you need to ensure that your database schema is consistent across different environments (development, staging, production, etc.).
 
-     1. First, you need to set up TypeORM in your NestJS application. This typically involves importing the `TypeOrmModule` into your application module and configuring it with your database connection details.
+    `Migration scripts` in TypeORM are a way to manage changes to your database schema over time. They allow you to version control your database schema and apply updates in a controlled manner. This is especially useful when working in a team or when you need to ensure that your database schema is consistent across different environments (development, staging, production, etc.).
 
-     2. After you need to add a `migrations` path and a cli configuration to your `ormconfig.json` or `ormconfig.js file:`
+    1.  First, you need to set up TypeORM in your NestJS application. This typically involves importing the `TypeOrmModule` into your application module and configuring it with your database connection details.
 
-     ```javascript
-      {
-          "type": "postgres",
-          "host": "localhost",
-          "port": 5432,
-          "username": "test",
-          "password": "test",
-          "database": "test",
-          "entities": ["src/**/*.entity.ts"],
-          "migrations": ["src/migrations/*.ts"],
-          "cli": {
-            "migrationsDir": "src/migrations"
-          }
-        }
-     ```
-     3. To generate a new migration, you can use the TypeORM CLI command `typeorm migration:generate -n MigrationName`. This will create a new migration file in the `src/migrations` directory with a name like `TIMESTAMP-MigrationName.ts.`
+    2.  After you need to add a `migrations` path and a cli configuration to your `ormconfig.json` or `ormconfig.js file:`
 
-     4. The generated migration file will have `up` and `down` methods. In the `up` method, you write the SQL to apply the migration, and in the `down` method, you write the SQL to undo the migration.
-    
-     5. To run the migrations, you can use the TypeORM CLI command `typeorm migration:run`. This will apply all pending migrations in the order they were created.
+    ```javascript
+     {
+         "type": "postgres",
+         "host": "localhost",
+         "port": 5432,
+         "username": "test",
+         "password": "test",
+         "database": "test",
+         "entities": ["src/**/*.entity.ts"],
+         "migrations": ["src/migrations/*.ts"],
+         "cli": {
+           "migrationsDir": "src/migrations"
+         }
+       }
+    ```
 
-     6. To undo the last migration, you can use the TypeORM CLI command `typeorm migration:revert`. This will run the `down` method of the last applied migration.
+    3.  To generate a new migration, you can use the TypeORM CLI command `typeorm migration:generate -n MigrationName`. This will create a new migration file in the `src/migrations` directory with a name like `TIMESTAMP-MigrationName.ts.`
+
+    4.  The generated migration file will have `up` and `down` methods. In the `up` method, you write the SQL to apply the migration, and in the `down` method, you write the SQL to undo the migration.
+
+    5.  To run the migrations, you can use the TypeORM CLI command `typeorm migration:run`. This will apply all pending migrations in the order they were created.
+
+    6.  To undo the last migration, you can use the TypeORM CLI command `typeorm migration:revert`. This will run the `down` method of the last applied migration.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 45. ### What is the purpose of ExecutionContext in NestJS?
-     `ExecutionContext` represents the context of the currently processed HTTP request. It contains information about the `request`, `response`, `route handler`, and other details. ExecutionContext is often used in custom decorators, guards, and interceptors to access and manipulate request-related information.
+
+    `ExecutionContext` represents the context of the currently processed HTTP request. It contains information about the `request`, `response`, `route handler`, and other details. ExecutionContext is often used in custom decorators, guards, and interceptors to access and manipulate request-related information.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 46. ### What is the purpose of the @Res() decorator in NestJS controllers?
+     Nest provides `@Res()` and `@Response()` decorators. `@Res()` is simply an alias for `@Response()`. 
+     `@Res()` or `@Response()`allows you to directly interact with the `response` object and use its methods.
+
+     When using them, you should also import the typings for the underlying library (e.g., `@types/express`) to take full advantage.
+     
+     **Note** When you inject either `@Res()` or `@Response()` in a method handler, you put Nest into Library-specific mode for that handler, and you become responsible for managing the response. When doing so, you must issue some kind of response by making a call on the response object (e.g., res.json(...) or res.send(...)), or the HTTP server will hang.
+
+     Here is an example of using `@Res()` decorator:
+
+     ```javascript
+      
+     ```
 
     **[⬆ Back to Top](#table-of-contents)**
 
