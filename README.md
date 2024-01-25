@@ -1303,6 +1303,7 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 50. ### What is the difference between dependency injection and inversion of control (IoC)?
+    Dependency Injection is a design pattern where components receive their dependencies from an external source rather than creating them internally.
 
     **[⬆ Back to Top](#table-of-contents)**
 
