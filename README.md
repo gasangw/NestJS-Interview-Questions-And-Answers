@@ -1325,5 +1325,13 @@
     })
     export class AppModule {}
     ```
+    To interact with the cache manager instance, inject it to your class using the `CACHE_MANAGER` token, as follows:
+    > constructor(@Inject(CACHE_MANAGER) private cacheManager: Cache) {}
+
+    The `get` method is used to retrieve items from the cache. If the item does not exist in the cache, null will be returned.
+    > const value = await this.cacheManager.get('key');
+
+    To add an item to the cache, use the `set` method:
+    > 
 
     **[⬆ Back to Top](#table-of-contents)**
