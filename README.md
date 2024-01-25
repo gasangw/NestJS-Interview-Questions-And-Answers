@@ -1109,13 +1109,13 @@
      **[⬆ Back to Top](#table-of-contents)**
 
 47. ### Explain the concept of Dynamic Modules in NestJS?
-
+     **[⬆ Back to Top](#table-of-contents)**
 48. ### How can you secure your NestJS application?
-    
+     **[⬆ Back to Top](#table-of-contents)**   
 49. ### What is the entry file of NestJs application?
-
+     **[⬆ Back to Top](#table-of-contents)**
 50. ### What is the difference between dependency injection and inversion of  control (IoC)?
-
+     **[⬆ Back to Top](#table-of-contents)**
 51. ### How can you implement Caching in NestJS?
 
 
