@@ -66,7 +66,8 @@
 | 47  | [Explain the various Modules in NestJS?](#explain-the-various-modules-in-nestjs)                                                                                                                                                                                                                                                                                 |
 | 48  | [How can you secure your NestJS application?](#how-can-you-secure-your-nestjs-application)                                                                                                                                                                                                                                                                       |
 | 49  | [What is the entry file of NestJs application?](#what-is-the-entry-file-of-nestjs-application)                                                                                                                                                                                                                                                                   |
-| 50  | [What is the entry file of NestJs application?](#what-is-the-entry-file-of-nestjs-application)                                                                                                                                                                                                                                                                   |
+| 50  | [What is the difference between dependency injection and inversion of control (IoC)?](#what-is-the-difference-between-dependency-injection-and-inversion-of-control-ioc)                                                                                                                                                                                         |
+| 51  | [How can you implement Caching in NestJS?](#how-can-you-implement-caching-in-nestjs)                                                                                                                                                                                                                                                                             |
 
 ### Answers
 
@@ -1306,7 +1307,10 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 51. ### How can you implement Caching in NestJS?
+    Caching is a great and simple `technique` that helps improve your app's performance. It acts as a temporary data store providing high performance data access.
 
     NestJS supports caching through various mechanisms, including the use of caching libraries like `cache-manager` and built-in decorators such as `@CacheKey` and `@CacheTTL`. By incorporating caching strategies in your application, you can enhance performance and reduce response times for frequently requested data.
+
+    In order to enable caching, import the `CacheModule` and call its `register() method`
 
     **[⬆ Back to Top](#table-of-contents)**
