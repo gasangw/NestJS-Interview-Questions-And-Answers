@@ -1156,6 +1156,7 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 45. ### What is the purpose of ExecutionContext in NestJS?
+     `ExecutionContext` represents the context of the currently processed HTTP request. It contains information about the `request`, `response`, `route handler`, and other details. ExecutionContext is often used in custom decorators, guards, and interceptors to access and manipulate request-related information.
 
     **[⬆ Back to Top](#table-of-contents)**
 
