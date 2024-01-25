@@ -1328,27 +1328,39 @@
 
     To interact with the cache manager instance, inject it to your class using the `CACHE_MANAGER` token, as follows:
 
+    > ```javascript
     > constructor(@Inject(CACHE_MANAGER) private cacheManager: Cache) {}
+    > ```
 
     The `get` method is used to retrieve items from the cache. If the item does not exist in the cache, null will be returned.
 
-    > const value = await this.cacheManager.get('key');
+    > ```javascript
+    > const value = await this.cacheManager.get("key");
+    > ```
 
     To add an item to the cache, use the `set` method:
 
-    > await this.cacheManager.set('key', 'value');
+    > ```javascript
+    > await this.cacheManager.set("key", "value");
+    > ```
 
     The default expiration time of the cache is 5 seconds, however you can change this.
 
-    > await this.cacheManager.set('key', 'value', 1000);
+    > ```javascript
+    > await this.cacheManager.set("key", "value", 1000);
+    > ```
 
     To disable expiration of the cache, `set` the `ttl` configuration property to 0:
 
-    > await this.cacheManager.set('key', 'value', 0);
+    > ```javascript
+    > await this.cacheManager.set("key", "value", 0);
+    > ```
 
     To remove an item from the cache, use the `del` method:
 
-    > await this.cacheManager.del('key');
+    > ```javascript
+    > await this.cacheManager.del("key");
+    > ```
 
     To clear the entire cache, use the `reset` method:
 
