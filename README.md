@@ -64,6 +64,7 @@
 | 45  | [What is the purpose of ExecutionContext in NestJS?](#what-is-the-purpose-of-executioncontext-in-nestjs)                                                                                                                                                                                                                                                         |
 | 46  | [What is the purpose of the @Res() decorator in NestJS controllers?](#what-is-the-purpose-of-the-res-decorator-in-nestjs-controllers)                                                                                                                                                                                                                            |
 | 47  | [Explain the various Modules in NestJS?](#explain-the-various-modules-in-nestjs)                                                                                                                                                                                                                                                                                 |
+| 47  | [How can you secure your NestJS application?](#how-can-you-secure-your-nestjs-application)                                                                                                                                                                                                                                                                       |
 
 ### Answers
 
@@ -1246,6 +1247,7 @@
     })
     export class CatsModule {}
     ```
+
     The `@Global()` decorator makes the module global-scoped. Global modules should be registered only once, generally by the root or core module. In the above example, the CatsService provider will be present, and modules that wish to inject the service will not need to import the CatsModule in their imports array.
 
     4.  `Dynamic Modules:` enables you to easily create customizable modules that can register and configure providers dynamically. They are created using the `register()` method, which takes an options object and returns a dynamic module.
@@ -1253,7 +1255,11 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 48. ### How can you secure your NestJS application?
+
+     
+
     **[⬆ Back to Top](#table-of-contents)**
+
 49. ### What is the entry file of NestJs application?
 
     **[⬆ Back to Top](#table-of-contents)**
@@ -1261,3 +1267,4 @@
 50. ### What is the difference between dependency injection and inversion of control (IoC)?
     **[⬆ Back to Top](#table-of-contents)**
 51. ### How can you implement Caching in NestJS?
+     NestJS supports caching through various mechanisms, including the use of caching libraries like `cache-manager` and built-in decorators such as `@CacheKey` and `@CacheTTL`. By incorporating caching strategies in your application, you can enhance performance and reduce response times for frequently requested data.
