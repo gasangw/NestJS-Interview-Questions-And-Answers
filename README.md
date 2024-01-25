@@ -1192,30 +1192,47 @@
 
 47. ### Explain the various Modules in NestJS?
 
-     A `module` is a class annotated with a `@Module()` decorator. The`@Module()` decorator provides metadata that Nest makes use of to organize the application structure.
+    A `module` is a class annotated with a `@Module()` decorator. The`@Module()` decorator provides metadata that Nest makes use of to organize the application structure.
 
-     `modules` are a fundamental aspect of the framework's architecture. They help organize the application into logical and manageable sections. There are three main types of modules in NestJS:
+    `modules` are a fundamental aspect of the framework's architecture. They help organize the application into logical and manageable sections. There are three main types of modules in NestJS:
 
-     1. `Feature Modules:` These are the most common type of modules and are used to group related features together. They keep the code organized and establish clear boundaries. This helps us manage complexity and develop with SOLID principles, especially as the size of the application and/or team grow.
+    1.  `Feature Modules:` These are the most common type of modules and are used to group related features together. They keep the code organized and establish clear boundaries. This helps us manage complexity and develop with SOLID principles, especially as the size of the application and/or team grow.
 
-     For example: The `CatsController` and `CatsService` belong to the same application domain. As they are closely related, it makes sense to move them into a feature module.
+    For example: The `CatsController` and `CatsService` belong to the same application domain. As they are closely related, it makes sense to move them into a feature module.
 
-     ```javascript
-      import { Module } from '@nestjs/common';
-      import { CatsController } from './cats.controller';
-      import { CatsService } from './cats.service';
+    ```javascript
+    import { Module } from "@nestjs/common";
+    import { CatsController } from "./cats.controller";
+    import { CatsService } from "./cats.service";
 
-      @Module({
-        controllers: [CatsController],
-        providers: [CatsService],
-      })
-      export class CatsModule {}
-     ```
-     2. `Shared Modules:` modules are singletons by default, and thus you can share the same instance of any provider between multiple modules effortlessly. When a module is imported into another module, all of its providers are made available to the importing module. Therefore, any module that provides shared functionality should be imported wherever that functionality is needed.
-    
-     
-     3. `Dynamic Modules:` These are modules that can be configured at runtime. Dynamic modules are useful when you need to pass configuration options to a module. They are created using the `register()` method, which takes an options object and returns a dynamic module.
-    
+    @Module({
+      controllers: [CatsController],
+      providers: [CatsService],
+    })
+    export class CatsModule {}
+    ```
+
+    2.  `Shared Modules:` modules are singletons by default, and thus you can share the same instance of any provider between multiple modules effortlessly. When a module is imported into another module, all of its providers are made available to the importing module. Therefore, any module that provides shared functionality should be imported wherever that functionality is needed.
+
+    Let's imagine that we want to share an instance of the `CatsService` between several other modules. In order to do that, we first need to export the `CatsService` provider by adding it to the module's `exports array`, as shown below:
+
+    ```javascript
+    import { Module } from "@nestjs/common";
+    import { CatsController } from "./cats.controller";
+    import { CatsService } from "./cats.service";
+
+    @Module({
+      controllers: [CatsController],
+      providers: [CatsService],
+      exports: [CatsService],
+    })
+    export class CatsModule {}
+
+    ```
+    Now any module that imports the CatsModule has access to the CatsService and will share the same instance with all other modules that import it as well.
+
+
+    3.  `Dynamic Modules:` These are modules that can be configured at runtime. Dynamic modules are useful when you need to pass configuration options to a module. They are created using the `register()` method, which takes an options object and returns a dynamic module.
 
     **[⬆ Back to Top](#table-of-contents)**
 
