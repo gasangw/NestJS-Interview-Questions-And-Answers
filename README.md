@@ -1306,7 +1306,13 @@
 
 50. ### What is the difference between dependency injection and inversion of control (IoC)?
 
-    `Dependency Injection (DI)` and `Inversion of Control (IoC)` are both design patterns used to reduce the coupling between classes, making the code more modular, easier to test and maintain. However, they are not the same thing, but rather, `DI` is a form of `IoC`.
+    `Dependency Injection (DI)` and `Inversion of Control (IoC)` are both design patterns used to reduce the `coupling` between classes, making the code more modular, easier to test and maintain. However, they are not the same thing, but rather, `DI` is a form of `IoC`.
+
+    `Inversion of Control (IoC)` is a general principle where the control flow of a program is inverted: instead of the programmer controlling the flow of a program, the external framework or runtime controls it. 
+
+    `Dependency Injection (DI)` is a form of IoC where the creation and binding of dependent objects is controlled by a container or a framework. Instead of a class creating or finding its dependencies, they are passed in (injected) at runtime by another piece of code, typically a container or a framework. This makes the code more flexible, testable and modular because it decouples the usage of an object from its creation. This is the form of IoC that is used in many modern frameworks such as Angular, Spring, and NestJS.
+
+    In summary `IoC` is a design principle which can be implemented in several ways, one of which is `DI`
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -1382,4 +1388,4 @@
 57. ### Explain the concept of Serialization and Deserialization in NestJS?
 58. ### Explain the purpose of the `@nestjs/websockets` and `@nestjs/config` packages in NestJS?
 59. ### Explain the role of NestJS middleware in the context of Microservices and provide a scenario where middleware is beneficial in a Microservices setup?
-60. ### How does NestJS facilitate inter-service communication in a Microservices architecture, and what are the supported communication protocols?
+60. ### Discuss the different types of coupling, such as tight coupling and loose coupling, and provide examples of how NestJS modules contribute to achieving loose coupling in a modularized application.
