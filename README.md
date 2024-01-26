@@ -1540,7 +1540,43 @@
 
     `Loose Coupling:` Here, a module is not highly dependent on other modules. Changes in one module have minimal or no effect on other modules. This makes the system more maintainable and adaptable to change.
 
-    
+    NestJS promotes loose coupling through its modular development structure. Each module contains a portion of the application's functionality and can operate independently of other modules. This means that changes in one module do not affect others, leading to a loosely coupled system.
+
+    Here is a more easier example:
+
+    ```javascript
+    // users.service.ts
+      import { Injectable } from '@nestjs/common';
+      import { User } from './user.entity';
+
+      @Injectable()
+      export class UsersService {
+        private users: User[] = [];
+
+        create(user: User) {
+          this.users.push(user);
+        }
+
+        findAll(): User[] {
+          return this.users;
+        }
+      }
+
+      // meal.service.ts
+      import { Injectable } from '@nestjs/common';
+      import { UsersService } from '../users/users.service';
+
+      @Injectable()
+      export class MealService {
+        constructor(private usersService: UsersService) {}
+
+        createMeal(userId: string, MealData: CreateMealDTO) {
+          const user = this.usersService.findById(userId);
+          // Create meal for the user
+        }
+      }
+    ```
+    In above example, MealService depends on UsersService, but it doesn't manipulate user data directly. This is an example of loose coupling.
 
     **[⬆ Back to Top](#table-of-contents)**
 
