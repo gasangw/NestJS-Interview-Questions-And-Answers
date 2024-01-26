@@ -1385,8 +1385,10 @@
 
     The `Dependency Inversion Principle (DIP)` is one of the five principles of [SOLID](https://www.freecodecamp.org/news/solid-design-principles-in-software-development/), an acronym. The principle states that:
 
-    1. High-level modules should not depend on low-level modules. Both should depend on abstractions.
-    2. Abstractions should not depend on details. Details should depend on abstractions.
+    > ```javascript
+    >     1. High-level modules should not depend on low-level modules. Both should depend on abstractions.
+    > 2. Abstractions should not depend on details. Details should depend on abstractions.
+    > ```
 
     In the context of NestJS, or any other framework that supports dependency injection, the purpose of `DIP` is to reduce the `coupling` between modules, making the system more flexible, easier to test, and easier to maintain.
 
@@ -1399,7 +1401,6 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 53. ### How can you schedule tasks in NestJS?
-
 
     **[⬆ Back to Top](#table-of-contents)**
 
