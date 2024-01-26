@@ -1450,6 +1450,7 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 54. ### How can you handle database transactions in NestJS, and why are transactions important in certain scenarios?
+
     Database transactions in NestJS can be handled using the `TypeORM` package. Transactions are important when you want to ensure data integrity. If a series of database operations need to succeed or fail together, transactions can ensure that if any operation fails, all changes are rolled back.
 
     **[⬆ Back to Top](#table-of-contents)**
@@ -1458,6 +1459,16 @@
 
     Versioning allows you to have `different versions` of your controllers or individual routes running within the same application.
 
+    There are 4 types of versioning that are supported:
+
+    1. `URI Versioning:` The version will be passed within the URI of the request (default).
+    2. `Header Versioning:` A custom request header will specify the version.
+    3. `Media Type Versioning:` The Accept header of the request will specify the version.
+    4. `Custom Versioning:` Any aspect of the request may be used to specify the version(s). A custom function is provided to extract said version(s).
+
+    Check [this](https://docs.nestjs.com/techniques/versioning) to see how the above types of versioning are implemented.
+
+    **[⬆ Back to Top](#table-of-contents)**
 
 56. ### Explain the purpose of the `@nestjs/graphql Resolver` and `@nestjs/graphql Scalar` decorators, and how does it relate to GraphQL in NestJS?
 57. ### Explain the concept of Serialization and Deserialization in NestJS?
