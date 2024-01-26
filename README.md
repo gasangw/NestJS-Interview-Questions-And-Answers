@@ -1217,8 +1217,8 @@
     ```
 
     2.  `Shared Modules:` modules are singletons by default, and thus you can share the same instance of any provider between multiple modules effortlessly. When a module is imported into another module, all of its providers are made available to the importing module. Therefore, any module that provides shared functionality should be imported wherever that functionality is needed.
-       ![shared module](https://github.com/gasangw/NestJS-Interview-Questions-And-Answers/assets/99269832/91871589-f7ce-4e74-8063-3bac46d4b31a)
 
+    ![shared module](https://github.com/gasangw/NestJS-Interview-Questions-And-Answers/assets/99269832/91871589-f7ce-4e74-8063-3bac46d4b31a)
 
     Let's imagine that we want to share an instance of the `CatsService` between several other modules. In order to do that, we first need to export the `CatsService` provider by adding it to the module's `exports array`, as shown below:
 
@@ -1305,6 +1305,7 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 50. ### What is the difference between dependency injection and inversion of control (IoC)?
+
     Dependency Injection is a design pattern where components receive their dependencies from an external source rather than creating them internally.
 
     **[⬆ Back to Top](#table-of-contents)**
