@@ -1494,4 +1494,4 @@
 58. ### Explain the purpose of the `@nestjs/websockets` and `@nestjs/config` packages in NestJS?
 59. ### Explain the role of NestJS middleware in the context of Microservices and provide a scenario where middleware is beneficial in a Microservices setup?
 60. ### Discuss the different types of coupling, such as tight coupling and loose coupling, and provide examples of how NestJS modules contribute to achieving loose coupling in a modularized application.
-61. ###
+61. ### How does NestJS support Server-Sent Events (SSE), and what are the primary advantages of using SSE for real-time communication in web applications?
