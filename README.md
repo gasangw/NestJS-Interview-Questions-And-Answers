@@ -73,6 +73,7 @@
 | 54  | [How can you handle database transactions in NestJS, and why are transactions important in certain scenarios?](#how-can-you-handle-database-transactions-in-nestjs-and-why-are-transactions-important-in-certain-scenarios)                                                                                                                                      |
 | 55  | [How can you implement versioning in NestJS APIs?](#how-can-you-implement-versioning-in-nestjs-api)                                                                                                                                                                                                                                                              |
 | 56  | [Explain the purpose of the `@nestjs/graphql Resolver` and `@nestjs/graphql Scalar` decorators, and how they relate to GraphQL in NestJS?](#explain-the-purpose-of-the-nestjs-graphql-resolver-and-nestjs-graphql-scalar-decorators-and-how-they-relate-to-graphql-in-nestjs)                                                                                    |
+| 57  | [Explain the concept of Serialization and Deserialization in NestJS?](#explain-the-concept-of-serialization-and-deserialization-in-nestjs)                                                                                                                                                                                                                       |
 
 ### Answers
 
@@ -1504,6 +1505,12 @@
     Serialization and deserialization are fundamental concepts in computer science, not just in NestJS. They are used when data needs to be converted into a format that can be stored or transmitted and then reconstructed later.
 
     `Serialization:` This is the process of converting a data structure or object state into a format that can be stored (for example, in a file or memory buffer) or transmitted (for example, across a network connection link) and reconstructed later (possibly in a different computer environment).
+
+    `Deserialization:` This is the reverse process of serialization, where the serialized format is converted back into an actual object in memory.
+
+    In the context of NestJS, these concepts are often used when dealing with `HTTP requests` and `responses`. For example, when you send data from a client to a NestJS server, the data is serialized into a `JSON format`, transmitted over the network, and then deserialized back into a JavaScript object on the server.
+
+    NestJS provides a `Pipes` mechanism that can be used for data transformation (serialization/deserialization) and validation. For example, the `ValidationPipe` provided by NestJS can be used to automatically validate and transform incoming request payloads into instances of `DTO classes.`
 
     **[⬆ Back to Top](#table-of-contents)**
 
