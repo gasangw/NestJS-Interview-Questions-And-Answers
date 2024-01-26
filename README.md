@@ -1576,10 +1576,27 @@
         }
       }
     ```
+
     In above example, MealService depends on UsersService, but it doesn't manipulate user data directly. This is an example of loose coupling.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 60. ### How does NestJS support Server-Sent Events (SSE), and what are the primary advantages of using SSE for real-time communication in web applications?
 
-    **[⬆ Back to Top](#table-of-contents)**
+    `Server-Sent Events (SSE)` is a server push technology enabling a client to receive automatic updates from a server via HTTP connection. `SSE` is a one-way communication channel from server to client. If you need bi-directional communication, you might want to use WebSockets instead.
+
+    `SSE` they have been used in Facebook/Twitter updates, stock price updates, news feeds etc.
+
+    To enable `Server-Sent events` on a route (route registered within a controller class), annotate the method handler with the `@Sse()` decorator.
+
+    ```javascript
+      @Sse('sse')
+        sse(): Observable<MessageEvent> {
+          return interval(1000).pipe(map((_) => ({ data: { hello: 'world' } })));
+      }
+    ```
+    In the example above, we defined a route named `sse` that will allow us to propagate real-time updates. These events can be listened to using the [EventSource API](https://developer.mozilla.org/en-US/docs/Web/API/EventSource).
+
+    For more detailed information about `sse` kindly refer to [this](https://docs.nestjs.com/techniques/server-sent-events)
+
+     **[⬆ Back to Top](#table-of-contents)**
