@@ -68,6 +68,7 @@
 | 49  | [What is the entry file of NestJs application?](#what-is-the-entry-file-of-nestjs-application)                                                                                                                                                                                                                                                                   |
 | 50  | [What is the difference between dependency injection and inversion of control (IoC)?](#what-is-the-difference-between-dependency-injection-and-inversion-of-control-ioc)                                                                                                                                                                                         |
 | 51  | [How can you implement Caching in NestJS?](#how-can-you-implement-caching-in-nestjs)                                                                                                                                                                                                                                                                             |
+| 51  | [Explain the purpose of the Dependency Inversion Principle (DIP) in NestJS?](#explain-the-purpose-of-the-dependency-inversion-principle-dip-in-nestjs)                                                                                                                                                                                                           |
 
 ### Answers
 
@@ -1308,7 +1309,7 @@
 
     `Dependency Injection (DI)` and `Inversion of Control (IoC)` are both design patterns used to reduce the `coupling` between classes, making the code more modular, easier to test and maintain. However, they are not the same thing, but rather, `DI` is a form of `IoC`.
 
-    `Inversion of Control (IoC)` is a general principle where the control flow of a program is inverted: instead of the programmer controlling the flow of a program, the external framework or runtime controls it. 
+    `Inversion of Control (IoC)` is a general principle where the control flow of a program is inverted: instead of the programmer controlling the flow of a program, the external framework or runtime controls it.
 
     `Dependency Injection (DI)` is a form of IoC where the creation and binding of dependent objects is controlled by a container or a framework. Instead of a class creating or finding its dependencies, they are passed in (injected) at runtime by another piece of code, typically a container or a framework. This makes the code more flexible, testable and modular because it decouples the usage of an object from its creation. This is the form of IoC that is used in many modern frameworks such as Angular, Spring, and NestJS.
 
