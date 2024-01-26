@@ -74,6 +74,8 @@
 | 55  | [How can you implement versioning in NestJS APIs?](#how-can-you-implement-versioning-in-nestjs-api)                                                                                                                                                                                                                                                              |
 | 56  | [Explain the purpose of the `@nestjs/graphql Resolver` and `@nestjs/graphql Scalar` decorators, and how they relate to GraphQL in NestJS?](#explain-the-purpose-of-the-nestjs-graphql-resolver-and-nestjs-graphql-scalar-decorators-and-how-they-relate-to-graphql-in-nestjs)                                                                                    |
 | 57  | [Explain the concept of Serialization and Deserialization in NestJS?](#explain-the-concept-of-serialization-and-deserialization-in-nestjs)                                                                                                                                                                                                                       |
+| 58  | [Explain the role of NestJS middleware in the context of Microservices and provide a scenario where middleware is beneficial in a Microservices setup?](#explain-the-role-of-nestjs-middleware-in-the-context-of-microservices-and-provide-a-scenario-where-middleware-is-beneficial-in-a-microservices-setup)                                                   |
+
 
 ### Answers
 
@@ -1504,7 +1506,7 @@
 
     Serialization and deserialization are fundamental concepts in computer science, not just in NestJS. They are used when data needs to be converted into a format that can be stored or transmitted and then reconstructed later.
 
-    `Serialization:` This is the process of converting a data structure or object state into a format that can be stored (for example, in a file or memory buffer) or transmitted (for example, across a network connection link) and reconstructed later (possibly in a different computer environment).
+    `Serialization:` This is the process of converting a data structure or object state into a format that can be stored (for example, in a file or memory buffer) or transmitted (for example, across a network connection link) and reconstructed later (possibly in a different computer environment). For more about serialization you can check [here](https://docs.nestjs.com/techniques/serialization).
 
     `Deserialization:` This is the reverse process of serialization, where the serialized format is converted back into an actual object in memory.
 
@@ -1515,5 +1517,17 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 58. ### Explain the role of NestJS middleware in the context of Microservices and provide a scenario where middleware is beneficial in a Microservices setup?
+     
+     `Middleware` is a function that is executed before the route handler. Middleware functions have access to the request and response objects, and the `next()` middleware function in the application’s request-response cycle. They can execute any code, make changes to the request and the response objects, end the request-response cycle, and call the next middleware function in the stack.
+
+     In the context of microservices, middleware can play several important roles:
+
+    **[⬆ Back to Top](#table-of-contents)**
+
 59. ### Discuss the different types of coupling, such as tight coupling and loose coupling, and provide examples of how NestJS modules contribute to achieving loose coupling in a modularized application.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
 60. ### How does NestJS support Server-Sent Events (SSE), and what are the primary advantages of using SSE for real-time communication in web applications?
+
+    **[⬆ Back to Top](#table-of-contents)**
