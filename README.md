@@ -1382,6 +1382,20 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 52. ### Explain the purpose of the Dependency Inversion Principle (DIP) in NestJS?
+
+    The `Dependency Inversion Principle (DIP)` is one of the five principles of [SOLID](https://www.freecodecamp.org/news/solid-design-principles-in-software-development/), an acronym. The principle states that:
+
+    1. High-level modules should not depend on low-level modules. Both should depend on abstractions.
+    2. Abstractions should not depend on details. Details should depend on abstractions.
+
+    In the context of NestJS, or any other framework that supports dependency injection, the purpose of `DIP` is to reduce the `coupling` between modules, making the system more flexible, easier to test, and easier to maintain.
+
+    By depending on `abstractions`, not on concrete implementations, you can easily swap out modules without changing the high-level code. For example, you might have a service that depends on a repository. If you code to an interface, you can easily change the repository (e.g., from an in-memory repository to a database repository) without changing the service code.
+
+    NestJS supports `DIP` through its modular system and the use of decorators like `@Injectable()`, `@Inject()`, and `custom providers`. These features allow you to define providers and inject them where needed, making it easy to manage dependencies and adhere to the Dependency Inversion Principle.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
 53. ### How can you schedule tasks in NestJS?
 54. ### How can you handle database transactions in NestJS, and why are transactions important in certain scenarios?
 55. ### How can you implement versioning in NestJS APIs?
