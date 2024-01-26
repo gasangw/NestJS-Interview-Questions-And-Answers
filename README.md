@@ -1392,11 +1392,17 @@
 
     By depending on `abstractions`, not on concrete implementations, you can easily swap out modules without changing the high-level code. For example, you might have a service that depends on a repository. If you code to an interface, you can easily change the repository (e.g., from an in-memory repository to a database repository) without changing the service code.
 
+    For more information about `DIP` you can check [here](https://trilon.io/blog/dependency-inversion-principle)
+
     NestJS supports `DIP` through its modular system and the use of decorators like `@Injectable()`, `@Inject()`, and `custom providers`. These features allow you to define providers and inject them where needed, making it easy to manage dependencies and adhere to the Dependency Inversion Principle.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 53. ### How can you schedule tasks in NestJS?
+
+
+    **[⬆ Back to Top](#table-of-contents)**
+
 54. ### How can you handle database transactions in NestJS, and why are transactions important in certain scenarios?
 55. ### How can you implement versioning in NestJS APIs?
 56. ### Explain the purpose of the `@nestjs/graphql Resolver` and `@nestjs/graphql Scalar` decorators, and how does it relate to GraphQL in NestJS?
