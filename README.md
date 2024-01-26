@@ -72,7 +72,7 @@
 | 53  | [How can you schedule tasks in NestJS?](#how-can-you-schedule-tasks-in-nestjs)                                                                                                                                                                                                                                                                                   |
 | 54  | [How can you handle database transactions in NestJS, and why are transactions important in certain scenarios?](#how-can-you-handle-database-transactions-in-nestjs-and-why-are-transactions-important-in-certain-scenarios)                                                                                                                                      |
 | 55  | [How can you implement versioning in NestJS APIs?](#how-can-you-implement-versioning-in-nestjs-api)                                                                                                                                                                                                                                                              |
-| 56  | [How can you implement versioning in NestJS APIs?](#how-can-you-implement-versioning-in-nestjs-api)                                                                                                                                                                                                                                                              |
+| 56  | [Explain the purpose of the `@nestjs/graphql Resolver` and `@nestjs/graphql Scalar` decorators, and how they relate to GraphQL in NestJS?](#explain-the-purpose-of-the-nestjs-graphql-resolver-and-nestjs-graphql-scalar-decorators-and-how-they-relate-to-graphql-in-nestjs)                                                                                    |
 
 ### Answers
 
@@ -1485,8 +1485,10 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-56. ### Explain the purpose of the `@nestjs/graphql Resolver` and `@nestjs/graphql Scalar` decorators, and how does it relate to GraphQL in NestJS?
-    
+56. ### Explain the purpose of the `@nestjs/graphql Resolver` and `@nestjs/graphql Scalar` decorators, and how they relate to GraphQL in NestJS?
+
+    **[⬆ Back to Top](#table-of-contents)**
+
 57. ### Explain the concept of Serialization and Deserialization in NestJS?
 
 58. ### Explain the purpose of the `@nestjs/websockets` and `@nestjs/config` packages in NestJS?
