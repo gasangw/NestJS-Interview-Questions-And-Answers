@@ -1597,6 +1597,16 @@
     ```
     In the example above, we defined a route named `sse` that will allow us to propagate real-time updates. These events can be listened to using the [EventSource API](https://developer.mozilla.org/en-US/docs/Web/API/EventSource).
 
+    `Server-Sent Events (SSE)` have several advantages for real-time communication in web applications:
+
+    1.`Built on HTTP:` SSE is built on HTTP, which makes it compatible with most firewalls and networks without requiring any special configuration.
+
+    2.`Automatic Reconnection:` If a connection is lost, the browser will automatically try to reconnect to the server.
+
+    3.`Event IDs:` The server can send an ID with each event, so if a client gets disconnected, it can reconnect and get all the events it missed.
+
+    4.`Efficient Updates:` SSE is ideal for applications that require real-time updates from the server (like live news updates, real-time analytics, etc.). The server can push updates to the client as soon as new data is available.
+
     For more detailed information about `sse` kindly refer to [this](https://docs.nestjs.com/techniques/server-sent-events)
 
      **[⬆ Back to Top](#table-of-contents)**
