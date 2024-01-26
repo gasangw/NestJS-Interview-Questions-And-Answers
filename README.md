@@ -71,6 +71,8 @@
 | 52  | [Explain the purpose of the Dependency Inversion Principle (DIP) in NestJS?](#explain-the-purpose-of-the-dependency-inversion-principle-dip-in-nestjs)                                                                                                                                                                                                           |
 | 53  | [How can you schedule tasks in NestJS?](#how-can-you-schedule-tasks-in-nestjs)                                                                                                                                                                                                                                                                                   |
 | 54  | [How can you handle database transactions in NestJS, and why are transactions important in certain scenarios?](#how-can-you-handle-database-transactions-in-nestjs-and-why-are-transactions-important-in-certain-scenarios)                                                                                                                                      |
+| 55  | [How can you implement versioning in NestJS APIs?](#how-can-you-implement-versioning-in-nestjs-api)                                                                                                                                                                                                                                                              |
+| 56  | [How can you implement versioning in NestJS APIs?](#how-can-you-implement-versioning-in-nestjs-api)                                                                                                                                                                                                                                                              |
 
 ### Answers
 
@@ -1451,7 +1453,9 @@
 
 54. ### How can you handle database transactions in NestJS, and why are transactions important in certain scenarios?
 
-    Database transactions in NestJS can be handled using the `TypeORM` package. Transactions are important when you want to ensure data integrity. If a series of database operations need to succeed or fail together, transactions can ensure that if any operation fails, all changes are rolled back.
+    Database transactions in NestJS can be handled using the `TypeORM` package. Transactions are important when you want to ensure data integrity. If a series of database operations need to succeed or fail together, transactions can ensure that if any operation fails, all changes are rolled back and the database remains in a consistent state.
+
+    This is particularly important in scenarios such as financial operations, where it's crucial that either all parts of a transaction are completed or none of them are.
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -1466,12 +1470,26 @@
     3. `Media Type Versioning:` The Accept header of the request will specify the version.
     4. `Custom Versioning:` Any aspect of the request may be used to specify the version(s). A custom function is provided to extract said version(s).
 
+    To enable `Header Versioning` for your application, do the following:
+
+    ```javascript
+    const app = await NestFactory.create(AppModule);
+    app.enableVersioning({
+      type: VersioningType.HEADER,
+      header: "Custom-Header",
+    });
+    await app.listen(3000);
+    ```
+
     Check [this](https://docs.nestjs.com/techniques/versioning) to see how the above types of versioning are implemented.
 
     **[⬆ Back to Top](#table-of-contents)**
 
 56. ### Explain the purpose of the `@nestjs/graphql Resolver` and `@nestjs/graphql Scalar` decorators, and how does it relate to GraphQL in NestJS?
+    
 57. ### Explain the concept of Serialization and Deserialization in NestJS?
+
 58. ### Explain the purpose of the `@nestjs/websockets` and `@nestjs/config` packages in NestJS?
 59. ### Explain the role of NestJS middleware in the context of Microservices and provide a scenario where middleware is beneficial in a Microservices setup?
 60. ### Discuss the different types of coupling, such as tight coupling and loose coupling, and provide examples of how NestJS modules contribute to achieving loose coupling in a modularized application.
+61. ###
