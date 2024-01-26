@@ -1306,7 +1306,7 @@
 
 50. ### What is the difference between dependency injection and inversion of control (IoC)?
 
-    Dependency Injection is a design pattern where components receive their dependencies from an external source rather than creating them internally.
+    `Dependency Injection (DI)` and `Inversion of Control (IoC)` are both design patterns used to reduce the coupling between classes, making the code more modular, easier to test and maintain. However, they are not the same thing, but rather, `DI` is a form of `IoC`.
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -1378,7 +1378,7 @@
 53. ### How can you schedule tasks in NestJS?
 54. ### How can you handle database transactions in NestJS, and why are transactions important in certain scenarios?
 55. ### How can you implement versioning in NestJS APIs?
-56. ### Explain the purpose of the `@nestjs/graphql Resolver` and `@nestjs/graphql Scalar`  decorators, and how does it relate to GraphQL in NestJS?
+56. ### Explain the purpose of the `@nestjs/graphql Resolver` and `@nestjs/graphql Scalar` decorators, and how does it relate to GraphQL in NestJS?
 57. ### Explain the concept of Serialization and Deserialization in NestJS?
 58. ### Explain the purpose of the `@nestjs/websockets` and `@nestjs/config` packages in NestJS?
 59. ### Explain the role of NestJS middleware in the context of Microservices and provide a scenario where middleware is beneficial in a Microservices setup?
