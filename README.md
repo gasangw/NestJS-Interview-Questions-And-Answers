@@ -69,6 +69,7 @@
 | 50  | [What is the difference between dependency injection and inversion of control (IoC)?](#what-is-the-difference-between-dependency-injection-and-inversion-of-control-ioc)                                                                                                                                                                                         |
 | 51  | [How can you implement Caching in NestJS?](#how-can-you-implement-caching-in-nestjs)                                                                                                                                                                                                                                                                             |
 | 52  | [Explain the purpose of the Dependency Inversion Principle (DIP) in NestJS?](#explain-the-purpose-of-the-dependency-inversion-principle-dip-in-nestjs)                                                                                                                                                                                                           |
+| 53  | [How can you schedule tasks in NestJS?](#how-can-you-schedule-tasks-in-nestjs)                                                                                                                                                                                                                                                                                   |
 
 ### Answers
 
@@ -1387,7 +1388,7 @@
 
     > ```javascript
     >     1. High-level modules should not depend on low-level modules. Both should depend on abstractions.
-    > 2. Abstractions should not depend on details. Details should depend on abstractions.
+    >     2. Abstractions should not depend on details. Details should depend on abstractions.
     > ```
 
     In the context of NestJS, or any other framework that supports dependency injection, the purpose of `DIP` is to reduce the `coupling` between modules, making the system more flexible, easier to test, and easier to maintain.
@@ -1402,10 +1403,54 @@
 
 53. ### How can you schedule tasks in NestJS?
 
+    Task scheduling allows you to schedule arbitrary code (methods/functions) to execute at a fixed date/time, at recurring intervals, or once after a specified interval.
+
+    Nest provides the `@nestjs/schedule` package, which integrates with the popular `Node.js cron` package.
+
+    1. To implement scheduling, you can install the required dependencies.
+
+    ```
+     npm install --save @nestjs/schedule
+    ```
+
+    2. Then, import the ScheduleModule into your module:
+
+    ```javascript
+    import { Module } from "@nestjs/common";
+    import { ScheduleModule } from "@nestjs/schedule";
+    import { TasksService } from "./tasks.service";
+
+    @Module({
+      imports: [ScheduleModule.forRoot()],
+      providers: [TasksService],
+    })
+    export class TasksModule {}
+    ```
+
+    3. Now, you can use the decorators in your service to schedule tasks. Here's an example:
+
+    ```javascript
+    import { Injectable } from "@nestjs/common";
+    import { Cron, CronExpression } from "@nestjs/schedule";
+
+    @Injectable()
+    export class TasksService {
+      @Cron(CronExpression.EVERY_5_SECONDS)
+      handleCron() {
+        console.log("Called every 5 seconds");
+      }
+    }
+    ```
+
+    In the above example, `handleCron()` will be called every 5 seconds. The `@Cron()` decorator takes a `CronExpression` which determines the schedule.
+
+    Remember, the `ScheduleModule` uses the `node-schedule` package under the hood, so you can use any cron expression that node-schedule supports.
+
     **[⬆ Back to Top](#table-of-contents)**
 
 54. ### How can you handle database transactions in NestJS, and why are transactions important in certain scenarios?
 55. ### How can you implement versioning in NestJS APIs?
+
 56. ### Explain the purpose of the `@nestjs/graphql Resolver` and `@nestjs/graphql Scalar` decorators, and how does it relate to GraphQL in NestJS?
 57. ### Explain the concept of Serialization and Deserialization in NestJS?
 58. ### Explain the purpose of the `@nestjs/websockets` and `@nestjs/config` packages in NestJS?
