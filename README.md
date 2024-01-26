@@ -1534,6 +1534,14 @@
 
 59. ### Discuss the different types of coupling, such as tight coupling and loose coupling, and provide examples of how NestJS modules contribute to achieving loose coupling in a modularized application.
 
+    `Coupling` is the degree of interdependence between software modules, a measure of how closely connected two routines or modules are, the strength of the relationships between modules.
+
+    `Tight Coupling:` In this case, a module (or class) is highly dependent on another module. Changes in one module may require changes in the dependent module. This makes the system harder to maintain and evolve over time.
+
+    `Loose Coupling:` Here, a module is not highly dependent on other modules. Changes in one module have minimal or no effect on other modules. This makes the system more maintainable and adaptable to change.
+
+    
+
     **[⬆ Back to Top](#table-of-contents)**
 
 60. ### How does NestJS support Server-Sent Events (SSE), and what are the primary advantages of using SSE for real-time communication in web applications?
