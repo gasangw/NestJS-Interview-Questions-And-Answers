@@ -1522,6 +1522,10 @@
 
      In the context of microservices, middleware can play several important roles:
 
+     1. `Request Logging:` Middleware can be used to log details of incoming requests. This can be useful for debugging, as well as for tracking usage patterns and user behavior.
+
+     2. `Authentication and Authorization:` Middleware can verify a user's identity and permissions before a request reaches a service. This can prevent unauthorized access and ensure that each service doesn't have to implement its own authentication checks.
+
     **[⬆ Back to Top](#table-of-contents)**
 
 59. ### Discuss the different types of coupling, such as tight coupling and loose coupling, and provide examples of how NestJS modules contribute to achieving loose coupling in a modularized application.
