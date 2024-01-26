@@ -70,6 +70,7 @@
 | 51  | [How can you implement Caching in NestJS?](#how-can-you-implement-caching-in-nestjs)                                                                                                                                                                                                                                                                             |
 | 52  | [Explain the purpose of the Dependency Inversion Principle (DIP) in NestJS?](#explain-the-purpose-of-the-dependency-inversion-principle-dip-in-nestjs)                                                                                                                                                                                                           |
 | 53  | [How can you schedule tasks in NestJS?](#how-can-you-schedule-tasks-in-nestjs)                                                                                                                                                                                                                                                                                   |
+| 54  | [How can you handle database transactions in NestJS, and why are transactions important in certain scenarios?](#how-can-you-handle-database-transactions-in-nestjs-and-why-are-transactions-important-in-certain-scenarios)                                                                                                                                      |
 
 ### Answers
 
@@ -1449,7 +1450,14 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 54. ### How can you handle database transactions in NestJS, and why are transactions important in certain scenarios?
+    Database transactions in NestJS can be handled using the `TypeORM` package. Transactions are important when you want to ensure data integrity. If a series of database operations need to succeed or fail together, transactions can ensure that if any operation fails, all changes are rolled back.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
 55. ### How can you implement versioning in NestJS APIs?
+
+    Versioning allows you to have `different versions` of your controllers or individual routes running within the same application.
+
 
 56. ### Explain the purpose of the `@nestjs/graphql Resolver` and `@nestjs/graphql Scalar` decorators, and how does it relate to GraphQL in NestJS?
 57. ### Explain the concept of Serialization and Deserialization in NestJS?
