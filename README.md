@@ -1495,13 +1495,18 @@
 
     2. `@Scalar():` This decorator is used to define a custom scalar. Scalars are primitive values: Int, Float, String, Boolean, or ID. When you need to use a custom primitive type (like a Date or a type from your database), you can define a custom scalar. On how its used check [here](https://docs.nestjs.com/graphql/scalars)
 
-    Read [this](https://www.apollographql.com/blog/graphql-vs-rest) to understand the difference between `GraphQL`and `REST` 
+    Read [this](https://www.apollographql.com/blog/graphql-vs-rest) to understand the difference between `GraphQL`and `REST`
 
     **[⬆ Back to Top](#table-of-contents)**
 
 57. ### Explain the concept of Serialization and Deserialization in NestJS?
 
-58. ### Explain the purpose of the `@nestjs/websockets` and `@nestjs/config` packages in NestJS?
-59. ### Explain the role of NestJS middleware in the context of Microservices and provide a scenario where middleware is beneficial in a Microservices setup?
-60. ### Discuss the different types of coupling, such as tight coupling and loose coupling, and provide examples of how NestJS modules contribute to achieving loose coupling in a modularized application.
-61. ### How does NestJS support Server-Sent Events (SSE), and what are the primary advantages of using SSE for real-time communication in web applications?
+    Serialization and deserialization are fundamental concepts in computer science, not just in NestJS. They are used when data needs to be converted into a format that can be stored or transmitted and then reconstructed later.
+
+    `Serialization:` This is the process of converting a data structure or object state into a format that can be stored (for example, in a file or memory buffer) or transmitted (for example, across a network connection link) and reconstructed later (possibly in a different computer environment).
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+58. ### Explain the role of NestJS middleware in the context of Microservices and provide a scenario where middleware is beneficial in a Microservices setup?
+59. ### Discuss the different types of coupling, such as tight coupling and loose coupling, and provide examples of how NestJS modules contribute to achieving loose coupling in a modularized application.
+60. ### How does NestJS support Server-Sent Events (SSE), and what are the primary advantages of using SSE for real-time communication in web applications?
