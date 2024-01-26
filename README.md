@@ -76,6 +76,7 @@
 | 57  | [Explain the concept of Serialization and Deserialization in NestJS?](#explain-the-concept-of-serialization-and-deserialization-in-nestjs)                                                                                                                                                                                                                                                               |
 | 58  | [Explain the role of NestJS middleware in the context of Microservices and provide a scenario where middleware is beneficial in a Microservices setup?](#explain-the-role-of-nestjs-middleware-in-the-context-of-microservices-and-provide-a-scenario-where-middleware-is-beneficial-in-a-microservices-setup)                                                                                           |
 | 59  | [Discuss the different types of coupling, such as tight coupling and loose coupling, and provide examples of how NestJS modules contribute to achieving loose coupling in a modularized application?](#discuss-the-different-types-of-coupling-such-as-tight-coupling-and-loose-coupling-and-provide-examples-of-how-nestjs-modules-contribute-to-achieving-loose-coupling-in-a-modularized-application) |
+| 60  | [How does NestJS support Server-Sent Events (SSE), and what are the primary advantages of using SSE for real-time communication in web applications?](#how-does-nestjs-support-server-sent-events-sse-and-what-are-the-primary-advantages-of-using-sse-for-real-time-communication-in-web-applications)                                                                                                  |
 
 ### Answers
 
@@ -1595,6 +1596,7 @@
           return interval(1000).pipe(map((_) => ({ data: { hello: 'world' } })));
       }
     ```
+
     In the example above, we defined a route named `sse` that will allow us to propagate real-time updates. These events can be listened to using the [EventSource API](https://developer.mozilla.org/en-US/docs/Web/API/EventSource).
 
     `Server-Sent Events (SSE)` have several advantages for real-time communication in web applications:
@@ -1609,4 +1611,4 @@
 
     For more detailed information about `sse` kindly refer to [this](https://docs.nestjs.com/techniques/server-sent-events)
 
-     **[⬆ Back to Top](#table-of-contents)**
+    **[⬆ Back to Top](#table-of-contents)**
