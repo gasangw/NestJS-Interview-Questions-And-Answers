@@ -1487,9 +1487,15 @@
 
 56. ### Explain the purpose of the `@nestjs/graphql Resolver` and `@nestjs/graphql Scalar` decorators, and how they relate to GraphQL in NestJS?
 
+    `GraphQL` is a powerful query language for APIs and a runtime for fulfilling those queries with your existing data. It's an elegant approach that solves many problems typically found with REST APIs.
+
     The `@nestjs/graphql` package provides decorators that allow you to define GraphQL schemas directly from your TypeScript classes.
 
-    1. `@Resolver():` This decorator is used to mark a class as a GraphQL resolver. Resolvers are the building blocks of GraphQL servers. They are responsible for fetching the data for individual fields in a schema. When you send a query to a GraphQL server, the server uses resolver functions to produce a response.
+    1. `@Resolver():` This decorator is used to mark a class as a GraphQL resolver. Resolvers are the building blocks of GraphQL servers. They are responsible for fetching the data for individual fields in a schema. When you send a query to a GraphQL server, the server uses resolver functions to produce a response. On how its used check [here](https://docs.nestjs.com/graphql/resolvers)
+
+    2. `@Scalar():` This decorator is used to define a custom scalar. Scalars are primitive values: Int, Float, String, Boolean, or ID. When you need to use a custom primitive type (like a Date or a type from your database), you can define a custom scalar. On how its used check [here](https://docs.nestjs.com/graphql/scalars)
+
+    Read [this](https://www.apollographql.com/blog/graphql-vs-rest) to understand the difference between `GraphQL`and `REST` 
 
     **[⬆ Back to Top](#table-of-contents)**
 
