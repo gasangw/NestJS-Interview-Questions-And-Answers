@@ -1373,3 +1373,13 @@
     > ```
 
     **[⬆ Back to Top](#table-of-contents)**
+
+52. ### Explain the purpose of the Dependency Inversion Principle (DIP) in NestJS?
+53. ### How can you schedule tasks in NestJS?
+54. ### How can you handle database transactions in NestJS, and why are transactions important in certain scenarios?
+55. ### How can you implement versioning in NestJS APIs?
+56. ### Explain the purpose of the `@nestjs/graphql Resolver` and `@nestjs/graphql Scalar`  decorators, and how does it relate to GraphQL in NestJS?
+57. ### Explain the concept of Serialization and Deserialization in NestJS?
+58. ### Explain the purpose of the `@nestjs/websockets` and `@nestjs/config` packages in NestJS?
+59. ### Explain the role of NestJS middleware in the context of Microservices and provide a scenario where middleware is beneficial in a Microservices setup?
+60. ### How does NestJS facilitate inter-service communication in a Microservices architecture, and what are the supported communication protocols?
