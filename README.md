@@ -76,7 +76,6 @@
 | 57  | [Explain the concept of Serialization and Deserialization in NestJS?](#explain-the-concept-of-serialization-and-deserialization-in-nestjs)                                                                                                                                                                                                                       |
 | 58  | [Explain the role of NestJS middleware in the context of Microservices and provide a scenario where middleware is beneficial in a Microservices setup?](#explain-the-role-of-nestjs-middleware-in-the-context-of-microservices-and-provide-a-scenario-where-middleware-is-beneficial-in-a-microservices-setup)                                                   |
 
-
 ### Answers
 
 1.  ### What is Nestjs?
@@ -1517,14 +1516,18 @@
     **[⬆ Back to Top](#table-of-contents)**
 
 58. ### Explain the role of NestJS middleware in the context of Microservices and provide a scenario where middleware is beneficial in a Microservices setup?
-     
-     `Middleware` is a function that is executed before the route handler. Middleware functions have access to the request and response objects, and the `next()` middleware function in the application’s request-response cycle. They can execute any code, make changes to the request and the response objects, end the request-response cycle, and call the next middleware function in the stack.
 
-     In the context of microservices, middleware can play several important roles:
+    `Middleware` is a function that is executed before the route handler. Middleware functions have access to the request and response objects, and the `next()` middleware function in the application’s request-response cycle. They can execute any code, make changes to the request and the response objects, end the request-response cycle, and call the next middleware function in the stack.
 
-     1. `Request Logging:` Middleware can be used to log details of incoming requests. This can be useful for debugging, as well as for tracking usage patterns and user behavior.
+    In the context of microservices, middleware can play several important roles:
 
-     2. `Authentication and Authorization:` Middleware can verify a user's identity and permissions before a request reaches a service. This can prevent unauthorized access and ensure that each service doesn't have to implement its own authentication checks.
+    1.  `Request Logging:` Middleware can be used to log details of incoming requests. This can be useful for debugging, as well as for tracking usage patterns and user behavior.
+
+    2.  `Authentication and Authorization:` Middleware can verify a user's identity and permissions before a request reaches a service. This can prevent unauthorized access and ensure that each service doesn't have to implement its own authentication checks.
+
+    3.  `Error Handling:` Middleware can catch and handle errors. This can help to ensure that the microservice responds with a well-defined error structure even when something goes wrong.
+
+    4.  `Rate Limiting:` Middleware can track the number of requests from a client and limit usage to prevent abuse.
 
     **[⬆ Back to Top](#table-of-contents)**
 
