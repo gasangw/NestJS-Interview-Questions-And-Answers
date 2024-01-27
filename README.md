@@ -173,7 +173,23 @@
 
 9.  ### Can you explain how to use decorators in a NestJS controller?
 
-    Decorators in a NestJS controller are used to define routes and to handle different types of HTTP requests. For example, `@Get()`, `@Post()`, `@Put()`, `@Delete()` are used to handle GET, POST, PUT, DELETE requests respectively.
+    Before explaining how to use decorators, let me explain more about what are `decorators`:
+    
+    `decorators` are special functions that are prefixed with an `@` symbol and can be attached to classes, methods, or properties. They are used to add metadata, methods, properties, or observe the behavior of the classes, methods, or properties they are attached to.
+
+    NestJS provides several built-in decorators, and you can also create custom decorators. Here are some examples of built-in decorators in NestJS:
+
+    1. `Class decorators` like `@Controller()`, `@Module()`, `@Injectable()`, etc. These are used to annotate classes.
+
+    2. `Method decorators` like `@Get()`, `@Post()`, `@Put()`, etc. These are used to annotate methods within controller classes to handle specific routes.
+
+    3. `Parameter decorators` like `@Req()`, `@Res()`, `@Body()`, etc. These are used to annotate parameters within route handling methods.
+
+    4. `Property decorators` like `@Inject()`. These are used to annotate properties within classes.
+
+    5. `Custom decorators`. You can create your own decorators to handle common tasks across your application.
+
+    For example, below is how `method decorators` are used to handle GET, POST, PUT, DELETE requests respectively.
 
     ```javascript
     import {
